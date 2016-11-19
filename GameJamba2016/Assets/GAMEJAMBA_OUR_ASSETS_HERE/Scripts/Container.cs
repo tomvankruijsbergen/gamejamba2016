@@ -7,12 +7,13 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _OnTest(bool b);
 	public _OnTest OnTest;
 
-	//private AudioManager audioManager;
+	private AudioManager audioManager;
 
 	void Start () {
-		//this.OnTest += (bool b) => {};
+		this.audioManager = new AudioManager();
+		
+		this.OnTest += (bool b) => {};
 		this.OnTest(true);
-		this.Update();
 	}
 
 
