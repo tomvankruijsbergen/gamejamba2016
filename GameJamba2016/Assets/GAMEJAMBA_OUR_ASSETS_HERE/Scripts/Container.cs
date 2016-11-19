@@ -18,7 +18,7 @@ public class Container : MonoSingleton<Container> {
 
 	private SlowTimeManager slowTimeManager;
 	private Transform player;
-	new private Transform camera;
+	new private CameraBehaviour camera;
 
 	// These are all the events that this class sends. They should always return void.
 
@@ -38,6 +38,12 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _PlayerDied(Transform KilledBy);
 	public event _PlayerDied OnPlayerDied;
 
+	public delegate void _CameraMoved(Vector2 newPosition);
+	public event _CameraMoved OnCameraMoved;
+
+	public delegate void _CameraZoomed(float newZoom);
+	public event _CameraZoomed OnCameraZoomed;
+
 	public override void Init () {
 		//instantiate the config
 		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
@@ -51,8 +57,8 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
-	public void AssignCamera(Transform camera) {
-		this.camera = camera;
+	public void AssignCamera(CameraBehaviour cameraBehaviour) {
+		this.camera = cameraBehaviour;
 	}
 	public void AssignPlayer(Transform player) {
 		this.player = player;
@@ -85,7 +91,13 @@ public class Container : MonoSingleton<Container> {
 		return player.position;
 	}
 	public Vector2 GetCameraPosition() {
-		return camera.position;
+		return camera.transform.position;
+	}
+	public float GetCameraSize() {
+		return camera.GetCameraSize();
+	}
+	public float GetCameraAspect() {
+		return camera.GetCameraAspect();
 	}
 
 	// These functions are called by objects.
@@ -104,14 +116,21 @@ public class Container : MonoSingleton<Container> {
 		this.OnPlayerMoved(position, velocity);
 	}
 
+	public void CameraMoved(Vector2 position) {
+		this.OnCameraMoved(position);
+	}
+	public void CameraZoomed(float newZoom) {
+		this.OnCameraZoomed(newZoom);
+	}
+
 	public void DragStart(Vector2 dragPosition) {
-		this.OnDragStart(dragPosition, player.position, camera.position);
+		this.OnDragStart(dragPosition, player.position, camera.transform.position);
 	}
 	public void DragUpdate(Vector2 dragPosition) {
-		this.OnDragUpdate(dragPosition, player.position, camera.position);
+		this.OnDragUpdate(dragPosition, player.position, camera.transform.position);
 	}
 	public void DragRelease(Vector2 dragPosition) {
-		this.OnDragEnd(dragPosition, player.position, camera.position);
+		this.OnDragEnd(dragPosition, player.position, camera.transform.position);
 	}
 
 	public void EnemyKilled(GameObject enemyKilled){

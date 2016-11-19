@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 [System.Serializable]
 public struct BackgroundSingleData {
-	public Sprite sprite;
-	public float parallax;
-	public float y;
-	public float scale;
+	public Material material;
+	public Vector3 parallax;
+	public float yOffset;
 }
 
 public struct BackgroundSingle {
@@ -29,17 +28,16 @@ public class BackgroundManager : MonoBehaviour {
 
 			single.data = backgroundData;
 
-			GameObject activeBackground = new GameObject();
+			GameObject activeBackground = Instantiate(Resources.Load("Prefabs/BackgroundSingle") as GameObject);
 			activeBackground.transform.parent = transform;
-			SpriteRenderer spriteRenderer = activeBackground.AddComponent<SpriteRenderer>();
-			spriteRenderer.sprite = single.data.sprite;
 			
 			int zIndex = (this.backgrounds.Length - i);
-			if (single.data.parallax <= 1) {
+			if (single.data.parallax.x <= 1) {
 				zIndex *= -1;
 			}
-			activeBackground.transform.position = new Vector3(0, 0, (this.backgrounds.Length - i));
-			activeBackground.transform.localScale = new Vector3(single.data.scale, single.data.scale, single.data.scale);
+			activeBackground.GetComponent<MeshRenderer>().material = single.data.material;
+			activeBackground.transform.position = new Vector3(0, 0, (this.backgrounds.Length - i) * 0.01f);
+			//activeBackground.transform.localScale = new Vector3(single.data.scale, single.data.scale, single.data.scale);
 
 			single.gameObject = activeBackground;
 
@@ -48,19 +46,54 @@ public class BackgroundManager : MonoBehaviour {
 		
 
 		Container.instance.OnPlayerMoved += this.OnPlayerMoved;
+		Container.instance.OnCameraMoved += this.OnCameraMoved;
+		Container.instance.OnCameraZoomed += this.OnCameraZoomed;
+	}
+
+	void Start() {
+		this.OnCameraZoomed(Container.instance.GetCameraSize());
+	}
+
+	void OnCameraMoved(Vector2 newPosition) {
+		foreach (BackgroundSingle backgroundSingle in this.activeBackgrounds) {
+			backgroundSingle.gameObject.transform.position = new Vector3(
+				newPosition.x, 
+				newPosition.y + backgroundSingle.data.yOffset,
+				backgroundSingle.gameObject.transform.position.z
+			);
+
+			Material material = backgroundSingle.gameObject.GetComponent<MeshRenderer>().material;
+			material.mainTextureOffset = new Vector2(
+				newPosition.x * backgroundSingle.data.parallax.x / backgroundSingle.gameObject.transform.localScale.x,
+				newPosition.y * backgroundSingle.data.parallax.y / backgroundSingle.gameObject.transform.localScale.y
+			);
+		} 
+	}
+	void OnCameraZoomed(float newZoom) {
+		float aspect = Container.instance.GetCameraAspect();
+		float width = 2f * newZoom;
+		float height = width * aspect;
+
+		foreach (BackgroundSingle backgroundSingle in this.activeBackgrounds) {
+			backgroundSingle.gameObject.transform.localScale = new Vector3(height, width, 1);
+		}
 	}
 
 	void OnPlayerMoved(Vector2 position, Vector2 velocity) {
 		// move the parallax in each background layer
+		/*
 		foreach (BackgroundSingle backgroundSingle in this.activeBackgrounds) {
 			Vector2 newTarget = position * backgroundSingle.data.parallax;
 			newTarget.y += backgroundSingle.data.y;
 			Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, backgroundSingle.gameObject.transform.position.z);
 			backgroundSingle.gameObject.transform.position = newPosition;
 		}
+		*/
 	}
 
 	void Destroy() {
         Container.instance.OnPlayerMoved -= this.OnPlayerMoved;
+		Container.instance.OnCameraMoved -= this.OnCameraMoved;
+		Container.instance.OnCameraZoomed -= this.OnCameraZoomed;
     }
 }

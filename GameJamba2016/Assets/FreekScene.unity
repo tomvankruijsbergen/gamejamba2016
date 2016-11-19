@@ -1001,29 +1001,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012339035586, guid: fabcd5a34e99a44e5bdfb7291214d68f,
-        type: 2}
-      propertyPath: zoomPerDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012339035586, guid: fabcd5a34e99a44e5bdfb7291214d68f,
-        type: 2}
-      propertyPath: zoomPerDistance
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 20000012740146964, guid: fabcd5a34e99a44e5bdfb7291214d68f,
         type: 2}
       propertyPath: orthographic size
-      value: 11.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012339035586, guid: fabcd5a34e99a44e5bdfb7291214d68f,
-        type: 2}
-      propertyPath: zoomBase
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012339035586, guid: fabcd5a34e99a44e5bdfb7291214d68f,
-        type: 2}
-      propertyPath: zoomMax
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []

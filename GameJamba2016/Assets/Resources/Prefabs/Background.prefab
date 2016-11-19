@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012327474436}
-  - 114: {fileID: 114000013584585582}
+  - 114: {fileID: 114000012439897298}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000013584585582
+--- !u!114 &114000012439897298
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,15 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - sprite: {fileID: 21300000, guid: 302673ff043da462c924666cd3c513d9, type: 3}
-    parallax: 0.95
-    y: 0
-    scale: 3
-  - sprite: {fileID: 21300000, guid: 2ad7bed1179ba496b8e71b2da7ffed11, type: 3}
-    parallax: 0.8
-    y: -8
-    scale: 3
-  - sprite: {fileID: 21300000, guid: 58f2cdaa635264b7891c73ceb405f430, type: 3}
-    parallax: 0.6
-    y: -13
-    scale: 2
+  - material: {fileID: 2100000, guid: 7a52a4f66f0764fedb499abf32b4f0e7, type: 2}
+    parallax: {x: 0.05, y: 0, z: 0}
+    yOffset: 0
+  - material: {fileID: 2100000, guid: 882dbdebdcfe3431881d8e8bd67c2311, type: 2}
+    parallax: {x: 0.1, y: 0, z: 0}
+    yOffset: -5
+  - material: {fileID: 2100000, guid: 11b0c6a019dc248218d73e1f5488fa64, type: 2}
+    parallax: {x: 1, y: 0, z: 0}
+    yOffset: -15
