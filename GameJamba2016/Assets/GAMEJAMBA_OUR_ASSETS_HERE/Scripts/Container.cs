@@ -33,7 +33,7 @@ public class Container : MonoSingleton<Container> {
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
-		this.slowTimeManager = new SlowTimeManager();
+		//
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
