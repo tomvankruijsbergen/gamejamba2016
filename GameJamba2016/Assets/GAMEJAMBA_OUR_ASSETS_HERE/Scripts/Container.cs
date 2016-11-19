@@ -19,17 +19,19 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _AudioChanged(string test);
 	public event _AudioChanged AudioChanged;
 
+	public delegate void _TimeChanged(float newTimeScale);
+	public event _TimeChanged TimeChanged;
+
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
 
 	public override void Init () {
-		this.audioManager = new AudioManager();	
+		this.audioManager = new AudioManager();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
-	
 	public void AssignCamera(Transform camera) {
 		this.camera = camera;
 	}
@@ -38,7 +40,6 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// Deassigns. Call this when an object should die.
-
 	public void RemoveCamera(Transform camera) {
 		this.camera = null;
 	}
@@ -47,21 +48,19 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// These functions are called by objects.
-
 	public void PlayerMoved(Vector3 newPosition) {
 		// Tell the audio manager that the background music should change.
 		this.AudioChanged("the audio has changed to something");
 	}
 
 	public void DragStart(Vector2 position) {
-		Debug.Log(this.OnDragStart);
-		//this.OnDragStart(position, player.position, camera.position);
+		this.OnDragStart(position, player.position, camera.position);
 	}
 	public void DragUpdate(Vector2 position) {
-		//this.OnDragUpdate(position, player.position, camera.position);
+		this.OnDragUpdate(position, player.position, camera.position);
 	}
 	public void DragRelease(Vector2 position) {
-		//this.OnDragEnd(position, player.position, camera.position);
+		this.OnDragEnd(position, player.position, camera.position);
 	}
 
 	public void EnemyKilled(GameObject enemy){
