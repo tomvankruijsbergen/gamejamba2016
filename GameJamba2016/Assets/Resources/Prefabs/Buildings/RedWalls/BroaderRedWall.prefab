@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010920123686}
+  - 61: {fileID: 61000013260607470}
+  - 61: {fileID: 61000010305013634}
   m_Layer: 0
   m_Name: BroaderRedWall
   m_TagString: Untagged
@@ -127,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010727312406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.100002, y: 14.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -190,6 +192,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010920123686}
   m_RootOrder: 3
+--- !u!61 &61000010305013634
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010727312406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 2.19}
+  serializedVersion: 2
+  m_Size: {x: 12.9, y: 0.76}
+--- !u!61 &61000013260607470
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010727312406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.09566879, y: -0.011490822}
+  serializedVersion: 2
+  m_Size: {x: 12.033039, y: 4.977016}
 --- !u!95 &95000013882259502
 Animator:
   serializedVersion: 3
