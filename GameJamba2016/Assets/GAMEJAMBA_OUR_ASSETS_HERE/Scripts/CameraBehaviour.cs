@@ -4,12 +4,6 @@ using System.Collections;
 public class CameraBehaviour : MonoBehaviour {
 
 	[SerializeField]
-	private float moveSpeed = 1f;
-
-	[SerializeField]
-	private float snapDistance = 0.1f;
-
-	[SerializeField]
 	private float zoomBase = 9;
 	[SerializeField]
 	private float zoomMax = 15;
@@ -20,6 +14,14 @@ public class CameraBehaviour : MonoBehaviour {
 	private float lookAheadVelocityModifier = 12f; 
 	[SerializeField]
 	private float movementSmoothTime = 0.6f;
+
+
+	[SerializeField]
+	private float targetSmoothTime = 0.4f;
+	private Vector3 moveVelocity = new Vector3();
+	private Vector2 extraAmount = new Vector2();
+	private Vector2 extraAmountVelocity = new Vector2();
+
 
 	private float animationZoomValue;
 
@@ -72,7 +74,6 @@ public class CameraBehaviour : MonoBehaviour {
         this.camera.orthographicSize = zoomBase + (zoomMax - zoomBase) * value;
     }
 
-	private Vector3 moveVelocity = new Vector3();
 	void OnPlayerMoved(Vector2 playerPosition, Vector2 velocity) {
 		// Interpolate to the player.
 
@@ -80,13 +81,13 @@ public class CameraBehaviour : MonoBehaviour {
 
 		Vector2 difference = (playerPosition - position);
 		Vector2 extra = velocity.normalized * this.lookAheadVelocityModifier;
-		difference += extra;
 
-		Vector2 newTarget = position + difference;
+		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime);
 
+		Vector2 newTarget = position + difference + extraAmount;
 		Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, transform.position.z);
 
-		transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref moveVelocity, this.movementSmoothTime);
+		transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref this.moveVelocity, this.movementSmoothTime);
 	}
 	
 	void OnDestroy() {
