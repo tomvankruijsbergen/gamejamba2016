@@ -10,8 +10,7 @@ public class Container : MonoSingleton<Container> {
 	// - Player.cs:  		sends Container.instance.PlayerMoved(this.transform.position);
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
-
-	private AudioManager audioManager;
+	
 	private Transform player;
 	new private Transform camera;
 
@@ -28,7 +27,7 @@ public class Container : MonoSingleton<Container> {
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
-		this.audioManager = new AudioManager();
+		// 
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
