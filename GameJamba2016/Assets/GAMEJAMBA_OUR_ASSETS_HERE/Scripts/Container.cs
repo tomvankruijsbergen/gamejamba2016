@@ -56,10 +56,10 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// Gets. These must not have side effects. Write a function that returns exactly what you need. 
-	public Vector2 getPlayerPosition() {
+	public Vector2 GetPlayerPosition() {
 		return player.position;
 	}
-	public Vector2 getCameraPosition() {
+	public Vector2 GetCameraPosition() {
 		return camera.position;
 	}
 
@@ -73,7 +73,7 @@ public class Container : MonoSingleton<Container> {
 		this.OnDragStart(dragPosition, player.position, camera.position);
 	}
 	public void DragUpdate(Vector2 dragPosition) {
-		this.OnDragUpdate(dragPosition, player.position, camera.position);
+		//this.OnDragUpdate(dragPosition, player.position, camera.position);
 	}
 	public void DragRelease(Vector2 dragPosition) {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
