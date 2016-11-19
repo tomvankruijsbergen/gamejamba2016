@@ -12,7 +12,7 @@ public class CameraBehaviour : MonoBehaviour {
 	[SerializeField]
 	private float zoomBase = 9;
 	[SerializeField]
-	private float zoomPerDistance = 10;
+	private float zoomPerRemainingDistance = 1;
 
 	[SerializeField]
 	new private Camera camera;
@@ -21,17 +21,42 @@ public class CameraBehaviour : MonoBehaviour {
 	void Awake () {
 		Container.instance.AssignCamera(transform);
 
-		Container.instance.OnDragStart += this.OnDragChanged;
-		Container.instance.OnDragEnd += this.OnDragChanged;
-		Container.instance.OnDragUpdate += this.OnDragChanged;
+		Container.instance.OnDragStart += this.OnDragStart;
+		Container.instance.OnDragEnd += this.OnDragEnd;
 
 		Container.instance.OnPlayerMoved += this.OnPlayerMoved;
 	}
-	void OnDragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
-		// Debug.Log("changed");
+
+	void Start() {
+		transform.position = Container.instance.GetPlayerPosition();
 	}
 
-	void OnPlayerMoved(Vector2 playerPosition) {
+	private float previousValue = 0;
+	void OnDragStart(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
+		iTween.Stop(gameObject);
+		iTween.ValueTo(gameObject, iTween.Hash(
+            "from", previousValue,
+            "to", 1,
+            "onupdate", "TweenedZoomValue",
+            "time", 0.35f
+        ));
+	}
+	void OnDragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
+		iTween.Stop(gameObject);
+		iTween.ValueTo(gameObject, iTween.Hash(
+            "from", this.previousValue,
+            "to", 0,
+            "onupdate", "TweenedZoomValue",
+            "time", 0.35f
+        ));
+	}
+
+    public void TweenedZoomValue(float value) {
+		this.previousValue = value;
+        this.camera.orthographicSize = zoomBase + zoomBase * value;
+    }
+
+	void OnPlayerMoved(Vector2 playerPosition, Vector2 velocity) {
 		// Interpolate to the player.
 
 		float speedPerTime = this.speed * Time.deltaTime;
@@ -58,16 +83,15 @@ public class CameraBehaviour : MonoBehaviour {
 			);
 		}
 		
-		float movedDistance = Vector2.Distance(newPosition, position);
-		this.camera.orthographicSize = zoomBase + movedDistance * zoomPerDistance;
+		//float remainingDistance = Vector2.Distance(newPosition, position);
+		//this.camera.orthographicSize = zoomBase + remainingDistance * zoomPerRemainingDistance;
 
 		transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
 	}
 	
 	void OnDestroy() {
-		Container.instance.OnDragStart -= this.OnDragChanged;
-		Container.instance.OnDragEnd -= this.OnDragChanged;
-		Container.instance.OnDragUpdate -= this.OnDragChanged;
+		Container.instance.OnDragStart -= this.OnDragStart;
+		Container.instance.OnDragEnd -= this.OnDragEnd;
 
 		Container.instance.RemoveCamera(transform);
 	}
