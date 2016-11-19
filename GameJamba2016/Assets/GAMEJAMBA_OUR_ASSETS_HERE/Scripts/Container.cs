@@ -67,6 +67,10 @@ public class Container : MonoSingleton<Container> {
 		this.slowTimeManager = null;
 	}
 
+	public void RemoveConfig(Config config) {
+		this.config = null;
+	}
+
 	// Gets. These must not have side effects. Write a function that returns exactly what you need. 
 	public Vector2 GetPlayerPosition() {
 		return player.position;
