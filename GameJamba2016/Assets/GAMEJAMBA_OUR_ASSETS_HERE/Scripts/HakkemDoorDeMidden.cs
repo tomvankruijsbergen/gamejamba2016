@@ -22,7 +22,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 	void Awake(){
 		myRigidBody = gameObject.GetComponent<Rigidbody2D>();
-		bloodBurstParticles = Resources.Load("Prefabs/BloodBurst") as GameObject;
+		bloodBurstParticles = Resources.Load("Prefabs/ParticleDeathSplat") as GameObject;
 		Container.instance.OnPlayerDied += PlayerKilled;
 	}
 
