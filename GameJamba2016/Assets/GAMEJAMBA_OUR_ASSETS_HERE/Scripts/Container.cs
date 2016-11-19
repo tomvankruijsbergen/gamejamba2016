@@ -10,8 +10,9 @@ public class Container : MonoSingleton<Container> {
 	// - Player.cs:  		sends Container.instance.PlayerMoved(this.transform.position);
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
-
+	
 	private AudioManager audioManager;
+	private SlowTimeManager slowTimeManager;
 	private Transform player;
 	new private Transform camera;
 
@@ -19,8 +20,6 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _AudioChanged(string test);
 	public event _AudioChanged AudioChanged;
 
-	public delegate void _TimeChanged(float newTimeScale);
-	public event _TimeChanged TimeChanged;
 
 	public delegate void _EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd);
 	public event _EnemyKilled EnemyKilled;
@@ -30,8 +29,11 @@ public class Container : MonoSingleton<Container> {
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
 
+	public delegate void _PlayerMoved(Vector2 newPosition);
+	public event _PlayerMoved OnPlayerMoved;
+
 	public override void Init () {
-		this.audioManager = new AudioManager();
+		this.slowTimeManager = new SlowTimeManager();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
@@ -40,6 +42,9 @@ public class Container : MonoSingleton<Container> {
 	}
 	public void AssignPlayer(Transform player) {
 		this.player = player;
+	}
+	public void AssignSlowTimeManager(SlowTimeManager slowTimeManager) {
+		this.slowTimeManager = slowTimeManager;
 	}
 
 	// Deassigns. Call this when an object should die.
@@ -50,20 +55,28 @@ public class Container : MonoSingleton<Container> {
 		this.player = null;
 	}
 
-	// These functions are called by objects.
-	public void PlayerMoved(Vector3 newPosition) {
-		// Tell the audio manager that the background music should change.
-		this.AudioChanged("the audio has changed to something");
+	// Gets. These must not have side effects. Write a function that returns exactly what you need. 
+	public Vector2 getPlayerPosition() {
+		return player.position;
+	}
+	public Vector2 getCameraPosition() {
+		return camera.position;
 	}
 
-	public void DragStart(Vector2 position) {
-		this.OnDragStart(position, player.position, camera.position);
+	// These functions are called by objects.
+
+	public void PlayerMoved(Vector2 position) {
+		this.OnPlayerMoved(position);
 	}
-	public void DragUpdate(Vector2 position) {
-		this.OnDragUpdate(position, player.position, camera.position);
+
+	public void DragStart(Vector2 dragPosition) {
+		this.OnDragStart(dragPosition, player.position, camera.position);
 	}
-	public void DragRelease(Vector2 position) {
-		this.OnDragEnd(position, player.position, camera.position);
+	public void DragUpdate(Vector2 dragPosition) {
+		this.OnDragUpdate(dragPosition, player.position, camera.position);
+	}
+	public void DragRelease(Vector2 dragPosition) {
+		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
 
 	// public void EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd){
