@@ -14,8 +14,14 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 	Rigidbody2D myRigidBody;
 
+	[SerializeField]
+	private float forceDelay;
+
+	private GameObject bloodBurstParticles;
+
 	void Awake(){
 		myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+		bloodBurstParticles = Resources.Load("Prefabs/BloodBurst") as GameObject;
 	}
 
 	private void OnDrawGizmos()
@@ -28,11 +34,8 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		enemiesToBeHakkedDoorDeMidden = Physics2D.OverlapCircleAll(transform.position, areaOfAttack, enemyLayers,0,99);
 
 		foreach(Collider2D enemyCollider in enemiesToBeHakkedDoorDeMidden){
-			Debug.Log("HAKKEM");
 			enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
-			// enemyCollider.enabled = false;
-			// Container.instance.EnemyKilled(enemyCollider.gameObject, transform.position, transform.InverseTransformDirection(myRigidBody.velocity));
-			// Vector2 slashDirection =  transform.InverseTransformDirection(myRigidBody.velocity).normalized * 100;
+			
 			Vector2 slashDirection = enemyCollider.transform.position;
 			Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
 		}
@@ -46,8 +49,23 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			gameObject = enemyToBeHakkedDoorDeMidden,
 			gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY,
 		} );
+		Debug.Log("heu");
+		StartCoroutine(DelayedForce(output, slashStart, slashEnd));
 
-		// Vector2 distance = slashEnd - slashStart;
+		Container.instance.EnemyKilled(output.firstSideGameObject, output.secondSideGameObject, slashStart,slashEnd );
+	}
+
+	private IEnumerator DelayedForce(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
+		
+		Debug.Log("werwer");
+
+		yield return new WaitForSeconds(forceDelay);
+		
+		GameObject particles1 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
+		particles1.transform.parent = output.firstSideGameObject.transform;
+		GameObject particles2 = GameObject.Instantiate( bloodBurstParticles, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
+		particles2.transform.parent = output.secondSideGameObject.transform;
+
 		Vector2 distance = output.firstSideGameObject.transform.position - output.secondSideGameObject.transform.position;
 
 		float angle = Mathf.Atan2(distance.y, distance.x);
@@ -63,8 +81,5 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		rbdy1.AddTorque(9001);
 		rbdy2.AddTorque(9001);
-
-
 	}
-
 }

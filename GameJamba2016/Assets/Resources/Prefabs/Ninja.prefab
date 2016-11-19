@@ -101,7 +101,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
-  areaOfAttack: 0
+  areaOfAttack: 3.51
 --- !u!114 &114000013115012008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a96494681a0340d0b30f158b55141bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10000
+  force: 18000
 --- !u!212 &212000010639815410
 SpriteRenderer:
   m_ObjectHideFlags: 1
