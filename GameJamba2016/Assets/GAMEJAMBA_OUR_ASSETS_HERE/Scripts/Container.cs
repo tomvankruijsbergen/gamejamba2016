@@ -10,7 +10,7 @@ public class Container : MonoSingleton<Container> {
 	// - Player.cs:  		sends Container.instance.PlayerMoved(this.transform.position);
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
-
+	
 	private AudioManager audioManager;
 	private SlowTimeManager slowTimeManager;
 	private Transform player;
@@ -30,7 +30,6 @@ public class Container : MonoSingleton<Container> {
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
-		this.audioManager = new AudioManager();
 		this.slowTimeManager = new SlowTimeManager();
 	}
 
@@ -41,7 +40,6 @@ public class Container : MonoSingleton<Container> {
 	public void AssignPlayer(Transform player) {
 		this.player = player;
 	}
-
 	public void AssignSlowTimeManager(SlowTimeManager slowTimeManager) {
 		this.slowTimeManager = slowTimeManager;
 	}

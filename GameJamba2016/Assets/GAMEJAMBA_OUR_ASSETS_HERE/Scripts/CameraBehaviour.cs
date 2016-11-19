@@ -3,6 +3,12 @@ using System.Collections;
 
 public class CameraBehaviour : MonoBehaviour {
 
+	[SerializeField]
+	private float speed = 1f;
+
+	[SerializeField]
+	private float snapDistance = 0.1f;
+
 	// Use this for initialization
 	void Awake () {
 		Container.instance.AssignCamera(transform);
@@ -19,7 +25,31 @@ public class CameraBehaviour : MonoBehaviour {
 
 	void OnPlayerMoved(Vector2 playerPosition) {
 		// Interpolate to the player.
-		transform.position = new Vector3(playerPosition.x, playerPosition.y, transform.position.z);
+
+		float speedPerTime = speed * Time.deltaTime;
+
+		Vector2 difference = new Vector2(
+			playerPosition.x - transform.position.x, 
+			playerPosition.y - transform.position.y
+		);
+
+		// Don't do anything if we're on the object.
+		if (difference.sqrMagnitude == 0) {
+			return;	
+		}
+
+		// Now either interpolate or snap
+		Vector2 newPosition;
+		if (difference.magnitude < this.snapDistance) {
+			newPosition = playerPosition;
+		} else {
+			newPosition = new Vector2(
+				transform.position.x + speedPerTime * difference.x,
+				transform.position.y + speedPerTime * difference.y
+			);
+		}
+
+		transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
 	}
 	
 	void OnDestroy() {
