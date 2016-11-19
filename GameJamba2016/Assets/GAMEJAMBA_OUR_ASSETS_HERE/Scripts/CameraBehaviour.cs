@@ -73,7 +73,6 @@ public class CameraBehaviour : MonoBehaviour {
 
 		Vector2 position = new Vector2(transform.position.x, transform.position.y);
 		
-		Debug.Log(velocity.magnitude);
 		Vector2 difference = (playerPosition - position);
 		Vector2 extra = velocity.normalized * 12;
 		difference += extra;
