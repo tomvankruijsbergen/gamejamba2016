@@ -19,6 +19,7 @@ public class CatapultGraphics : MonoBehaviour {
 	private Vector2 dragPositionHeadBand;
 
 	private Rigidbody2D myRigidBody;
+	private Vector2 lastPosition = Vector2.zero;
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
@@ -37,15 +38,29 @@ public class CatapultGraphics : MonoBehaviour {
 
 	void Update(){
 		if(!weDraggin){
-
-			var dir = myRigidBody.velocity - (Vector2)transform.position;
-			var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-			if(angle < -90 || angle > 90){
-				spriteRenderer.flipY =true;
-			}else{
-				spriteRenderer.flipY =false;
+			if(lastPosition == Vector2.zero) {
+				lastPosition = transform.position;
+				return;
 			}
+			var dir = (Vector2)transform.position - lastPosition;
+			if(dir.magnitude < 0.03f) {
+				if(spriteRenderer.flipY) {
+					transform.rotation = Quaternion.AngleAxis(-180f, Vector3.forward);
+				} else {
+					transform.rotation = Quaternion.AngleAxis(0f, Vector3.forward);
+				}
+			} else {
+				var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+				transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+				if(angle < -90 || angle > 90){
+					spriteRenderer.flipY =true;
+				}else{
+					spriteRenderer.flipY =false;
+				}
+			}
+			lastPosition = transform.position;
+		} else {
+			lastPosition = Vector2.zero;
 		}
 	}
 
