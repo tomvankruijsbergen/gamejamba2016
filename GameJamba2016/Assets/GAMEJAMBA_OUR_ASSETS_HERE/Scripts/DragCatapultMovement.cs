@@ -14,7 +14,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	private float distance;
 	private Vector3 point;
 
-	private float maxDragDistance = 2f;
+	private float maxDragDistance = 5f;
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);

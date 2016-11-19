@@ -89,7 +89,7 @@ public class Container : MonoSingleton<Container> {
 		this.OnDragStart(dragPosition, player.position, camera.position);
 	}
 	public void DragUpdate(Vector2 dragPosition) {
-		//this.OnDragUpdate(dragPosition, player.position, camera.position);
+		this.OnDragUpdate(dragPosition, player.position, camera.position);
 	}
 	public void DragRelease(Vector2 dragPosition) {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
