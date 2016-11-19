@@ -70,4 +70,8 @@ public class Container : MonoSingleton<Container> {
 	public void DragRelease(Vector2 dragPosition) {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
+
+	public void EnemyKilled(GameObject enemy){
+		
+	}
 }

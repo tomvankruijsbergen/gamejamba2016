@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnitySpriteCutter;
 
 public class HakkemDoorDeMidden : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 	private float areaOfAttack;
 
 	Collider2D[] enemiesToBeHakkedDoorDeMidden;
+
+
 
 	private void OnDrawGizmos()
 	{
@@ -24,6 +27,21 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			Debug.Log("HAKKEM");
 			enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
 			// enemyCollider.enabled = false;
+			// Container.instance.EnemyKilled(enemyCollider.gameObject);
 		}
+	}
+
+
+	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden){
+		// enemyToBeHakkedDoorDeMidden
+
+
+
+		// SpriteCutterOutput output = SpriteCutter.Cut( new SpriteCutterInput() {
+		// 	lineStart = lineStart,
+		// 	lineEnd = lineEnd,
+		// 	gameObject = go,
+		// 	gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY,
+		// } );
 	}
 }
