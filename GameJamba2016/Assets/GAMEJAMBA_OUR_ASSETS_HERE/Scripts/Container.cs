@@ -24,7 +24,7 @@ public class Container : MonoSingleton<Container> {
 	public event _AudioChanged AudioChanged;
 
 
-	public delegate void _EnemyKilled(GameObject part1, GameObject part2, Vector2 slashStart, Vector2 slashEnd);
+	public delegate void _EnemyKilled();
 	public event _EnemyKilled OnEnemyKilled;
 
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
@@ -95,7 +95,7 @@ public class Container : MonoSingleton<Container> {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
 
-	public void EnemyKilled(GameObject part1, GameObject part2, Vector2 slashStart, Vector2 slashEnd){
-		// this.OnEnemyKilled(part1, part2, slashStart,slashEnd);
+	public void EnemyKilled(){
+		this.OnEnemyKilled();
 	}
 }
