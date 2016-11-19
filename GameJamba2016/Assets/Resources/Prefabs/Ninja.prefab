@@ -24,6 +24,7 @@ GameObject:
   - 50: {fileID: 50000013878399034}
   - 114: {fileID: 114000013115012008}
   - 114: {fileID: 114000012091463154}
+  - 114: {fileID: 114000010959297720}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -75,6 +76,17 @@ CircleCollider2D:
   m_Offset: {x: -0.23, y: 0}
   serializedVersion: 2
   m_Radius: 2.42
+--- !u!114 &114000010959297720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011024658440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f4aa3a3c7e3478889cf2a49c1a58cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012091463154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a96494681a0340d0b30f158b55141bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  force: 10000
 --- !u!212 &212000010639815410
 SpriteRenderer:
   m_ObjectHideFlags: 1
