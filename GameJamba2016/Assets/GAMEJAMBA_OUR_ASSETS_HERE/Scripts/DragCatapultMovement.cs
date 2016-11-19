@@ -3,13 +3,27 @@ using System.Collections;
 
 public class DragCatapultMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	private Vector2 mouseDownPos;
+	private Vector2 mouseUpPos;
+	private Rigidbody2D myRigidbody;
+
+	[SerializeField]
+	private float speed = 500f;
+
+	void Awake(){
+		myRigidbody = gameObject.GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void OnMouseDown() 
+	{
+		mouseDownPos = Input.mousePosition;
+	}
 	
+	void OnMouseUp() 
+	{
+		mouseUpPos = Input.mousePosition;
+		var direction = mouseDownPos - mouseUpPos;
+		direction.Normalize();
+		myRigidbody.AddForce (direction * speed);
 	}
 }
