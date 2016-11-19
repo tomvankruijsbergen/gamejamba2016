@@ -22,7 +22,7 @@ public class Container : MonoSingleton<Container> {
 
 
 	public delegate void _EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd);
-	public event _EnemyKilled EnemyKilled;
+	public event _EnemyKilled OnEnemyKilled;
 
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
@@ -79,7 +79,7 @@ public class Container : MonoSingleton<Container> {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
 
-	// public void EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd){
-		
-	// }
+	public void EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd){
+		this.OnEnemyKilled(enemy,slashStart,slashEnd);
+	}
 }
