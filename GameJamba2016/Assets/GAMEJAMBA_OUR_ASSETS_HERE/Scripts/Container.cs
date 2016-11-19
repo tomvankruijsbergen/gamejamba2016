@@ -20,10 +20,14 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _AudioChanged(string test);
 	public event _AudioChanged AudioChanged;
 
+
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
+
+	public delegate void _PlayerMoved(Vector2 newPosition);
+	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
 		this.audioManager = new AudioManager();
@@ -50,20 +54,28 @@ public class Container : MonoSingleton<Container> {
 		this.player = null;
 	}
 
-	// These functions are called by objects.
-	public void PlayerMoved(Vector3 newPosition) {
-		// Tell the audio manager that the background music should change.
-		this.AudioChanged("the audio has changed to something");
+	// Gets. These must not have side effects. Write a function that returns exactly what you need. 
+	public Vector2 getPlayerPosition() {
+		return player.position;
+	}
+	public Vector2 getCameraPosition() {
+		return camera.position;
 	}
 
-	public void DragStart(Vector2 position) {
-		this.OnDragStart(position, player.position, camera.position);
+	// These functions are called by objects.
+
+	public void PlayerMoved(Vector2 position) {
+		this.OnPlayerMoved(position);
 	}
-	public void DragUpdate(Vector2 position) {
-		this.OnDragUpdate(position, player.position, camera.position);
+
+	public void DragStart(Vector2 dragPosition) {
+		this.OnDragStart(dragPosition, player.position, camera.position);
 	}
-	public void DragRelease(Vector2 position) {
-		this.OnDragEnd(position, player.position, camera.position);
+	public void DragUpdate(Vector2 dragPosition) {
+		this.OnDragUpdate(dragPosition, player.position, camera.position);
+	}
+	public void DragRelease(Vector2 dragPosition) {
+		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
 
 	public void EnemyKilled(GameObject enemy){
