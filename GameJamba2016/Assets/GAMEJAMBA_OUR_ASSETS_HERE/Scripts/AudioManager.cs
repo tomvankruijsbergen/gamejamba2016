@@ -1,6 +1,84 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class AudioManager {
-	
+public class AudioManager : MonoBehaviour {
+	[SerializeField]
+    private AudioClip busy;
+
+    [SerializeField]
+    private float busyStartPlayingVelocity = 5f;
+    [SerializeField]
+    private float busyStopPlayingVelocity = 5f;
+
+    [SerializeField]
+    private float maxSoundDistanceForFX = 10f;
+
+    [SerializeField]
+    private AudioClip killEnemy;
+
+    private Dictionary<AudioClip, AudioSource> audioSources;
+
+    private AudioSource fxAudioSource;
+
+    void Awake() {
+        this.audioSources = new Dictionary<AudioClip, AudioSource>();
+
+        AudioClip[] clips = new AudioClip[] { busy };
+        foreach (AudioClip clip in clips) {
+            
+            AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
+            source.clip = busy;
+            source.maxDistance = Mathf.Infinity;
+            source.loop = true;
+            source.volume = 0;
+            source.Play();
+
+            audioSources[clip] = source;
+        }
+
+        Container.instance.OnPlayerMoved += this.OnPlayerMoved;
+        Container.instance.OnEnemyKilled += this.OnEnemyKilled;
+    }
+
+    void OnPlayerMoved(Vector2 position, Vector2 velocity) {
+        // Determine how loud the 'busy' sound is.
+        float magnitude = velocity.magnitude;
+        float volume = (magnitude - this.busyStartPlayingVelocity) / this.busyStopPlayingVelocity;
+
+        // Todo: animate this number.
+        if (volume < 0) {
+            volume = 0;
+        }
+        if (volume > 1) {
+            volume = 1;
+        }
+		this.audioSources[busy].volume = volume;
+	}
+
+    private void OnEnemyKilled(GameObject enemyKilled){
+		this.PlaySoundClip(this.killEnemy, enemyKilled);
+	}
+
+    private void PlaySoundClip(AudioClip clip, GameObject onGameObject = null) {
+        GameObject soundObject = new GameObject();
+        AudioSlave slave = soundObject.AddComponent<AudioSlave>() as AudioSlave;
+
+        float maxDistance;
+        if (onGameObject != null) {
+            maxDistance = maxSoundDistanceForFX;
+            soundObject.transform.parent = onGameObject.transform;
+        } else {
+            maxDistance = Mathf.Infinity;
+            soundObject.transform.parent = transform;
+        }
+        slave.Play(clip, maxDistance);
+    }
+
+    void Destroy() {
+        Container.instance.OnPlayerMoved -= this.OnPlayerMoved;
+        Container.instance.OnEnemyKilled -= this.OnEnemyKilled;
+    } 
+
+
 }

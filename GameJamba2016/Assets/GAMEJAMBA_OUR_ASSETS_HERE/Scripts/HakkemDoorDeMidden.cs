@@ -65,7 +65,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		} );
 		if(isEnemy) {
 			StartCoroutine(DelayedForce(output, slashStart, slashEnd));
-			Container.instance.EnemyKilled();
+			Container.instance.EnemyKilled(enemyToBeHakkedDoorDeMidden);
 		} else {
 			Destroy(gameObject);
 			StartCoroutine(KillMyself(output, slashStart, slashEnd));

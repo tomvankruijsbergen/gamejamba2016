@@ -54,7 +54,7 @@ public class SlowTimeManager : MonoBehaviour {
         Time.timeScale = value;
     }
 
-    private void KillSlowDown(){
+    private void KillSlowDown(GameObject enemyKilled){
         StartCoroutine(KillSlowDownRoutine());
     }
 

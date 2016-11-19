@@ -13,6 +13,7 @@ public class PlayerEvents : MonoBehaviour {
 			transform.position.x - previousPosition.x,
 			transform.position.y - previousPosition.y
 		);
+		velocity = velocity / Time.deltaTime;
 		Container.instance.PlayerMoved(transform.position, velocity);
 
 		previousPosition = transform.position;
