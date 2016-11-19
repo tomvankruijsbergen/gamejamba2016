@@ -11,12 +11,15 @@ public class Container : MonoSingleton<Container> {
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
 	
+	private AudioManager audioManager;
+	private SlowTimeManager slowTimeManager;
 	private Transform player;
 	new private Transform camera;
 
 	// These are all the events that this class sends. They should always return void.
-	public delegate void _TimeChanged(float newTimeScale);
-	public event _TimeChanged TimeChanged;
+	public delegate void _AudioChanged(string test);
+	public event _AudioChanged AudioChanged;
+
 
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
@@ -27,7 +30,7 @@ public class Container : MonoSingleton<Container> {
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
-		// 
+		this.slowTimeManager = new SlowTimeManager();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
@@ -36,6 +39,9 @@ public class Container : MonoSingleton<Container> {
 	}
 	public void AssignPlayer(Transform player) {
 		this.player = player;
+	}
+	public void AssignSlowTimeManager(SlowTimeManager slowTimeManager) {
+		this.slowTimeManager = slowTimeManager;
 	}
 
 	// Deassigns. Call this when an object should die.
