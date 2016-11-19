@@ -8,7 +8,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	private Rigidbody2D myRigidbody;
 
 	[SerializeField]
-	private float speed = 500f;
+	private float force = 10000f;
 
 	private Plane plane;
 	private Ray ray;
@@ -47,7 +47,7 @@ public class DragCatapultMovement : MonoBehaviour {
 			mouseUpPos = Input.mousePosition;
 			var direction = mouseDownPos - mouseUpPos;
 			direction.Normalize();
-			myRigidbody.AddForce (direction * speed);
+			myRigidbody.AddForce (direction * force);
 		}
 
 		mouseDownPos = Vector2.zero;

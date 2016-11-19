@@ -19,6 +19,9 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _AudioChanged(string test);
 	public event _AudioChanged AudioChanged;
 
+	public delegate void _TimeChanged(float newTimeScale);
+	public event _TimeChanged TimeChanged;
+
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
 	public event _DragChanged OnDragUpdate;
@@ -29,7 +32,6 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
-	
 	public void AssignCamera(Transform camera) {
 		this.camera = camera;
 	}
@@ -38,7 +40,6 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// Deassigns. Call this when an object should die.
-
 	public void RemoveCamera(Transform camera) {
 		this.camera = null;
 	}
@@ -47,7 +48,6 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// These functions are called by objects.
-
 	public void PlayerMoved(Vector3 newPosition) {
 		// Tell the audio manager that the background music should change.
 		this.AudioChanged("the audio has changed to something");
