@@ -60,7 +60,7 @@ public class SlowTimeManager : MonoBehaviour {
 
     private IEnumerator KillSlowDownRoutine(){
         SlowDown();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(slowDownDuration);
         SpeedUp();
     }
 }

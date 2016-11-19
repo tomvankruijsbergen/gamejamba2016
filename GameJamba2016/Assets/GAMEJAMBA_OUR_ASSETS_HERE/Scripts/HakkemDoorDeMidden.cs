@@ -36,11 +36,11 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		
 	}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = new Color(1, 0, 0, 0.3F);
-		Gizmos.DrawSphere(transform.position, areaOfAttack);
-	}
+	// private void OnDrawGizmos()
+	// {
+	// 	Gizmos.color = new Color(1, 0, 0, 0.3F);
+	// 	Gizmos.DrawSphere(transform.position, areaOfAttack);
+	// }
 
 	void LateUpdate () {
 		if(!checking) {
@@ -103,6 +103,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		particles1.transform.parent = output.firstSideGameObject.transform;
 		GameObject particles2 = GameObject.Instantiate( bloodBurstParticles, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		particles2.transform.parent = output.secondSideGameObject.transform;
+
+		particles1.transform.Rotate(new Vector3(-90,0,0));
+		particles2.transform.Rotate(new Vector3(90,0,0));
 
 		Vector2 distance = output.firstSideGameObject.transform.position - output.secondSideGameObject.transform.position;
 

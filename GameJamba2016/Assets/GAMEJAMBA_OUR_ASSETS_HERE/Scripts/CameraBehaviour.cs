@@ -4,17 +4,31 @@ using System.Collections;
 public class CameraBehaviour : MonoBehaviour {
 
 	[SerializeField]
-	private float speed = 1f;
-
-	[SerializeField]
-	private float snapDistance = 0.1f;
-
-	[SerializeField]
 	private float zoomBase = 9;
 	[SerializeField]
 	private float zoomMax = 15;
 	[SerializeField]
 	private float zoomTime = 0.35f;
+
+	[SerializeField]
+	private float lookAheadVelocityModifier = 12f;
+	[SerializeField]
+	private float lookAheadMax = 20f;
+
+	[SerializeField]
+	private float movementSmoothTime = 0.6f;
+
+
+	[SerializeField]
+	private float targetSmoothTime = 0.4f;
+	private Vector3 moveVelocity = new Vector3();
+	private Vector2 extraAmount = new Vector2();
+	private Vector2 extraAmountVelocity = new Vector2();
+
+
+	private float animationZoomValue;
+
+	private const string AnimationZoom = "AnimationZoom";
 
 	[SerializeField]
 	new private Camera camera;
@@ -31,23 +45,27 @@ public class CameraBehaviour : MonoBehaviour {
 
 	void Start() {
 		transform.position = Container.instance.GetPlayerPosition();
+
+		// Initialising animation vars
+		this.animationZoomValue = 0;
 		this.camera.orthographicSize = zoomBase;
 	}
 
-	private float previousValue = 0;
 	void OnDragStart(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
-		iTween.Stop(gameObject);
+		iTween.StopByName(CameraBehaviour.AnimationZoom);
 		iTween.ValueTo(gameObject, iTween.Hash(
-            "from", previousValue,
+			"name", CameraBehaviour.AnimationZoom,
+            "from", animationZoomValue,
             "to", 1,
             "onupdate", "TweenedZoomValue",
             "time", zoomTime
         ));
 	}
 	void OnDragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
-		iTween.Stop(gameObject);
+		iTween.StopByName(CameraBehaviour.AnimationZoom);
 		iTween.ValueTo(gameObject, iTween.Hash(
-            "from", this.previousValue,
+			"name", CameraBehaviour.AnimationZoom,
+            "from", this.animationZoomValue,
             "to", 0,
             "onupdate", "TweenedZoomValue",
             "time", zoomTime
@@ -55,41 +73,24 @@ public class CameraBehaviour : MonoBehaviour {
 	}
 
     public void TweenedZoomValue(float value) {
-		this.previousValue = value;
+		this.animationZoomValue = value;
         this.camera.orthographicSize = zoomBase + (zoomMax - zoomBase) * value;
     }
 
 	void OnPlayerMoved(Vector2 playerPosition, Vector2 velocity) {
 		// Interpolate to the player.
 
-		float speedPerTime = this.speed * Time.deltaTime;
-
 		Vector2 position = new Vector2(transform.position.x, transform.position.y);
-		Vector2 difference = new Vector2(
-			playerPosition.x - position.x, 
-			playerPosition.y - position.y
-		);
 
-		// Don't do anything if we're on the object.
-		if (difference.sqrMagnitude == 0) {
-			return;	
-		}
+		Vector2 difference = (playerPosition - position);
+		Vector2 extra = Vector2.ClampMagnitude(velocity * this.lookAheadVelocityModifier, this.lookAheadMax);
 
-		// Now either interpolate or snap
-		Vector2 newPosition;
-		if (difference.magnitude < this.snapDistance) {
-			newPosition = playerPosition;
-		} else {
-			newPosition = new Vector2(
-				position.x + speedPerTime * difference.x,
-				position.y + speedPerTime * difference.y
-			);
-		}
-		
-		//float remainingDistance = Vector2.Distance(newPosition, position);
-		//this.camera.orthographicSize = zoomBase + remainingDistance * zoomPerRemainingDistance;
+		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime);
 
-		transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
+		Vector2 newTarget = position + difference + extraAmount;
+		Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, transform.position.z);
+
+		transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref this.moveVelocity, this.movementSmoothTime);
 	}
 	
 	void OnDestroy() {

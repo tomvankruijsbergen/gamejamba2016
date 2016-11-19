@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
 public class CatapultTrajectory : MonoBehaviour {
 
 	private float catapultForce;
@@ -40,5 +38,7 @@ public class CatapultTrajectory : MonoBehaviour {
 	void DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
 		// Adjust Trajectory
 		var angle = dragPosition - playerPosition;
+
+		
 	}
 }
