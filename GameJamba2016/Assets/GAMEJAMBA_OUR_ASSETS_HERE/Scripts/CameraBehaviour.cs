@@ -12,7 +12,9 @@ public class CameraBehaviour : MonoBehaviour {
 	[SerializeField]
 	private float zoomBase = 9;
 	[SerializeField]
-	private float zoomPerRemainingDistance = 1;
+	private float zoomMax = 15;
+	[SerializeField]
+	private float zoomTime = 0.35f;
 
 	[SerializeField]
 	new private Camera camera;
@@ -38,7 +40,7 @@ public class CameraBehaviour : MonoBehaviour {
             "from", previousValue,
             "to", 1,
             "onupdate", "TweenedZoomValue",
-            "time", 0.35f
+            "time", zoomTime
         ));
 	}
 	void OnDragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
@@ -47,13 +49,13 @@ public class CameraBehaviour : MonoBehaviour {
             "from", this.previousValue,
             "to", 0,
             "onupdate", "TweenedZoomValue",
-            "time", 0.35f
+            "time", zoomTime
         ));
 	}
 
     public void TweenedZoomValue(float value) {
 		this.previousValue = value;
-        this.camera.orthographicSize = zoomBase + zoomBase * value;
+        this.camera.orthographicSize = zoomBase + (zoomMax - zoomBase) * value;
     }
 
 	void OnPlayerMoved(Vector2 playerPosition, Vector2 velocity) {
