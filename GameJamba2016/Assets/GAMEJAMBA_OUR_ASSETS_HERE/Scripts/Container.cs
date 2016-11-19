@@ -27,7 +27,10 @@ public class Container : MonoSingleton<Container> {
 
 
 	// These functions are called by objects.
-	
+	public void AssignPlayer(Transform player) {
+		this.player = player;
+	}
+
 	public void PlayerMoved(Vector3 newPosition) {
 		// Tell the audio manager that the background music should change.
 		this.AudioChanged("the audio has changed to something");
