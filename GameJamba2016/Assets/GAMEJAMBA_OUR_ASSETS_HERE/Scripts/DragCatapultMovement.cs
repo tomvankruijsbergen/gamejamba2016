@@ -46,7 +46,7 @@ public class DragCatapultMovement : MonoBehaviour {
 			mouseUpPos = Input.mousePosition;
 			var direction = mouseDownPos - mouseUpPos;
 			direction.Normalize();
-			myRigidbody.AddForce (direction * force);
+			myRigidbody.AddForce (direction * catapultForce);
 		}
 
 		mouseDownPos = Vector2.zero;
