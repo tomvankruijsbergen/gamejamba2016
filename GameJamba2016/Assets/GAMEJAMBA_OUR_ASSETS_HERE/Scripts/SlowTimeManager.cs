@@ -14,6 +14,8 @@ public class SlowTimeManager : MonoBehaviour {
         Container.instance.AssignSlowTimeManager(this);
         Container.instance.OnDragStart += this.DragStart;
         Container.instance.OnDragEnd += this.DragRelease;
+
+        Container.instance.OnEnemyKilled += this.KillSlowDown;
     }
 
     private void DragStart(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
@@ -50,5 +52,15 @@ public class SlowTimeManager : MonoBehaviour {
 
     public void TweenedTimeValue(float value) {
         Time.timeScale = value;
+    }
+
+    private void KillSlowDown(){
+        StartCoroutine(KillSlowDownRoutine());
+    }
+
+    private IEnumerator KillSlowDownRoutine(){
+        SlowDown();
+        yield return new WaitForSeconds(0.2f);
+        SpeedUp();
     }
 }

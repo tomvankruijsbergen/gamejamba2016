@@ -49,16 +49,14 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			gameObject = enemyToBeHakkedDoorDeMidden,
 			gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY,
 		} );
-		Debug.Log("heu");
+		
 		StartCoroutine(DelayedForce(output, slashStart, slashEnd));
 
-		Container.instance.EnemyKilled(output.firstSideGameObject, output.secondSideGameObject, slashStart,slashEnd );
+		Container.instance.EnemyKilled();
 	}
 
 	private IEnumerator DelayedForce(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
 		
-		Debug.Log("werwer");
-
 		yield return new WaitForSeconds(forceDelay);
 		
 		GameObject particles1 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
