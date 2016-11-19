@@ -11,7 +11,10 @@ public class CameraBehaviour : MonoBehaviour {
 	private float zoomTime = 0.35f;
 
 	[SerializeField]
-	private float lookAheadVelocityModifier = 12f; 
+	private float lookAheadVelocityModifier = 12f;
+	[SerializeField]
+	private float lookAheadMax = 20f;
+
 	[SerializeField]
 	private float movementSmoothTime = 0.6f;
 
@@ -80,7 +83,7 @@ public class CameraBehaviour : MonoBehaviour {
 		Vector2 position = new Vector2(transform.position.x, transform.position.y);
 
 		Vector2 difference = (playerPosition - position);
-		Vector2 extra = velocity.normalized * this.lookAheadVelocityModifier;
+		Vector2 extra = Vector2.ClampMagnitude(velocity * this.lookAheadVelocityModifier, this.lookAheadMax);
 
 		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime);
 

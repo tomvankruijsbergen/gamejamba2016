@@ -135,7 +135,8 @@ MonoBehaviour:
   zoomBase: 12
   zoomMax: 18
   zoomTime: 0.35
-  lookAheadVelocityModifier: 8
+  lookAheadVelocityModifier: 30
+  lookAheadMax: 20
   movementSmoothTime: 0.3
   targetSmoothTime: 0.4
   camera: {fileID: 20000012740146964}
