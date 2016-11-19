@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour {
+    [SerializeField] private AudioClip background;
 	[SerializeField] private AudioClip busy;
 
     [SerializeField] private float busyStartPlayingVelocity = 5f;
@@ -21,18 +22,20 @@ public class AudioManager : MonoBehaviour {
     void Awake() {
         this.audioSources = new Dictionary<AudioClip, AudioSource>();
 
-        AudioClip[] clips = new AudioClip[] { busy };
+        AudioClip[] clips = new AudioClip[] { background, busy };
         foreach (AudioClip clip in clips) {
             
             AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
-            source.clip = busy;
+            source.clip = clip;
             source.maxDistance = Mathf.Infinity;
             source.loop = true;
-            source.volume = 0;
+            source.volume = 1;
             source.Play();
 
             audioSources[clip] = source;
         }
+
+        audioSources[busy].volume = 0;
 
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;

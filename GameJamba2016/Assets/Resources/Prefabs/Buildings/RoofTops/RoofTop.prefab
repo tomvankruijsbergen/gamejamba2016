@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012403455982}
   m_Layer: 0
-  m_Name: RoofLeft
+  m_Name: RoofTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
