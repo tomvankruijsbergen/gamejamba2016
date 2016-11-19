@@ -18,11 +18,9 @@ public class CatapultGraphics : MonoBehaviour {
 
 	private Vector2 worldMousePos;
 
+	private LineRenderer lineRenderer;
 	[SerializeField]
-	GameObject headBandForStretch; 
-
-	[SerializeField]
-	GameObject headBandEnd;
+	private GameObject headBandEnd;
 
 	private Rigidbody2D myRigidBody;
 	private Vector2 lastPosition = Vector2.zero;
@@ -34,6 +32,8 @@ public class CatapultGraphics : MonoBehaviour {
 		Container.instance.OnDragStart += this.DragStart;
 		Container.instance.OnDragEnd += this.DragEnd;
 		Container.instance.OnDragUpdate += this.DragChanged;
+
+		lineRenderer = gameObject.GetComponent<LineRenderer>();
 
 		myRigidBody = gameObject.GetComponent<Rigidbody2D>();
 	}
@@ -65,22 +65,19 @@ public class CatapultGraphics : MonoBehaviour {
 				}
 			}
 			lastPosition = transform.position;
+			lineRenderer.SetPosition(1,transform.position  - transform.right * 2.5f);
+			headBandEnd.transform.position = transform.position  - transform.right * 2.5f;
 		} else {
 			lastPosition = Vector2.zero;
+			
 		}
+		lineRenderer.SetPosition(0,transform.position  - transform.right * 2.5f);
+		
 	}
 
 	void DragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
-		// headBandForStretch.transform.localScale = Vector3.zero;
-		iTween.ScaleTo(headBandForStretch, iTween.Hash(
-			"x", 0,
-            "y", 1,
-            "z", 1,
-            "easetype", "easeInQuint",
-			"time",0.005f
-        ));
-
-		headBandEnd.transform.localPosition = Vector3.zero;
+		lineRenderer.SetPosition(1,transform.position  - transform.right * 2.5f);
+		headBandEnd.transform.position = transform.position  - transform.right * 2.5f;
 		
 		weDraggin = false;
 	}
@@ -91,11 +88,12 @@ public class CatapultGraphics : MonoBehaviour {
 		if(plane.Raycast(ray, out distance)) {
 			point = ray.GetPoint(distance);
 			worldMousePos = point;
-			headBandEnd.transform.position = point;
-
+			lineRenderer.SetPosition(1,point);
+			headBandEnd.transform.position = worldMousePos;
 		}
 
 		Vector2 diff = worldMousePos - (Vector2)transform.position;
+
 		
 		Vector2 diffNotNormalised = diff;
 		
@@ -103,13 +101,9 @@ public class CatapultGraphics : MonoBehaviour {
      	float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 		if(rot_z < -90 || rot_z > 90){
 			spriteRenderer.flipY =false;
-			headBandForStretch.transform.localScale = new Vector2(-diffNotNormalised.x,1);
-			// headBandEnd.transform.localPosition = new Vector2(diffNotNormalised.x,1);
 			
 		}else{
 			spriteRenderer.flipY =true;
-			headBandForStretch.transform.localScale = new Vector2(diffNotNormalised.x,1);
-			// headBandEnd.transform.localPosition = new Vector2(-diffNotNormalised.x,1);
 		}
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 180);
 	}
