@@ -16,6 +16,11 @@ public class CameraBehaviour : MonoBehaviour {
 	[SerializeField]
 	private float zoomTime = 0.35f;
 
+	[SerializeField]
+	private float lookAheadVelocityModifier = 12f; 
+	[SerializeField]
+	private float movementSmoothTime = 0.6f;
+
 	private float animationZoomValue;
 
 	private const string AnimationZoom = "AnimationZoom";
@@ -72,16 +77,16 @@ public class CameraBehaviour : MonoBehaviour {
 		// Interpolate to the player.
 
 		Vector2 position = new Vector2(transform.position.x, transform.position.y);
-		
+
 		Vector2 difference = (playerPosition - position);
-		Vector2 extra = velocity.normalized * 12;
+		Vector2 extra = velocity.normalized * this.lookAheadVelocityModifier;
 		difference += extra;
 
 		Vector2 newTarget = position + difference;
 
 		Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, transform.position.z);
 
-		transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref moveVelocity, 0.6f);
+		transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref moveVelocity, this.movementSmoothTime);
 	}
 	
 	void OnDestroy() {
