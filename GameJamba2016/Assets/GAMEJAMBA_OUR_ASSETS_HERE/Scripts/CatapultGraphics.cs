@@ -43,7 +43,7 @@ public class CatapultGraphics : MonoBehaviour {
 				return;
 			}
 			var dir = (Vector2)transform.position - lastPosition;
-			if(dir.magnitude < 0.03f) {
+			if(dir.magnitude < 0.05f) {
 				if(spriteRenderer.flipY) {
 					transform.rotation = Quaternion.AngleAxis(-180f, Vector3.forward);
 				} else {
