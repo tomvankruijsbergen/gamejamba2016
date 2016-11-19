@@ -11,6 +11,9 @@ public class Container : MonoSingleton<Container> {
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
 	
+	// There should only be one public je moeder
+	public Config config;
+
 	private AudioManager audioManager;
 	private SlowTimeManager slowTimeManager;
 	private Transform player;
@@ -33,7 +36,9 @@ public class Container : MonoSingleton<Container> {
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
-		//
+		//instantiate the config
+		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
+		this.config = configObject.GetComponent<Config>();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
@@ -46,6 +51,9 @@ public class Container : MonoSingleton<Container> {
 	public void AssignSlowTimeManager(SlowTimeManager slowTimeManager) {
 		this.slowTimeManager = slowTimeManager;
 	}
+	public void AssignConfig(Config config) {
+		this.config = config;
+	}
 
 	// Deassigns. Call this when an object should die.
 	public void RemoveCamera(Transform camera) {
@@ -53,6 +61,10 @@ public class Container : MonoSingleton<Container> {
 	}
 	public void RemovePlayer(Transform player) {
 		this.player = null;
+	}
+
+	public void RemoveSlowTimeManager(SlowTimeManager slowTimeManager) {
+		this.slowTimeManager = null;
 	}
 
 	// Gets. These must not have side effects. Write a function that returns exactly what you need. 

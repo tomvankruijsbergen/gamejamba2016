@@ -25,6 +25,7 @@ public class SlowTimeManager : MonoBehaviour {
     }
 
     private void SlowDown() {
+        iTween.Stop(gameObject);
         iTween.ValueTo(gameObject, iTween.Hash(
             "from", normalTimeScale,
             "to", slowTimeScale,
@@ -34,12 +35,17 @@ public class SlowTimeManager : MonoBehaviour {
     }
 
     private void SpeedUp() {
+        iTween.Stop(gameObject);
         iTween.ValueTo(gameObject, iTween.Hash(
             "from", slowTimeScale,
             "to", normalTimeScale,
             "onupdate", "TweenedTimeValue",
             "time", speedUpDuration
         ));
+    }
+
+    private void OnDestroy() {
+        Container.instance.RemoveSlowTimeManager(this);
     }
 
     public void TweenedTimeValue(float value) {
