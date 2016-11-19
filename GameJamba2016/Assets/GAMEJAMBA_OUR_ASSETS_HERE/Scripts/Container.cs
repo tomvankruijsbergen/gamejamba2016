@@ -3,13 +3,19 @@ using System.Collections;
 
 public class Container : MonoSingleton<Container> {
 
-	// Use this for initialization
+	public delegate void _OnTest(bool b);
+	public _OnTest OnTest;
+
+	//private AudioManager audioManager;
+
 	void Start () {
-	
+		//this.OnTest += (bool b) => {};
+		this.OnTest(true);
+		this.Update();
 	}
-	
-	// Update is called once per frame
+
+
 	void Update () {
-	
+		// 
 	}
 }
