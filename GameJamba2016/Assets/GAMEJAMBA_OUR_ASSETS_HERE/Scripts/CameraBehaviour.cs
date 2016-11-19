@@ -83,7 +83,7 @@ public class CameraBehaviour : MonoBehaviour {
 		Vector2 position = new Vector2(transform.position.x, transform.position.y);
 
 		Vector2 difference = (playerPosition - position);
-		Vector2 extra = Vector2.ClampMagnitude(velocity * this.lookAheadVelocityModifier, this.lookAheadMax);
+		Vector2 extra = Vector2.ClampMagnitude(velocity * Time.deltaTime * this.lookAheadVelocityModifier, this.lookAheadMax);
 
 		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime);
 

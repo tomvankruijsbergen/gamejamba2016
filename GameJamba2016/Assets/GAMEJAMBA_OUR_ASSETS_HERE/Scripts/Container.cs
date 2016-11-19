@@ -11,20 +11,17 @@ public class Container : MonoSingleton<Container> {
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
 	
-	// There should only be one public je moeder
+	// These are objects that are instantiated from a Prefab.
 	public Config config;
-
 	private AudioManager audioManager;
+
 	private SlowTimeManager slowTimeManager;
 	private Transform player;
 	new private Transform camera;
 
 	// These are all the events that this class sends. They should always return void.
-	public delegate void _AudioChanged(string test);
-	public event _AudioChanged AudioChanged;
 
-
-	public delegate void _EnemyKilled();
+	public delegate void _EnemyKilled(GameObject enemyKilled);
 	public event _EnemyKilled OnEnemyKilled;
 
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
@@ -41,6 +38,9 @@ public class Container : MonoSingleton<Container> {
 		//instantiate the config
 		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
 		this.config = configObject.GetComponent<Config>();
+
+		GameObject audioManagerObject = Instantiate(Resources.Load("Prefabs/AudioManager") as GameObject);
+		this.audioManager = audioManagerObject.GetComponent<AudioManager>();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
@@ -100,7 +100,7 @@ public class Container : MonoSingleton<Container> {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
 
-	public void EnemyKilled(){
-		this.OnEnemyKilled();
+	public void EnemyKilled(GameObject enemyKilled){
+		this.OnEnemyKilled(enemyKilled);
 	}
 }
