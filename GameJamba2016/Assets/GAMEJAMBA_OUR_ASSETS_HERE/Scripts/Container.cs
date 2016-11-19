@@ -29,7 +29,7 @@ public class Container : MonoSingleton<Container> {
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
 
-	public delegate void _PlayerMoved(Vector2 newPosition);
+	public delegate void _PlayerMoved(Vector2 newPosition, Vector2 velocity);
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
@@ -65,8 +65,8 @@ public class Container : MonoSingleton<Container> {
 
 	// These functions are called by objects.
 
-	public void PlayerMoved(Vector2 position) {
-		this.OnPlayerMoved(position);
+	public void PlayerMoved(Vector2 position, Vector2 velocity) {
+		this.OnPlayerMoved(position, velocity);
 	}
 
 	public void DragStart(Vector2 dragPosition) {

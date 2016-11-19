@@ -12,7 +12,7 @@ public class CameraBehaviour : MonoBehaviour {
 	[SerializeField]
 	private float zoomBase = 9;
 	[SerializeField]
-	private float zoomPerDistance = 10;
+	private float zoomPerRemainingDistance = 1;
 
 	[SerializeField]
 	new private Camera camera;
@@ -31,7 +31,7 @@ public class CameraBehaviour : MonoBehaviour {
 		// Debug.Log("changed");
 	}
 
-	void OnPlayerMoved(Vector2 playerPosition) {
+	void OnPlayerMoved(Vector2 playerPosition, Vector2 velocity) {
 		// Interpolate to the player.
 
 		float speedPerTime = this.speed * Time.deltaTime;
@@ -58,8 +58,8 @@ public class CameraBehaviour : MonoBehaviour {
 			);
 		}
 		
-		float movedDistance = Vector2.Distance(newPosition, position);
-		this.camera.orthographicSize = zoomBase + movedDistance * zoomPerDistance;
+		float remainingDistance = Vector2.Distance(newPosition, position);
+		this.camera.orthographicSize = zoomBase + remainingDistance * zoomPerRemainingDistance;
 
 		transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
 	}
