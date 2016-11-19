@@ -20,7 +20,6 @@ public class DragCatapultMovement : MonoBehaviour {
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
 		myRigidbody = gameObject.GetComponent<Rigidbody2D>();
-		Container.instance.AssignPlayer(transform);
 	}
 	
 	void OnMouseDown() 
