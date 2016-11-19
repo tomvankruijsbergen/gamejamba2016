@@ -127,8 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 212000010639815410}
-  headBandStartPosition: {fileID: 0}
-  headBandEndPosition: {fileID: 0}
 --- !u!212 &212000010639815410
 SpriteRenderer:
   m_ObjectHideFlags: 1
