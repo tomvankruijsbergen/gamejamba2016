@@ -99,6 +99,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010764619152}
+  - 60: {fileID: 60000013926011208}
   m_Layer: 0
   m_Name: BiggerRoof
   m_TagString: Untagged
@@ -113,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012817626476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -144,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010728676080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -189,6 +190,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010764619152}
   m_RootOrder: 2
+--- !u!60 &60000013926011208
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014237524672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -9.195547, y: -1.4813919}
+      - {x: -9.204439, y: -0.60042953}
+      - {x: -8.064909, y: -0.5410686}
+      - {x: -6.9346843, y: -0.0055245757}
+      - {x: -6.0619445, y: 1.1662331}
+      - {x: -5.633288, y: 2.2600796}
+      - {x: -6.362866, y: 2.5063338}
+      - {x: 6.3526645, y: 2.5062654}
+      - {x: 5.7454295, y: 2.2363527}
+      - {x: 6.0488205, y: 1.0975151}
+      - {x: 6.674884, y: 0.25370002}
+      - {x: 7.7303553, y: -0.4110422}
+      - {x: 9.2042055, y: -0.5614907}
+      - {x: 9.326866, y: -1.4328554}
+      - {x: 6.5175624, y: -2.5138283}
+      - {x: 3.4889345, y: -2.4767668}
+      - {x: -6.4361005, y: -2.4705667}
 --- !u!212 &212000010046587360
 SpriteRenderer:
   m_ObjectHideFlags: 1
