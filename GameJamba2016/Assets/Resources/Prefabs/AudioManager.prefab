@@ -126,8 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fd51c451b814a8cb4baacc6bfbc1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 8300000, guid: 039c4146ad63f47ca98e65ac8f1bac5a, type: 3}
+  normal: {fileID: 8300000, guid: 71b5d32a84e064bb7bcb2d89141e3922, type: 3}
   busy: {fileID: 8300000, guid: f1a5c906542eb4a2c89695831fcfc74a, type: 3}
   busyStartPlayingVelocity: 5
   busyStopPlayingVelocity: 20
+  busySoundVolumeFadeDuration: 0.5
   maxSoundDistanceForFX: 10
   killEnemy: {fileID: 8300000, guid: a4809ad7e2d5a469a9dfa06639160907, type: 3}

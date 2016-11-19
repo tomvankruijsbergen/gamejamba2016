@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour {
-	[SerializeField]
-    private AudioClip busy;
+    [SerializeField] private AudioClip background;
+    [SerializeField] private AudioClip normal;
+	[SerializeField] private AudioClip busy;
 
-    [SerializeField]
-    private float busyStartPlayingVelocity = 5f;
-    [SerializeField]
-    private float busyStopPlayingVelocity = 5f;
+    [SerializeField] private float busyStartPlayingVelocity = 5f;
+    [SerializeField] private float busyStopPlayingVelocity = 5f;
+    [SerializeField] private float busySoundVolumeFadeDuration = 0.5f;
 
-    [SerializeField]
-    private float maxSoundDistanceForFX = 10f;
+    [SerializeField] private float maxSoundDistanceForFX = 10f;
 
     [SerializeField]
     private AudioClip killEnemy;
@@ -24,36 +23,42 @@ public class AudioManager : MonoBehaviour {
     void Awake() {
         this.audioSources = new Dictionary<AudioClip, AudioSource>();
 
-        AudioClip[] clips = new AudioClip[] { busy };
+        AudioClip[] clips = new AudioClip[] { background, normal, busy };
         foreach (AudioClip clip in clips) {
             
             AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
-            source.clip = busy;
+            source.clip = clip;
             source.maxDistance = Mathf.Infinity;
             source.loop = true;
-            source.volume = 0;
+            source.volume = 1;
             source.Play();
 
             audioSources[clip] = source;
         }
 
+        audioSources[busy].volume = 0;
+
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;
     }
+
+    private float busyVolume = 0;
+    private float busyVolumeVelocity = 0;
 
     void OnPlayerMoved(Vector2 position, Vector2 velocity) {
         // Determine how loud the 'busy' sound is.
         float magnitude = velocity.magnitude;
         float volume = (magnitude - this.busyStartPlayingVelocity) / this.busyStopPlayingVelocity;
 
-        // Todo: animate this number.
         if (volume < 0) {
             volume = 0;
         }
         if (volume > 1) {
             volume = 1;
         }
-		this.audioSources[busy].volume = volume;
+
+        busyVolume = Mathf.SmoothDamp(busyVolume, volume, ref busyVolumeVelocity, this.busySoundVolumeFadeDuration);
+		this.audioSources[busy].volume = busyVolume;
 	}
 
     private void OnEnemyKilled(GameObject enemyKilled){
