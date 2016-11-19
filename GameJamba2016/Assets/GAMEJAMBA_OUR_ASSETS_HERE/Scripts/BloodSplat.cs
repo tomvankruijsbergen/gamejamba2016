@@ -8,7 +8,7 @@ public class BloodSplat : MonoBehaviour {
 	List<GameObject> chosenBlootsplatters = new List<GameObject>();
 
 
-	private float duration = 1.5f;
+	private float duration = 2f;
 	private float startTime;
 
 	void Awake(){
@@ -25,7 +25,7 @@ public class BloodSplat : MonoBehaviour {
 		}
 
 		foreach(GameObject rnd in chosenBlootsplatters){
-			iTween.ScaleTo(rnd.gameObject, new Vector3(1,1,1), 2f);
+			iTween.ScaleTo(rnd.gameObject, new Vector3(1,1,1), 3f);
 		}
 	}
 
