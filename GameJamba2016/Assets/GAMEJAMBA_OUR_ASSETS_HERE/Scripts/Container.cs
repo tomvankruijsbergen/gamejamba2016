@@ -25,14 +25,14 @@ public class Container : MonoSingleton<Container> {
 
 
 	public delegate void _EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd);
-	public event _EnemyKilled EnemyKilled;
+	public event _EnemyKilled OnEnemyKilled;
 
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
 
-	public delegate void _PlayerMoved(Vector2 newPosition);
+	public delegate void _PlayerMoved(Vector2 newPosition, Vector2 velocity);
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
@@ -77,8 +77,8 @@ public class Container : MonoSingleton<Container> {
 
 	// These functions are called by objects.
 
-	public void PlayerMoved(Vector2 position) {
-		this.OnPlayerMoved(position);
+	public void PlayerMoved(Vector2 position, Vector2 velocity) {
+		this.OnPlayerMoved(position, velocity);
 	}
 
 	public void DragStart(Vector2 dragPosition) {
@@ -91,7 +91,7 @@ public class Container : MonoSingleton<Container> {
 		this.OnDragEnd(dragPosition, player.position, camera.position);
 	}
 
-	// public void EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd){
-		
-	// }
+	public void EnemyKilled(GameObject enemy, Vector2 slashStart, Vector2 slashEnd){
+		this.OnEnemyKilled(enemy,slashStart,slashEnd);
+	}
 }
