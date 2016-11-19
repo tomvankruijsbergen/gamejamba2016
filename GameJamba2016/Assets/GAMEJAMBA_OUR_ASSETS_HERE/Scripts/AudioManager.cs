@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip background;
+    [SerializeField] private AudioClip normal;
 	[SerializeField] private AudioClip busy;
 
     [SerializeField] private float busyStartPlayingVelocity = 5f;
@@ -22,7 +23,7 @@ public class AudioManager : MonoBehaviour {
     void Awake() {
         this.audioSources = new Dictionary<AudioClip, AudioSource>();
 
-        AudioClip[] clips = new AudioClip[] { background, busy };
+        AudioClip[] clips = new AudioClip[] { background, normal, busy };
         foreach (AudioClip clip in clips) {
             
             AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
