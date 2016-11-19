@@ -34,6 +34,8 @@ public class Container : MonoSingleton<Container> {
 
 	public delegate void _PlayerMoved(Vector2 newPosition, Vector2 velocity);
 	public event _PlayerMoved OnPlayerMoved;
+	public delegate void _PlayerDied(Transform KilledBy);
+	public event _PlayerDied OnPlayerDied;
 
 	public override void Init () {
 		//instantiate the config
@@ -80,6 +82,9 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// These functions are called by objects.
+	public void DoPlayerKill(Transform killedBy) {
+		this.OnPlayerDied(killedBy);
+	}
 
 	public void PlayerMoved(Vector2 position, Vector2 velocity) {
 		this.OnPlayerMoved(position, velocity);
