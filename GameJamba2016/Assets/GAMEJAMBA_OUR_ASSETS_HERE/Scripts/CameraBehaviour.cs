@@ -6,7 +6,7 @@ public class CameraBehaviour : MonoBehaviour {
 	[SerializeField]
 	private float zoomBase = 9;
 	[SerializeField]
-	private float zoomMax = 15;
+	private float zoomMax = 15; 
 	[SerializeField]
 	private float zoomTime = 0.35f;
 
@@ -35,7 +35,7 @@ public class CameraBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		Container.instance.AssignCamera(transform);
+		Container.instance.AssignCamera(this);
 
 		Container.instance.OnDragStart += this.OnDragStart;
 		Container.instance.OnDragEnd += this.OnDragEnd;
@@ -72,9 +72,19 @@ public class CameraBehaviour : MonoBehaviour {
         ));
 	}
 
+	public float GetCameraSize() {
+		return this.camera.orthographicSize;
+	}
+	public float GetCameraAspect() {
+		return this.camera.aspect;
+	}
+
     public void TweenedZoomValue(float value) {
 		this.animationZoomValue = value;
-        this.camera.orthographicSize = zoomBase + (zoomMax - zoomBase) * value;
+		float newZoom = zoomBase + (zoomMax - zoomBase) * value;
+        this.camera.orthographicSize = newZoom;
+
+		Container.instance.CameraZoomed(newZoom);
     }
 
 	void OnPlayerMoved(Vector2 playerPosition, Vector2 velocity) {
@@ -90,7 +100,10 @@ public class CameraBehaviour : MonoBehaviour {
 		Vector2 newTarget = position + difference + extraAmount;
 		Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, transform.position.z);
 
-		transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref this.moveVelocity, this.movementSmoothTime);
+		Vector3 resultPosition = Vector3.SmoothDamp(transform.position, newPosition, ref this.moveVelocity, this.movementSmoothTime);
+		transform.position = resultPosition;
+
+		Container.instance.CameraMoved(new Vector2(resultPosition.x, resultPosition.y));
 	}
 	
 	void OnDestroy() {
