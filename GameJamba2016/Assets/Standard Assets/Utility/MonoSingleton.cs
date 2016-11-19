@@ -26,7 +26,8 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
                 // Object not found, we create a temporary one
                 if( m_Instance == null )
                 {
-  				Debug.LogWarning("No instance of " + typeof(T).ToString() + ", a temporary one is created.");
+                    //DIT IS DE BEDOELING LUL
+                    //Debug.LogWarning("No instance of " + typeof(T).ToString() + ", a temporary one is created.");
 
 					isTemporaryInstance = true;
                     m_Instance = new GameObject("Temp Instance of " + typeof(T).ToString(), typeof(T)).GetComponent<T>();
