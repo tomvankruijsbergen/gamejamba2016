@@ -7,8 +7,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	private Vector2 mouseUpPos;
 	private Rigidbody2D myRigidbody;
 
-	[SerializeField]
-	private float force = 10000f;
+	private float catapultForce;
 
 	private Plane plane;
 	private Ray ray;
@@ -19,6 +18,7 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
+		catapultForce = Container.instance.config.catapultForce;
 		myRigidbody = gameObject.GetComponent<Rigidbody2D>();
 	}
 	
