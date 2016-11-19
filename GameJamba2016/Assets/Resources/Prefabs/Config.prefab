@@ -52,4 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catapultForce: 40
-  maxPullMagnitude: 200
+  maxPullMagnitude: 100

@@ -16,7 +16,13 @@ public class CatapultGraphics : MonoBehaviour {
 
 	private bool weDraggin = false;
 
-	private Vector2 dragPositionHeadBand;
+	private Vector2 worldMousePos;
+
+	[SerializeField]
+	GameObject headBandForStretch; 
+
+	[SerializeField]
+	GameObject headBandEnd;
 
 	private Rigidbody2D myRigidBody;
 	private Vector2 lastPosition = Vector2.zero;
@@ -65,29 +71,46 @@ public class CatapultGraphics : MonoBehaviour {
 	}
 
 	void DragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
+		// headBandForStretch.transform.localScale = Vector3.zero;
+		iTween.ScaleTo(headBandForStretch, iTween.Hash(
+			"x", 0,
+            "y", 1,
+            "z", 1,
+            "easetype", "easeInQuint",
+			"time",0.005f
+        ));
+
+		headBandEnd.transform.localPosition = Vector3.zero;
 		
 		weDraggin = false;
 	}
 
 	void DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
 		
-
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(plane.Raycast(ray, out distance)) {
 			point = ray.GetPoint(distance);
-			dragPositionHeadBand = point;
+			worldMousePos = point;
+			headBandEnd.transform.position = point;
+
 		}
 
-		Vector2 diff = dragPositionHeadBand -  (Vector2)transform.position;
-
+		Vector2 diff = worldMousePos - (Vector2)transform.position;
+		
+		Vector2 diffNotNormalised = diff;
+		
 		diff.Normalize();
      	float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 		if(rot_z < -90 || rot_z > 90){
 			spriteRenderer.flipY =false;
+			headBandForStretch.transform.localScale = new Vector2(-diffNotNormalised.x,1);
+			// headBandEnd.transform.localPosition = new Vector2(diffNotNormalised.x,1);
+			
 		}else{
 			spriteRenderer.flipY =true;
+			headBandForStretch.transform.localScale = new Vector2(diffNotNormalised.x,1);
+			// headBandEnd.transform.localPosition = new Vector2(-diffNotNormalised.x,1);
 		}
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 180);
-
 	}
 }

@@ -105,14 +105,10 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		
 		GameObject particles2 = GameObject.Instantiate( spriteBurst, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		
-
 		GameObject particles3 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		particles3.transform.parent = output.firstSideGameObject.transform;
 		GameObject particles4 = GameObject.Instantiate( bloodBurstParticles, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		particles4.transform.parent = output.secondSideGameObject.transform;
-
-		// Rigidbody2D particleRbdy1 = particles1.gameObject.GetComponent<Rigidbody2D>();
-		// Rigidbody2D particleRbdy2 = particles2.gameObject.GetComponent<Rigidbody2D>();
 
 		particles1.transform.Rotate(new Vector3(-90,0,0));
 		particles2.transform.Rotate(new Vector3(90,0,0));
