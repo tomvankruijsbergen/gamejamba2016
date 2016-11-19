@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011254519814}
   - 212: {fileID: 212000011954576238}
-  - 114: {fileID: 114000013597461206}
   m_Layer: 0
   m_Name: Splat4
   m_TagString: Untagged
@@ -39,6 +38,7 @@ GameObject:
   - 198: {fileID: 198000011521980508}
   - 199: {fileID: 199000013927530862}
   - 114: {fileID: 114000013013990316}
+  - 50: {fileID: 50000011107632812}
   m_Layer: 0
   m_Name: ParticleDeathSplat
   m_TagString: Untagged
@@ -55,7 +55,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010377714584}
   - 212: {fileID: 212000013303501506}
-  - 114: {fileID: 114000012982302716}
   m_Layer: 0
   m_Name: Splat1
   m_TagString: Untagged
@@ -72,7 +71,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011863934414}
   - 212: {fileID: 212000013630119662}
-  - 114: {fileID: 114000012119515884}
   m_Layer: 0
   m_Name: Splat3
   m_TagString: Untagged
@@ -89,7 +87,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013901949900}
   - 212: {fileID: 212000010508283748}
-  - 114: {fileID: 114000013024380500}
   m_Layer: 0
   m_Name: Splat2
   m_TagString: Untagged
@@ -166,42 +163,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011757322418}
   m_RootOrder: 1
---- !u!114 &114000012119515884
-MonoBehaviour:
+--- !u!50 &50000011107632812
+Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011735615264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUnitsPerSecond:
-    value: {x: 0, y: 0, z: 0}
-    space: 1
-  rotateDegreesPerSecond:
-    value: {x: 0, y: 0, z: 120}
-    space: 1
-  ignoreTimescale: 0
---- !u!114 &114000012982302716
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011403173768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUnitsPerSecond:
-    value: {x: 0, y: 0, z: 0}
-    space: 1
-  rotateDegreesPerSecond:
-    value: {x: 0, y: 0, z: 120}
-    space: 1
-  ignoreTimescale: 0
+  m_GameObject: {fileID: 1000010844373396}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &114000013013990316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,42 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0a8747ac04460c9c7b10472610dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013024380500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013267066290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUnitsPerSecond:
-    value: {x: 0, y: 0, z: 0}
-    space: 1
-  rotateDegreesPerSecond:
-    value: {x: 0, y: 0, z: 120}
-    space: 1
-  ignoreTimescale: 0
---- !u!114 &114000013597461206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010281574928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUnitsPerSecond:
-    value: {x: 0, y: 0, z: 0}
-    space: 1
-  rotateDegreesPerSecond:
-    value: {x: 0, y: 0, z: 120}
-    space: 1
-  ignoreTimescale: 0
 --- !u!198 &198000011521980508
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -299,7 +241,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -930277500
+  randomSeed: -1275313961
   InitialModule:
     serializedVersion: 2
     enabled: 1

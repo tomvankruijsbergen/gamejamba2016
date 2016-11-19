@@ -8,7 +8,7 @@ public class BloodSplat : MonoBehaviour {
 	List<GameObject> chosenBlootsplatters = new List<GameObject>();
 
 
-	private float duration = 2f;
+	private float duration = 1.5f;
 	private float startTime;
 
 	void Awake(){
@@ -21,11 +21,15 @@ public class BloodSplat : MonoBehaviour {
 		int randomInt;
 		for(int i = 0; i < 1; i++){
 			randomInt = Random.Range(0,bloodSplatRenderers.Length);
+			// Debug.Log(randomInt);
 			chosenBlootsplatters.Add(bloodSplatRenderers[randomInt].gameObject);
+			if(Random.value > 0.5f){
+				bloodSplatRenderers[randomInt].flipX=true;
+			}
 		}
 
 		foreach(GameObject rnd in chosenBlootsplatters){
-			iTween.ScaleTo(rnd.gameObject, new Vector3(1,1,1), 3f);
+			iTween.ScaleTo(rnd.gameObject, new Vector3(1.5f,1.5f,1.5f), 2f);
 		}
 	}
 
