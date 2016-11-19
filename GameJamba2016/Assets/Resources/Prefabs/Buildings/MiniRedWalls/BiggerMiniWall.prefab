@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012223098502}
+  - 61: {fileID: 61000011012190642}
   m_Layer: 0
   m_Name: BiggerMiniWall
   m_TagString: Untagged
@@ -192,6 +193,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012223098502}
   m_RootOrder: 2
+--- !u!61 &61000011012190642
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011663065986}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!95 &95000010511986736
 Animator:
   serializedVersion: 3
