@@ -12,7 +12,7 @@ public class CameraBehaviour : MonoBehaviour {
 		Container.instance.OnDragUpdate += this.OnDragChanged;
 	}
 	void OnDragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
-		Debug.Log("changed");
+		// Debug.Log("changed");
 	}
 	
 	void OnDestroy() {

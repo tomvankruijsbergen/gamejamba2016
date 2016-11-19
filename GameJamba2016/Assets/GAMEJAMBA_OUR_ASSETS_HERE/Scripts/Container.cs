@@ -25,7 +25,7 @@ public class Container : MonoSingleton<Container> {
 	public event _DragChanged OnDragEnd;
 
 	public override void Init () {
-		this.audioManager = new AudioManager();	
+		this.audioManager = new AudioManager();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
@@ -54,13 +54,12 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	public void DragStart(Vector2 position) {
-		Debug.Log(this.OnDragStart);
-		//this.OnDragStart(position, player.position, camera.position);
+		this.OnDragStart(position, player.position, camera.position);
 	}
 	public void DragUpdate(Vector2 position) {
-		//this.OnDragUpdate(position, player.position, camera.position);
+		this.OnDragUpdate(position, player.position, camera.position);
 	}
 	public void DragRelease(Vector2 position) {
-		//this.OnDragEnd(position, player.position, camera.position);
+		this.OnDragEnd(position, player.position, camera.position);
 	}
 }
