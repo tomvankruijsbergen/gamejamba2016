@@ -45,8 +45,10 @@ public class DragCatapultMovement : MonoBehaviour {
 		if(mouseDownPos != Vector2.zero){
 			mouseUpPos = Input.mousePosition;
 			var direction = mouseDownPos - mouseUpPos;
-			direction.Normalize();
-			myRigidbody.AddForce (direction * catapultForce);
+			Debug.Log(direction.magnitude);
+			Vector3.ClampMagnitude(direction, Container.instance.config.maxPullMagnitude);
+			myRigidbody.velocity = Vector3.zero;
+			myRigidbody.AddForce(direction * catapultForce);
 		}
 
 		mouseDownPos = Vector2.zero;

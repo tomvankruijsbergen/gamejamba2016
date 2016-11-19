@@ -8,6 +8,7 @@ public class PlayerEvents : MonoBehaviour {
 	}
 
 	private Vector2 previousPosition;
+	
 	void LateUpdate() {
 		Vector2 velocity = new Vector2(
 			transform.position.x - previousPosition.x,
