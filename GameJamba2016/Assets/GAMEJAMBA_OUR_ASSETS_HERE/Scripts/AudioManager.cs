@@ -23,8 +23,9 @@ public class AudioManager : MonoBehaviour {
     void Awake() {
         this.audioSources = new Dictionary<AudioClip, AudioSource>();
 
-        AudioClip[] clips = new AudioClip[] { background, normal, busy };
-        foreach (AudioClip clip in clips) {
+        // Initialises the music layers.
+        AudioClip[] musicClips = new AudioClip[] { background, normal, busy };
+        foreach (AudioClip clip in musicClips) {
             
             AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
             source.clip = clip;
