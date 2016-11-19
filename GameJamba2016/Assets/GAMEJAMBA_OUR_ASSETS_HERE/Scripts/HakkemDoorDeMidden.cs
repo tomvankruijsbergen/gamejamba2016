@@ -12,7 +12,11 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 	Collider2D[] enemiesToBeHakkedDoorDeMidden;
 
+	Rigidbody2D myRigidBody;
 
+	void Awake(){
+		myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+	}
 
 	private void OnDrawGizmos()
 	{
@@ -27,21 +31,40 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			Debug.Log("HAKKEM");
 			enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
 			// enemyCollider.enabled = false;
-			// Container.instance.EnemyKilled(enemyCollider.gameObject);
+			// Container.instance.EnemyKilled(enemyCollider.gameObject, transform.position, transform.InverseTransformDirection(myRigidBody.velocity));
+			// Vector2 slashDirection =  transform.InverseTransformDirection(myRigidBody.velocity).normalized * 100;
+			Vector2 slashDirection = enemyCollider.transform.position;
+			Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
 		}
 	}
 
+	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden, Vector2 slashStart, Vector2 slashEnd){
 
-	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden){
-		// enemyToBeHakkedDoorDeMidden
+		SpriteCutterOutput output = SpriteCutter.Cut( new SpriteCutterInput() {
+			lineStart = slashStart,
+			lineEnd = slashEnd,
+			gameObject = enemyToBeHakkedDoorDeMidden,
+			gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY,
+		} );
+
+		// Vector2 distance = slashEnd - slashStart;
+		Vector2 distance = output.firstSideGameObject.transform.position - output.secondSideGameObject.transform.position;
+
+		float angle = Mathf.Atan2(distance.y, distance.x);
+		angle += 0.5f * Mathf.PI;
+
+		Vector2 force = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * 9991; // je force
+
+		Rigidbody2D rbdy1 = output.firstSideGameObject.GetComponent<Rigidbody2D>();
+		Rigidbody2D rbdy2 = output.secondSideGameObject.GetComponent<Rigidbody2D>();
+
+		rbdy1.AddForceAtPosition(-force, slashStart);
+		rbdy2.AddForceAtPosition(force, slashEnd);
+
+		rbdy1.AddTorque(9001);
+		rbdy2.AddTorque(9001);
 
 
-
-		// SpriteCutterOutput output = SpriteCutter.Cut( new SpriteCutterInput() {
-		// 	lineStart = lineStart,
-		// 	lineEnd = lineEnd,
-		// 	gameObject = go,
-		// 	gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY,
-		// } );
 	}
+
 }
