@@ -31,6 +31,7 @@ public class CameraBehaviour : MonoBehaviour {
 
 	void Start() {
 		transform.position = Container.instance.GetPlayerPosition();
+		this.camera.orthographicSize = zoomBase;
 	}
 
 	private float previousValue = 0;
