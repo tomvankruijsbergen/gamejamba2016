@@ -132,10 +132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04b9c38461ef485381770d181542738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  snapDistance: 0.1
-  zoomBase: 9
-  zoomPerDistance: 10
+  zoomBase: 12
+  zoomMax: 18
+  zoomTime: 0.35
+  lookAheadVelocityModifier: 30
+  lookAheadMax: 20
+  movementSmoothTime: 0.3
+  targetSmoothTime: 0.4
   camera: {fileID: 20000012740146964}
 --- !u!124 &124000012881850224
 Behaviour:
