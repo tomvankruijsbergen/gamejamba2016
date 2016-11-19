@@ -12,27 +12,32 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	private Plane plane;
 	private Ray ray;
-	private float distance = 20;
+	private float distance;
 	private Vector3 point;
 
 	private float maxDragDistance = 2f;
 
 	void Awake(){
-		plane = new Plane(Vector3.up, Vector3.zero);
+		plane = new Plane(Vector3.forward, Vector3.zero);
 		myRigidbody = gameObject.GetComponent<Rigidbody2D>();
-
+		Container.instance.AssignPlayer(transform);
 	}
 	
 	void OnMouseDown() 
 	{
-		
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(plane.Raycast(ray, out distance)) {
 			point = ray.GetPoint(distance);
 			if(Vector2.Distance(point, transform.position) <= maxDragDistance){
 				mouseDownPos = Input.mousePosition;
-				// Container.instance.DragStart();
+				Container.instance.DragStart(mouseDownPos);
 			}
+		}
+	}
+
+	void Update(){
+		if(mouseDownPos != Vector2.zero){
+			Container.instance.DragUpdate(Input.mousePosition);
 		}
 	}
 	
@@ -46,6 +51,6 @@ public class DragCatapultMovement : MonoBehaviour {
 		}
 
 		mouseDownPos = Vector2.zero;
-		// Container.instance.DragRelease();
+		Container.instance.DragRelease(mouseUpPos);
 	}
 }
