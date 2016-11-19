@@ -4,12 +4,13 @@ using System.Collections;
 public class CameraBehaviour : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+		Container.instance.AssignCamera(transform);
+		Container.instance.OnDragStart += this.OnDragChanged;
+		Container.instance.OnDragEnd += this.OnDragChanged;
+		Container.instance.OnDragUpdate += this.OnDragChanged;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnDragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
+		
 	}
 }
