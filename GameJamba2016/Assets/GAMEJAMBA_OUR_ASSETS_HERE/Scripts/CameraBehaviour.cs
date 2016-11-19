@@ -19,5 +19,7 @@ public class CameraBehaviour : MonoBehaviour {
 		Container.instance.OnDragStart -= this.OnDragChanged;
 		Container.instance.OnDragEnd -= this.OnDragChanged;
 		Container.instance.OnDragUpdate -= this.OnDragChanged;
+
+		Container.instance.RemoveCamera(transform);
 	}
 }

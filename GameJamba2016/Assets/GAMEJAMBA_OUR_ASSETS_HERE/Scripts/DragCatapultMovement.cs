@@ -52,4 +52,8 @@ public class DragCatapultMovement : MonoBehaviour {
 		mouseDownPos = Vector2.zero;
 		Container.instance.DragRelease(mouseUpPos);
 	}
+
+	void OnDestroy() {
+		Container.instance.RemovePlayer(transform);
+	}
 }
