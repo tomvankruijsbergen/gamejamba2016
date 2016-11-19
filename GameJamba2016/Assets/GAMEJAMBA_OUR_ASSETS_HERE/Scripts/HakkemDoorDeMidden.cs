@@ -18,11 +18,13 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 	private float forceDelay;
 
 	private GameObject bloodBurstParticles;
+	private GameObject spriteBurst;
 	private bool checking = true;
 
 	void Awake(){
 		myRigidBody = gameObject.GetComponent<Rigidbody2D>();
-		bloodBurstParticles = Resources.Load("Prefabs/ParticleDeathSplat") as GameObject;
+		bloodBurstParticles = Resources.Load("Prefabs/BloodBurst") as GameObject;
+		spriteBurst = Resources.Load("Prefabs/SpriteSplat") as GameObject;
 		Container.instance.OnPlayerDied += PlayerKilled;
 	}
 
@@ -99,13 +101,24 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		
 		yield return new WaitForSeconds(forceDelay);
 		
-		GameObject particles1 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
-		particles1.transform.parent = output.firstSideGameObject.transform;
-		GameObject particles2 = GameObject.Instantiate( bloodBurstParticles, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
-		particles2.transform.parent = output.secondSideGameObject.transform;
+		GameObject particles1 = GameObject.Instantiate( spriteBurst, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
+		
+		GameObject particles2 = GameObject.Instantiate( spriteBurst, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
+		
+
+		GameObject particles3 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
+		particles3.transform.parent = output.firstSideGameObject.transform;
+		GameObject particles4 = GameObject.Instantiate( bloodBurstParticles, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
+		particles4.transform.parent = output.secondSideGameObject.transform;
+
+		// Rigidbody2D particleRbdy1 = particles1.gameObject.GetComponent<Rigidbody2D>();
+		// Rigidbody2D particleRbdy2 = particles2.gameObject.GetComponent<Rigidbody2D>();
 
 		particles1.transform.Rotate(new Vector3(-90,0,0));
 		particles2.transform.Rotate(new Vector3(90,0,0));
+
+		particles3.transform.Rotate(new Vector3(-90,0,0));
+		particles4.transform.Rotate(new Vector3(90,0,0));
 
 		Vector2 distance = output.firstSideGameObject.transform.position - output.secondSideGameObject.transform.position;
 
