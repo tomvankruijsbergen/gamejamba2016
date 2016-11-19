@@ -29,6 +29,7 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
+	
 	public void AssignCamera(Transform camera) {
 		this.camera = camera;
 	}
@@ -36,19 +37,30 @@ public class Container : MonoSingleton<Container> {
 		this.player = player;
 	}
 
+	// Deassigns. Call this when an object should die.
+
+	public void RemoveCamera(Transform camera) {
+		this.camera = null;
+	}
+	public void RemovePlayer(Transform player) {
+		this.player = null;
+	}
+
 	// These functions are called by objects.
+
 	public void PlayerMoved(Vector3 newPosition) {
 		// Tell the audio manager that the background music should change.
 		this.AudioChanged("the audio has changed to something");
 	}
 
 	public void DragStart(Vector2 position) {
-		this.OnDragStart(position, player.position, camera.position);
+		Debug.Log(this.OnDragStart);
+		//this.OnDragStart(position, player.position, camera.position);
 	}
 	public void DragUpdate(Vector2 position) {
-		this.OnDragUpdate(position, player.position, camera.position);
+		//this.OnDragUpdate(position, player.position, camera.position);
 	}
 	public void DragRelease(Vector2 position) {
-		this.OnDragEnd(position, player.position, camera.position);
+		//this.OnDragEnd(position, player.position, camera.position);
 	}
 }
