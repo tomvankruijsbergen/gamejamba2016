@@ -11,6 +11,9 @@ public class Container : MonoSingleton<Container> {
 	// - Container.cs: 		sends this.AudioChanged("something");
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
 	
+	// There should only be one public je moeder
+	public Config config;
+
 	private AudioManager audioManager;
 	private SlowTimeManager slowTimeManager;
 	private Transform player;
@@ -29,11 +32,13 @@ public class Container : MonoSingleton<Container> {
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
 
-	public delegate void _PlayerMoved(Vector2 newPosition);
+	public delegate void _PlayerMoved(Vector2 newPosition, Vector2 velocity);
 	public event _PlayerMoved OnPlayerMoved;
 
 	public override void Init () {
-		//
+		//instantiate the config
+		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
+		this.config = configObject.GetComponent<Config>();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
@@ -46,6 +51,9 @@ public class Container : MonoSingleton<Container> {
 	public void AssignSlowTimeManager(SlowTimeManager slowTimeManager) {
 		this.slowTimeManager = slowTimeManager;
 	}
+	public void AssignConfig(Config config) {
+		this.config = config;
+	}
 
 	// Deassigns. Call this when an object should die.
 	public void RemoveCamera(Transform camera) {
@@ -55,25 +63,33 @@ public class Container : MonoSingleton<Container> {
 		this.player = null;
 	}
 
+	public void RemoveSlowTimeManager(SlowTimeManager slowTimeManager) {
+		this.slowTimeManager = null;
+	}
+
+	public void RemoveConfig(Config config) {
+		this.config = null;
+	}
+
 	// Gets. These must not have side effects. Write a function that returns exactly what you need. 
-	public Vector2 getPlayerPosition() {
+	public Vector2 GetPlayerPosition() {
 		return player.position;
 	}
-	public Vector2 getCameraPosition() {
+	public Vector2 GetCameraPosition() {
 		return camera.position;
 	}
 
 	// These functions are called by objects.
 
-	public void PlayerMoved(Vector2 position) {
-		this.OnPlayerMoved(position);
+	public void PlayerMoved(Vector2 position, Vector2 velocity) {
+		this.OnPlayerMoved(position, velocity);
 	}
 
 	public void DragStart(Vector2 dragPosition) {
 		this.OnDragStart(dragPosition, player.position, camera.position);
 	}
 	public void DragUpdate(Vector2 dragPosition) {
-		this.OnDragUpdate(dragPosition, player.position, camera.position);
+		//this.OnDragUpdate(dragPosition, player.position, camera.position);
 	}
 	public void DragRelease(Vector2 dragPosition) {
 		this.OnDragEnd(dragPosition, player.position, camera.position);

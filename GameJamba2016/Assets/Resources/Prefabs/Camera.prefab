@@ -134,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   snapDistance: 0.1
+  zoomBase: 9
+  zoomPerDistance: 10
   camera: {fileID: 20000012740146964}
 --- !u!124 &124000012881850224
 Behaviour:
