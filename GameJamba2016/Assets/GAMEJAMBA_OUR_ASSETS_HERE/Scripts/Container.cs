@@ -25,6 +25,9 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _EnemyKilled(GameObject enemyKilled);
 	public event _EnemyKilled OnEnemyKilled;
 
+	public delegate void _TimeChanged(float timeScale);
+	public event _TimeChanged OnTimeChanged;
+
 	public delegate void _DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition);
 	public event _DragChanged OnDragStart;
 	public event _DragChanged OnDragUpdate;
@@ -98,6 +101,13 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	// These functions are called by objects.
+	public void TimeChanged(float timeScale) {
+		//DIT MAG ECHT ALLEEN HIER FAGGOTS
+		if(this.OnTimeChanged != null) {
+			this.OnTimeChanged(timeScale);
+		}
+	}
+
 	public void DoPlayerKill(Transform killedBy) {
 		this.OnPlayerDied(killedBy);
 	}

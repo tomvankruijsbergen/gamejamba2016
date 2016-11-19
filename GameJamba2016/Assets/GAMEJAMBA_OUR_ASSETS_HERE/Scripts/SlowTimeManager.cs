@@ -52,6 +52,7 @@ public class SlowTimeManager : MonoBehaviour {
 
     public void TweenedTimeValue(float value) {
         Time.timeScale = value;
+        Container.instance.TimeChanged(value);
     }
 
     private void KillSlowDown(GameObject enemyKilled){
