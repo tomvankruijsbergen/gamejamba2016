@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf7b3c4f242b496d89e10dd8bb9e9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catapultForce: 60
-  maxPullMagnitude: 100
+  catapultForce: 70
+  maxPullMagnitude: 120
+  minPullMagnitude: 100

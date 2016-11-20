@@ -96,6 +96,10 @@ public class DragCatapultMovement : MonoBehaviour {
 			// Debug.Log(direction.magnitude);
 			Vector3.ClampMagnitude(direction, Container.instance.config.maxPullMagnitude);
 			myRigidbody.velocity = Vector3.zero;
+			Vector3 force = direction * catapultForce;
+			if(force.magnitude < Container.instance.config.minPullMagnitude) {
+				force = direction.normalized * Container.instance.config.minPullMagnitude * catapultForce;
+			}
 			myRigidbody.AddForce(direction * catapultForce);
 		}
 
