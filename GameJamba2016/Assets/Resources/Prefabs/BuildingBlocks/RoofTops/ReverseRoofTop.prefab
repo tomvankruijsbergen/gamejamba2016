@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013580299958}
   - 212: {fileID: 212000013966620396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011924778544}
   - 212: {fileID: 212000012388747572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012365162600}
-  m_Layer: 0
+  - 60: {fileID: 60000011347683814}
+  m_Layer: 10
   m_Name: ReverseRoofTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +68,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011623572170}
   - 212: {fileID: 212000010135955402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 1000012408715450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013580299958}
@@ -129,6 +130,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012365162600}
   m_RootOrder: 0
+--- !u!60 &60000011347683814
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012408715450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -2.1458611, y: 0.5275631}
+      - {x: -2.34087, y: 0.5335393}
+      - {x: -2.3380747, y: 0.8064637}
+      - {x: 2.3287866, y: 0.8296013}
+      - {x: 2.3142486, y: 0.53621626}
+      - {x: 2.0388277, y: 0.5508208}
+      - {x: 2.0580988, y: 0.047881603}
+      - {x: 2.330684, y: 0.012177944}
+      - {x: 2.348575, y: -0.95101595}
+      - {x: -2.3343751, y: -0.9936161}
+      - {x: -2.338072, y: 0.046899796}
+      - {x: -2.1296496, y: 0.06761885}
 --- !u!212 &212000010135955402
 SpriteRenderer:
   m_ObjectHideFlags: 1
