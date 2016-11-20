@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011424297566}
   - 212: {fileID: 212000011473971064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012344172162}
   - 212: {fileID: 212000012960702820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013613481846}
   - 212: {fileID: 212000012762515674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010641010444}
   - 212: {fileID: 212000012605101956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - 4: {fileID: 4000011237747292}
   - 212: {fileID: 212000013714759112}
   - 95: {fileID: 95000013452510702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012553230090}
   - 212: {fileID: 212000013551879868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013678412504}
   - 212: {fileID: 212000011601979864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010927849626}
   - 212: {fileID: 212000011161694574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013804047186}
   - 212: {fileID: 212000012612272096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012334563132}
   - 212: {fileID: 212000012099424804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - 4: {fileID: 4000010244560700}
   - 212: {fileID: 212000013535934662}
   - 95: {fileID: 95000011797315848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010653160202}
   - 212: {fileID: 212000012284728400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012188632924}
   - 61: {fileID: 61000013016277110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - 4: {fileID: 4000013449869432}
   - 212: {fileID: 212000011024024054}
   - 95: {fileID: 95000013265066516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011246976668}
   - 212: {fileID: 212000013478973402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012541794026}
   - 212: {fileID: 212000010439419830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010139020580}
   - 212: {fileID: 212000010977109980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013677559162}
   - 60: {fileID: 60000012058564248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigSmallRoof (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010730320620}
   - 212: {fileID: 212000011512753136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010863227150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012611358890}
   - 212: {fileID: 212000012389757854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010075828838}
   - 212: {fileID: 212000012712398840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011404939942}
   - 212: {fileID: 212000014080186182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - 4: {fileID: 4000012838475228}
   - 212: {fileID: 212000011318324606}
   - 95: {fileID: 95000010126817576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - 4: {fileID: 4000010290079244}
   - 61: {fileID: 61000013423866456}
   - 61: {fileID: 61000011209080010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011318583128}
   - 212: {fileID: 212000011275075362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010202408034}
   - 212: {fileID: 212000011747738732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010496290618}
   - 212: {fileID: 212000012597434772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010853770296}
   - 212: {fileID: 212000010647035654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - 4: {fileID: 4000010336637952}
   - 212: {fileID: 212000010323670970}
   - 95: {fileID: 95000013172441232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012610019262}
   - 212: {fileID: 212000013707566540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - 4: {fileID: 4000012955566894}
   - 212: {fileID: 212000012710927430}
   - 95: {fileID: 95000014108918300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +538,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010495310824}
   - 212: {fileID: 212000010288344290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011009246032}
   - 61: {fileID: 61000011029754958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013562373074}
   - 212: {fileID: 212000010720091402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011581229974}
   - 212: {fileID: 212000010911011088}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010310626220}
   - 212: {fileID: 212000012073397688}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012993381548}
   - 212: {fileID: 212000014213750102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010357868082}
   - 212: {fileID: 212000010655935148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011190998630}
   - 212: {fileID: 212000013676194564}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012286070954}
   - 60: {fileID: 60000013347360366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigSmallRoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   - 4: {fileID: 4000010767435594}
   - 212: {fileID: 212000011753495786}
   - 95: {fileID: 95000010359762474}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012474240752}
   - 60: {fileID: 60000010841650678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerRoof (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012382726384}
   - 212: {fileID: 212000012123311916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   - 4: {fileID: 4000014043830316}
   - 212: {fileID: 212000010899330006}
   - 95: {fileID: 95000012907781664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013351310676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerFence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013860530538}
   - 212: {fileID: 212000013958876622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011679760500}
   - 212: {fileID: 212000012331454838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010153480796}
   - 212: {fileID: 212000013063698002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ GameObject:
   - 4: {fileID: 4000013053795112}
   - 212: {fileID: 212000013925558070}
   - 95: {fileID: 95000013184708818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010991760036}
   - 212: {fileID: 212000014156031826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012009568830}
   - 212: {fileID: 212000010585114574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011661850770}
   - 212: {fileID: 212000010290386192}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010443503414}
   - 212: {fileID: 212000013667275962}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +892,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014160704602}
   - 212: {fileID: 212000014006370326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -908,7 +908,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012783296212}
   - 212: {fileID: 212000012800119732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013958723762}
   - 212: {fileID: 212000012982839322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +940,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014075846434}
   - 212: {fileID: 212000010870231446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +956,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013653188624}
   - 212: {fileID: 212000010198494590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010161643336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HugeFence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   - 4: {fileID: 4000010051856768}
   - 212: {fileID: 212000010374077568}
   - 95: {fileID: 95000011834401080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010646491296}
   - 212: {fileID: 212000010216388544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1021,7 @@ GameObject:
   - 4: {fileID: 4000010089673440}
   - 212: {fileID: 212000011089545346}
   - 95: {fileID: 95000013634713094}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010508432534}
   - 212: {fileID: 212000013377566296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013125822258}
   - 212: {fileID: 212000014240799302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ GameObject:
   - 4: {fileID: 4000011313847618}
   - 212: {fileID: 212000014029095616}
   - 95: {fileID: 95000013498268628}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1087,7 @@ GameObject:
   - 4: {fileID: 4000013604507068}
   - 61: {fileID: 61000012829035836}
   - 61: {fileID: 61000012150487750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012360898156}
   - 212: {fileID: 212000012813540090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   - 4: {fileID: 4000012400028366}
   - 212: {fileID: 212000013332263706}
   - 95: {fileID: 95000010285612890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012770808774}
   - 212: {fileID: 212000013737432594}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1152,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012087059014}
   - 212: {fileID: 212000012068775744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1169,7 +1169,7 @@ GameObject:
   - 4: {fileID: 4000010218393064}
   - 212: {fileID: 212000013361113864}
   - 95: {fileID: 95000013877866720}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014216957464}
   - 212: {fileID: 212000010744952718}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1201,7 +1201,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014073217960}
   - 212: {fileID: 212000012111735798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1218,7 @@ GameObject:
   - 4: {fileID: 4000012946389048}
   - 212: {fileID: 212000011652405114}
   - 95: {fileID: 95000013775727092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010189457370}
   - 212: {fileID: 212000010547077454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,7 +1250,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010159877946}
   - 212: {fileID: 212000010840228870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1266,7 +1266,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011063346034}
   - 212: {fileID: 212000014221995146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1282,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013713457790}
   - 212: {fileID: 212000012116405114}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,7 +1298,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010342618184}
   - 61: {fileID: 61000012703614584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014101912926}
   - 212: {fileID: 212000014151873342}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1330,7 +1330,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014281197308}
   - 212: {fileID: 212000012114980246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011137961960}
   - 212: {fileID: 212000011333096850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1362,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011687271020}
   - 212: {fileID: 212000013432461894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,7 +1379,7 @@ GameObject:
   - 4: {fileID: 4000011795027600}
   - 212: {fileID: 212000010737389424}
   - 95: {fileID: 95000012981026702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1395,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013028353070}
   - 212: {fileID: 212000010703248514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,7 +1412,7 @@ GameObject:
   - 4: {fileID: 4000011354775762}
   - 212: {fileID: 212000011105301364}
   - 95: {fileID: 95000010144695698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1428,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011246979492}
   - 61: {fileID: 61000012580191736}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1444,7 +1444,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010445789412}
   - 212: {fileID: 212000013400461860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,7 +1460,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012613056420}
   - 212: {fileID: 212000010077445456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,7 +1476,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011571112286}
   - 61: {fileID: 61000013919495012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,7 +1492,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014011262888}
   - 212: {fileID: 212000011963039178}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1508,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012747323064}
   - 212: {fileID: 212000012825749614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   - 4: {fileID: 4000014242070758}
   - 212: {fileID: 212000012358289672}
   - 95: {fileID: 95000013576430472}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1541,7 +1541,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012554275574}
   - 212: {fileID: 212000010183070816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011742874482}
   - 212: {fileID: 212000013235570122}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1573,7 +1573,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013750740524}
   - 61: {fileID: 61000012544082146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1589,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010677920200}
   - 212: {fileID: 212000012492285188}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1605,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012319405114}
   - 212: {fileID: 212000012053327986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013044277834}
   - 212: {fileID: 212000011327073956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1637,7 +1637,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011263810962}
   - 212: {fileID: 212000013024605566}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1653,7 +1653,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010136202602}
   - 212: {fileID: 212000012946944228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1669,7 +1669,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013306682416}
   - 61: {fileID: 61000011350750408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: kkdikkeplank (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,7 +1685,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013344079856}
   - 212: {fileID: 212000012999585934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1701,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012380621690}
   - 212: {fileID: 212000013412080516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1717,7 +1717,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011039822852}
   - 212: {fileID: 212000012658934708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1733,7 +1733,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010267347016}
   - 212: {fileID: 212000012511711478}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1749,7 +1749,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010953033752}
   - 212: {fileID: 212000012561411670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1765,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012935908892}
   - 212: {fileID: 212000013906074750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,7 +1781,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011804465544}
   - 212: {fileID: 212000012616823678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1797,7 +1797,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010513496726}
   - 212: {fileID: 212000012097592470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1814,7 @@ GameObject:
   - 4: {fileID: 4000011793303942}
   - 212: {fileID: 212000013894713756}
   - 95: {fileID: 95000011171381818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1831,7 +1831,7 @@ GameObject:
   - 4: {fileID: 4000012396331306}
   - 212: {fileID: 212000010823392338}
   - 95: {fileID: 95000012883056418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1848,7 +1848,7 @@ GameObject:
   - 4: {fileID: 4000011590823982}
   - 212: {fileID: 212000013505030738}
   - 95: {fileID: 95000011043846986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1865,7 @@ GameObject:
   - 4: {fileID: 4000011818974034}
   - 212: {fileID: 212000014201980458}
   - 95: {fileID: 95000010496883570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1881,7 +1881,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011308277304}
   - 212: {fileID: 212000011650637096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1897,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010829237962}
   - 212: {fileID: 212000012175419314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1913,7 +1913,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012247572178}
   - 212: {fileID: 212000013082657254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1929,7 +1929,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011973219976}
   - 212: {fileID: 212000012228618974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1945,7 +1945,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013113777382}
   - 212: {fileID: 212000010969724658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1961,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010585827220}
   - 212: {fileID: 212000013061061990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1977,7 +1977,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010758582934}
   - 212: {fileID: 212000013048159950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +1993,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010131651572}
   - 212: {fileID: 212000012901227022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2008,7 +2008,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010152727378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerFence (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,7 +2024,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013820861346}
   - 212: {fileID: 212000012575472372}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2040,7 +2040,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012044124140}
   - 212: {fileID: 212000011795747092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2056,7 +2056,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013897064710}
   - 212: {fileID: 212000011773211636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,7 +2072,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012242328350}
   - 212: {fileID: 212000010545731508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2088,7 +2088,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013963061578}
   - 212: {fileID: 212000013395921932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2104,7 +2104,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010564101342}
   - 212: {fileID: 212000014180243288}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2121,7 +2121,7 @@ GameObject:
   - 4: {fileID: 4000011773636756}
   - 212: {fileID: 212000013318265306}
   - 95: {fileID: 95000011313202438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2138,7 +2138,7 @@ GameObject:
   - 4: {fileID: 4000012731420062}
   - 212: {fileID: 212000011491448656}
   - 95: {fileID: 95000010927368756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2154,7 +2154,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010321825340}
   - 212: {fileID: 212000012957181146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2170,7 +2170,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011100335646}
   - 212: {fileID: 212000011070461410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2186,7 +2186,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011924337958}
   - 61: {fileID: 61000012676115378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DikkeMiniWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2203,7 @@ GameObject:
   - 4: {fileID: 4000013390328864}
   - 212: {fileID: 212000014292245822}
   - 95: {fileID: 95000014077246330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,7 +2219,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011419168596}
   - 212: {fileID: 212000012344071658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2235,7 +2235,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012268678336}
   - 212: {fileID: 212000010983028980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2251,7 +2251,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012815003382}
   - 212: {fileID: 212000013125918514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2267,7 +2267,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010066477490}
   - 212: {fileID: 212000012192786040}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2283,7 +2283,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012581295842}
   - 212: {fileID: 212000011378688388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2299,7 +2299,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011145172136}
   - 212: {fileID: 212000011726944734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2316,7 +2316,7 @@ GameObject:
   - 4: {fileID: 4000011428619944}
   - 61: {fileID: 61000011652905416}
   - 61: {fileID: 61000010492456528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2333,7 @@ GameObject:
   - 4: {fileID: 4000012874203982}
   - 212: {fileID: 212000012765946680}
   - 95: {fileID: 95000011121021328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2350,7 +2350,7 @@ GameObject:
   - 4: {fileID: 4000011889326042}
   - 212: {fileID: 212000013759331172}
   - 95: {fileID: 95000012282043318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2366,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010348331974}
   - 212: {fileID: 212000010609444860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2382,7 +2382,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013585568218}
   - 61: {fileID: 61000010160469874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2398,7 +2398,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013709176974}
   - 212: {fileID: 212000013986482160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2414,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012705762216}
   - 212: {fileID: 212000012661570334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2431,7 +2431,7 @@ GameObject:
   - 4: {fileID: 4000013583407452}
   - 212: {fileID: 212000012491720186}
   - 95: {fileID: 95000013940109504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,7 +2447,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010019773228}
   - 61: {fileID: 61000010611004650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2463,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012334804036}
   - 212: {fileID: 212000010230295404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2479,7 +2479,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010673162158}
   - 212: {fileID: 212000011895512534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2495,7 +2495,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010930002396}
   - 212: {fileID: 212000011075664636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2512,7 +2512,7 @@ GameObject:
   - 4: {fileID: 4000014116922334}
   - 212: {fileID: 212000013355609978}
   - 95: {fileID: 95000012327596822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2528,7 +2528,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011917525322}
   - 212: {fileID: 212000011953085502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2545,7 @@ GameObject:
   - 4: {fileID: 4000011277285528}
   - 212: {fileID: 212000013088375142}
   - 95: {fileID: 95000013913363916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2561,7 +2561,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011185199248}
   - 212: {fileID: 212000010953727606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2578,7 +2578,7 @@ GameObject:
   - 4: {fileID: 4000013602562688}
   - 61: {fileID: 61000012671816240}
   - 61: {fileID: 61000010094390792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2594,7 +2594,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010383549922}
   - 212: {fileID: 212000010341603674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2610,7 +2610,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013259380598}
   - 212: {fileID: 212000012026247838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2627,7 +2627,7 @@ GameObject:
   - 4: {fileID: 4000012802283130}
   - 212: {fileID: 212000013447934452}
   - 95: {fileID: 95000013965401920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2643,7 +2643,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013544200780}
   - 212: {fileID: 212000010619929422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2659,7 +2659,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014168252514}
   - 212: {fileID: 212000013931671404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2675,7 +2675,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010296349524}
   - 212: {fileID: 212000013021591544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2691,7 +2691,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012999926582}
   - 212: {fileID: 212000010606782038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2707,7 +2707,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013693359036}
   - 61: {fileID: 61000013214632304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2723,7 +2723,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011787911690}
   - 212: {fileID: 212000011347720264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2739,7 +2739,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014213500594}
   - 212: {fileID: 212000013600446502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2756,7 @@ GameObject:
   - 4: {fileID: 4000010619167838}
   - 212: {fileID: 212000010249762830}
   - 95: {fileID: 95000013925887666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,7 +2772,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012505523250}
   - 61: {fileID: 61000010102387014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2788,7 +2788,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013345728930}
   - 212: {fileID: 212000010831858772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2804,7 +2804,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013221136098}
   - 212: {fileID: 212000013643684246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2820,7 +2820,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010187556060}
   - 61: {fileID: 61000010074412816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2837,7 +2837,7 @@ GameObject:
   - 4: {fileID: 4000012111517750}
   - 212: {fileID: 212000011013898890}
   - 95: {fileID: 95000012348006750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2853,7 +2853,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010751511980}
   - 212: {fileID: 212000011938088880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2869,7 +2869,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014037525714}
   - 212: {fileID: 212000012191258254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2885,7 +2885,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012087833828}
   - 212: {fileID: 212000010252266294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2901,7 +2901,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010645122782}
   - 212: {fileID: 212000011714773748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2917,7 +2917,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013121410302}
   - 212: {fileID: 212000012608005434}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2933,7 +2933,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011520561188}
   - 212: {fileID: 212000012567143306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2949,7 +2949,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012634067910}
   - 212: {fileID: 212000011622177904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012613939178}
   - 212: {fileID: 212000010214713096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2982,7 +2982,7 @@ GameObject:
   - 4: {fileID: 4000012182765218}
   - 212: {fileID: 212000010265096344}
   - 95: {fileID: 95000010965470154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +2998,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013163899502}
   - 212: {fileID: 212000012480603494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3014,7 +3014,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011453028594}
   - 212: {fileID: 212000013402259340}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3030,7 +3030,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010685132228}
   - 212: {fileID: 212000014000462858}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3047,7 +3047,7 @@ GameObject:
   - 4: {fileID: 4000013374334192}
   - 212: {fileID: 212000011110835942}
   - 95: {fileID: 95000011976231106}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3063,7 +3063,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010051327240}
   - 212: {fileID: 212000011518301746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3079,7 +3079,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012902904170}
   - 212: {fileID: 212000010458893968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3096,7 +3096,7 @@ GameObject:
   - 4: {fileID: 4000011372954070}
   - 212: {fileID: 212000013302501110}
   - 95: {fileID: 95000014071720290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3112,7 +3112,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014101792902}
   - 212: {fileID: 212000010380483934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3128,7 +3128,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011427977630}
   - 212: {fileID: 212000012538828404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3144,7 +3144,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013087141820}
   - 212: {fileID: 212000010720497704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3160,7 +3160,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013773184666}
   - 212: {fileID: 212000010480823184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3177,7 +3177,7 @@ GameObject:
   - 4: {fileID: 4000014039595180}
   - 212: {fileID: 212000013249451440}
   - 95: {fileID: 95000010006561976}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3193,7 +3193,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013014260114}
   - 212: {fileID: 212000012481170478}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3209,7 +3209,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013791805972}
   - 212: {fileID: 212000011313236938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3225,7 +3225,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010065689298}
   - 212: {fileID: 212000010394301102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3241,7 +3241,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012506691364}
   - 212: {fileID: 212000011577805034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3257,7 +3257,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010838934682}
   - 212: {fileID: 212000010913767898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3273,7 +3273,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014126351126}
   - 212: {fileID: 212000012699478786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3290,7 +3290,7 @@ GameObject:
   - 4: {fileID: 4000011411448384}
   - 212: {fileID: 212000011602760632}
   - 95: {fileID: 95000010000267354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3306,7 +3306,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010640621924}
   - 212: {fileID: 212000011861457470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3323,7 +3323,7 @@ GameObject:
   - 4: {fileID: 4000012526519572}
   - 212: {fileID: 212000013268853926}
   - 95: {fileID: 95000011954334562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3339,7 +3339,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012338221370}
   - 212: {fileID: 212000013498004430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3355,7 +3355,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011744109454}
   - 212: {fileID: 212000013064980628}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3371,7 +3371,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010985468974}
   - 212: {fileID: 212000013877264722}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3387,7 +3387,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010275207650}
   - 212: {fileID: 212000012402880426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3403,7 +3403,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013031307416}
   - 212: {fileID: 212000012543477606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3420,7 +3420,7 @@ GameObject:
   - 4: {fileID: 4000013927109336}
   - 212: {fileID: 212000012282071556}
   - 95: {fileID: 95000011776977336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3436,7 +3436,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012915326318}
   - 61: {fileID: 61000012861279324}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3452,7 +3452,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013317411034}
   - 212: {fileID: 212000013705569622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3468,7 +3468,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013846740634}
   - 212: {fileID: 212000011307451436}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3484,7 +3484,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010353908692}
   - 61: {fileID: 61000011816799506}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3500,7 +3500,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013939322506}
   - 212: {fileID: 212000012073901430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3516,7 +3516,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011692942300}
   - 212: {fileID: 212000011960703888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3533,7 +3533,7 @@ GameObject:
   - 4: {fileID: 4000010609408830}
   - 212: {fileID: 212000013634581328}
   - 95: {fileID: 95000012665258038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3550,7 +3550,7 @@ GameObject:
   - 4: {fileID: 4000010862223452}
   - 212: {fileID: 212000010068736832}
   - 95: {fileID: 95000013300516974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3566,7 +3566,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013365772672}
   - 212: {fileID: 212000010641985642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3582,7 +3582,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010460237340}
   - 212: {fileID: 212000010516379218}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3598,7 +3598,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014283166004}
   - 61: {fileID: 61000011859379466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerBrownWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3614,7 +3614,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014177025408}
   - 212: {fileID: 212000011019185034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3630,7 +3630,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012097565738}
   - 60: {fileID: 60000013850351798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerRoofTop (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3646,7 +3646,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011200732322}
   - 212: {fileID: 212000011767378850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3661,7 +3661,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011623871158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerFence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3677,7 +3677,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013344839284}
   - 212: {fileID: 212000010723876336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3694,7 +3694,7 @@ GameObject:
   - 4: {fileID: 4000010985334702}
   - 212: {fileID: 212000010889034784}
   - 95: {fileID: 95000012217721676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3711,7 +3711,7 @@ GameObject:
   - 4: {fileID: 4000014089852414}
   - 212: {fileID: 212000010777251238}
   - 95: {fileID: 95000010281149798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3727,7 +3727,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012548983950}
   - 212: {fileID: 212000011922652042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3744,7 +3744,7 @@ GameObject:
   - 4: {fileID: 4000011331536538}
   - 212: {fileID: 212000013502899466}
   - 95: {fileID: 95000010766211502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3760,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010883353272}
   - 212: {fileID: 212000012683609360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3776,7 +3776,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011121945762}
   - 61: {fileID: 61000011740679978}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3792,7 +3792,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011630811376}
   - 212: {fileID: 212000010382066672}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3808,7 +3808,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011257231768}
   - 212: {fileID: 212000010326881862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3824,7 +3824,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014201869238}
   - 212: {fileID: 212000011584961150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3840,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011217438154}
   - 212: {fileID: 212000011743137570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3856,7 +3856,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013023333924}
   - 212: {fileID: 212000011068323938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3872,7 +3872,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014047433206}
   - 212: {fileID: 212000012662484712}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3888,7 +3888,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010463232876}
   - 61: {fileID: 61000010727310746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: kkdikkeplank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3905,7 +3905,7 @@ GameObject:
   - 4: {fileID: 4000011759857962}
   - 212: {fileID: 212000010493886558}
   - 95: {fileID: 95000013734819108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3922,7 +3922,7 @@ GameObject:
   - 4: {fileID: 4000010277614598}
   - 212: {fileID: 212000013736140150}
   - 95: {fileID: 95000014211881408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3938,7 +3938,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014045545864}
   - 212: {fileID: 212000013107872202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3954,7 +3954,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010414863180}
   - 61: {fileID: 61000011849181588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3970,7 +3970,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014186506198}
   - 212: {fileID: 212000010996269754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3986,7 +3986,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010055683732}
   - 61: {fileID: 61000013835280372}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerBrownWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4002,7 +4002,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010295935950}
   - 212: {fileID: 212000012637689764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4018,7 +4018,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010279941876}
   - 212: {fileID: 212000013617973508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4034,7 +4034,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013423934202}
   - 212: {fileID: 212000011669994776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4051,7 +4051,7 @@ GameObject:
   - 4: {fileID: 4000012044874536}
   - 212: {fileID: 212000012723221918}
   - 95: {fileID: 95000013619697988}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4067,7 +4067,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012664456926}
   - 212: {fileID: 212000010482697196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4083,7 +4083,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011512352806}
   - 212: {fileID: 212000011899899438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4099,7 +4099,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011004695124}
   - 212: {fileID: 212000013906685444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4115,7 +4115,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010941115452}
   - 61: {fileID: 61000010451827878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerBrownWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4131,7 +4131,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012350214932}
   - 212: {fileID: 212000010743126854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4147,7 +4147,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011065392256}
   - 212: {fileID: 212000010013671660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4163,7 +4163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011914470388}
   - 212: {fileID: 212000013183389638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4179,7 +4179,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011193045914}
   - 212: {fileID: 212000014226400002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4195,7 +4195,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010456762972}
   - 61: {fileID: 61000011634921478}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4212,7 +4212,7 @@ GameObject:
   - 4: {fileID: 4000012219410482}
   - 212: {fileID: 212000011207121402}
   - 95: {fileID: 95000012243972994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4228,7 +4228,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012130288978}
   - 212: {fileID: 212000013442739640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4244,7 +4244,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011083322972}
   - 212: {fileID: 212000013290796766}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4261,7 +4261,7 @@ GameObject:
   - 4: {fileID: 4000012863154192}
   - 212: {fileID: 212000012804077910}
   - 95: {fileID: 95000011078186012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4278,7 +4278,7 @@ GameObject:
   - 4: {fileID: 4000013011969516}
   - 61: {fileID: 61000010070080862}
   - 61: {fileID: 61000012098994952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4295,7 +4295,7 @@ GameObject:
   - 4: {fileID: 4000011948296262}
   - 212: {fileID: 212000013837063388}
   - 95: {fileID: 95000011028646162}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4311,7 +4311,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011422429816}
   - 212: {fileID: 212000010762524270}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4327,7 +4327,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013958124624}
   - 212: {fileID: 212000012005581856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4343,7 +4343,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013107069618}
   - 212: {fileID: 212000011332447406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4359,7 +4359,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010925762718}
   - 60: {fileID: 60000010357782554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerRoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4375,7 +4375,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013117257076}
   - 61: {fileID: 61000013024116148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: kkdikkeplank (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4391,7 +4391,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012939365014}
   - 212: {fileID: 212000012637242646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4407,7 +4407,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012856548316}
   - 212: {fileID: 212000010673129574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4422,7 +4422,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010245284888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HugeFence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4438,7 +4438,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010428770002}
   - 212: {fileID: 212000012283823568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4454,7 +4454,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014128151218}
   - 212: {fileID: 212000013018749982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4471,7 +4471,7 @@ GameObject:
   - 4: {fileID: 4000010267640950}
   - 212: {fileID: 212000010444350812}
   - 95: {fileID: 95000010015483318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4487,7 +4487,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012377788364}
   - 212: {fileID: 212000012001512268}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4503,7 +4503,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011258987334}
   - 212: {fileID: 212000013319656910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4519,7 +4519,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013060033754}
   - 212: {fileID: 212000011601977330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4535,7 +4535,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010610154836}
   - 212: {fileID: 212000011650251732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4552,7 +4552,7 @@ GameObject:
   - 4: {fileID: 4000011015751532}
   - 212: {fileID: 212000013181074296}
   - 95: {fileID: 95000014278043440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4568,7 +4568,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011048983496}
   - 212: {fileID: 212000011721215922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4584,7 +4584,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010346206358}
   - 212: {fileID: 212000014259700044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4601,7 +4601,7 @@ GameObject:
   - 4: {fileID: 4000011619578984}
   - 212: {fileID: 212000012734037806}
   - 95: {fileID: 95000012044160570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4617,7 +4617,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013510390660}
   - 212: {fileID: 212000013285442158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4633,7 +4633,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011316761610}
   - 212: {fileID: 212000011476592346}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4649,7 +4649,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012246123476}
   - 212: {fileID: 212000011206024692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4666,7 +4666,7 @@ GameObject:
   - 4: {fileID: 4000013500661524}
   - 212: {fileID: 212000010068199770}
   - 95: {fileID: 95000014015030204}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4682,7 +4682,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010160189818}
   - 61: {fileID: 61000010795311640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4698,7 +4698,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013266075820}
   - 212: {fileID: 212000011064767232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4714,7 +4714,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013218069410}
   - 212: {fileID: 212000014201640360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-top-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4730,7 +4730,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013996421146}
   - 61: {fileID: 61000010964205060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4746,7 +4746,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013192317278}
   - 212: {fileID: 212000013810027822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4762,7 +4762,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011203570638}
   - 212: {fileID: 212000013394086374}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4779,7 +4779,7 @@ GameObject:
   - 4: {fileID: 4000010137222800}
   - 212: {fileID: 212000014291455778}
   - 95: {fileID: 95000012614983798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4795,7 +4795,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011931694320}
   - 212: {fileID: 212000012803100846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4812,7 +4812,7 @@ GameObject:
   - 4: {fileID: 4000011828231684}
   - 61: {fileID: 61000014142850374}
   - 61: {fileID: 61000014232124528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4828,7 +4828,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013686415582}
   - 212: {fileID: 212000012263525226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4845,7 +4845,7 @@ GameObject:
   - 4: {fileID: 4000012860557710}
   - 212: {fileID: 212000013936079116}
   - 95: {fileID: 95000013943806668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4861,7 +4861,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011144303358}
   - 212: {fileID: 212000011830917420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4877,7 +4877,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010737415880}
   - 212: {fileID: 212000012783692116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4893,7 +4893,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010900078034}
   - 212: {fileID: 212000013853110944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4909,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013119669208}
   - 212: {fileID: 212000013937217312}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4925,7 +4925,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013783363486}
   - 212: {fileID: 212000013269841998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4942,7 +4942,7 @@ GameObject:
   - 4: {fileID: 4000013128057384}
   - 212: {fileID: 212000011050662262}
   - 95: {fileID: 95000010011568812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4958,7 +4958,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013375330202}
   - 61: {fileID: 61000013044904138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4975,7 +4975,7 @@ GameObject:
   - 4: {fileID: 4000013433740936}
   - 212: {fileID: 212000012529623700}
   - 95: {fileID: 95000013489325708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010586125904}
   - 212: {fileID: 212000012447300174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5007,7 +5007,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012646047588}
   - 212: {fileID: 212000012806658380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5023,7 +5023,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013330994918}
   - 212: {fileID: 212000010543923172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5039,7 +5039,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012918201872}
   - 212: {fileID: 212000011090588998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5056,7 +5056,7 @@ GameObject:
   - 4: {fileID: 4000013110836458}
   - 212: {fileID: 212000011239953972}
   - 95: {fileID: 95000010655329970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5072,7 +5072,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012431228540}
   - 212: {fileID: 212000010968675974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5088,7 +5088,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012613606000}
   - 212: {fileID: 212000012654219350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5104,7 +5104,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010020915028}
   - 212: {fileID: 212000013409487310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5121,7 +5121,7 @@ GameObject:
   - 4: {fileID: 4000012612849214}
   - 212: {fileID: 212000013685183390}
   - 95: {fileID: 95000011346292694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5138,7 +5138,7 @@ GameObject:
   - 4: {fileID: 4000010250255784}
   - 212: {fileID: 212000011880291610}
   - 95: {fileID: 95000013075657834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5155,7 +5155,7 @@ GameObject:
   - 4: {fileID: 4000013473264838}
   - 212: {fileID: 212000011756993286}
   - 95: {fileID: 95000011589781704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5171,7 +5171,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013259167232}
   - 212: {fileID: 212000014244746432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5187,7 +5187,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011236738036}
   - 212: {fileID: 212000012789197444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5204,7 +5204,7 @@ GameObject:
   - 4: {fileID: 4000013201120494}
   - 212: {fileID: 212000012517857556}
   - 95: {fileID: 95000010736407494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5220,7 +5220,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012373827622}
   - 212: {fileID: 212000010377514534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5236,7 +5236,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013128226440}
   - 212: {fileID: 212000012379569638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5253,7 +5253,7 @@ GameObject:
   - 4: {fileID: 4000012103789156}
   - 212: {fileID: 212000013769638212}
   - 95: {fileID: 95000011840782910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5269,7 +5269,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010896445838}
   - 212: {fileID: 212000013008719370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5285,7 +5285,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011891623946}
   - 212: {fileID: 212000012195026780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5301,7 +5301,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012680093396}
   - 212: {fileID: 212000014199211146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: brown-wall-mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5318,7 +5318,7 @@ GameObject:
   - 4: {fileID: 4000012938657154}
   - 61: {fileID: 61000010390535024}
   - 61: {fileID: 61000012095480816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5334,7 +5334,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013061266634}
   - 61: {fileID: 61000013031491184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5351,7 +5351,7 @@ GameObject:
   - 4: {fileID: 4000010563827536}
   - 212: {fileID: 212000011329817168}
   - 95: {fileID: 95000011804524560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5367,7 +5367,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013309265300}
   - 212: {fileID: 212000012076229556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5383,7 +5383,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010467431732}
   - 212: {fileID: 212000011765737446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5399,7 +5399,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013233546772}
   - 212: {fileID: 212000014059493076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5415,7 +5415,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011192896818}
   - 212: {fileID: 212000010278539652}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5431,7 +5431,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013583273478}
   - 61: {fileID: 61000010706312354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5448,7 +5448,7 @@ GameObject:
   - 4: {fileID: 4000011521635426}
   - 212: {fileID: 212000012127500068}
   - 95: {fileID: 95000013412523352}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5465,7 +5465,7 @@ GameObject:
   - 4: {fileID: 4000010227747748}
   - 212: {fileID: 212000013858744756}
   - 95: {fileID: 95000010038733218}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-small-mid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5481,7 +5481,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010341639604}
   - 212: {fileID: 212000013900276496}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5497,7 +5497,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013522452008}
   - 60: {fileID: 60000011460786622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerRoofTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5513,7 +5513,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014019798074}
   - 212: {fileID: 212000013072915422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5530,7 +5530,7 @@ GameObject:
   - 4: {fileID: 4000010844484078}
   - 61: {fileID: 61000011100137900}
   - 61: {fileID: 61000010159503598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BroaderRedWall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5546,7 +5546,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010053848470}
   - 212: {fileID: 212000013502486156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5562,7 +5562,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010640874892}
   - 61: {fileID: 61000010107922264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5578,7 +5578,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012342625856}
   - 212: {fileID: 212000013498321188}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5594,7 +5594,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012040231804}
   - 61: {fileID: 61000011077132640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5610,7 +5610,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013590822318}
   - 212: {fileID: 212000011289019206}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red-wall-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5626,7 +5626,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013293671304}
   - 61: {fileID: 61000013628179302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerGreenSeperator (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5642,7 +5642,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012694259726}
   - 61: {fileID: 61000010898034066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5658,7 +5658,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010414552178}
   - 212: {fileID: 212000013164615032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5674,7 +5674,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011908241050}
   - 212: {fileID: 212000010635813240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5690,7 +5690,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014176637542}
   - 61: {fileID: 61000012627425136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BiggerMiniWall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5706,7 +5706,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010254513056}
   - 212: {fileID: 212000010679796784}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: separator-mid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5722,7 +5722,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014269978538}
   - 212: {fileID: 212000013094156932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: roof-small-mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6938,7 +6938,7 @@ Transform:
   m_GameObject: {fileID: 1000010271028524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011828231684}
