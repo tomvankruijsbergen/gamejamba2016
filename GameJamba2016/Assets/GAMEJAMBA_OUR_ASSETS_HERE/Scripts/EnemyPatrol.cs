@@ -27,7 +27,7 @@ public class EnemyPatrol : MonoBehaviour {
 		float distancePercentage = (deltaTime % patrolDuration) / patrolDuration;
 		
 		//Are we going to A ???
-		Debug.Log(deltaTime % patrolDuration * 2f);
+		// Debug.Log(deltaTime % patrolDuration * 2f);
 		if(deltaTime % patrolDuration * 2f < patrolDuration) {
 			//morph value for to A
 			distancePercentage = 1f - distancePercentage;
