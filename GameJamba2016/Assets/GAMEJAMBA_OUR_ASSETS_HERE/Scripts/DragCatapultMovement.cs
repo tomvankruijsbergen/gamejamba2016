@@ -14,7 +14,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	private float distance;
 	private Vector3 point;
 
-	private float maxDragDistance = 99f;
+	[SerializeField] private float maxDragStartDistance = 7f;
 
 	public int jumpCount;
 	public int resetJumpToThis;
@@ -22,6 +22,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	private Vector2 lastIncrementPosition;
 	private float stretchIncrement = 6f;
 	private float theTimesForStretchIncrementHasArrivedNow;
+	private bool iAmOfDraggedBeforeThisPeriod = false;
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
@@ -30,23 +31,35 @@ public class DragCatapultMovement : MonoBehaviour {
 		resetJumpToThis = jumpCount;
 	}
 	
-	void OnMouseDown() 
+	void DoDragRayCast() 
 	{
 		if(jumpCount>0){
-			
+			Vector2 mousePointInWorld = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			//TODO: deze distance is onafhankelijk van scherm grote ofzo ? 
+			//iig: klein scherm is kanker weinig vaart krijgen
+			float distance = Vector2.Distance(transform.position, mousePointInWorld);
+		
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if(plane.Raycast(ray, out distance)) {
-				point = ray.GetPoint(distance);
-				lastIncrementPosition = point;
-				if(Vector2.Distance(point, transform.position) <= maxDragDistance){
-					mouseDownPos = Input.mousePosition;
-					Container.instance.DragStart(mouseDownPos);
-				}
+
+			if(distance <= maxDragStartDistance){
+				iAmOfDraggedBeforeThisPeriod = true;
+				mouseDownPos = Input.mousePosition;
+				Container.instance.DragStart(mouseDownPos);
 			}
 		}
 	}
 
 	void Update(){
+		if(Input.GetMouseButtonDown(0)) {
+			DoDragRayCast();
+		}
+		if(Input.GetMouseButtonUp(0)) {
+			if(jumpCount>0 && iAmOfDraggedBeforeThisPeriod){
+				StartCoroutine(Launch());
+				jumpCount--;
+			}
+		}
+
 		if(mouseDownPos != Vector2.zero && jumpCount >0){
 			Container.instance.DragUpdate(Input.mousePosition);
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -63,15 +76,6 @@ public class DragCatapultMovement : MonoBehaviour {
 				}
 			}
 
-		}
-	}
-	
-	void OnMouseUp() 
-	{
-		
-		if(jumpCount>0){
-			StartCoroutine(Launch());
-			jumpCount --;
 		}
 	}
 
