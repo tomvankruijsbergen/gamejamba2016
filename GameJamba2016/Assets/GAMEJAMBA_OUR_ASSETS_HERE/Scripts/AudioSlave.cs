@@ -11,7 +11,7 @@ public class AudioSlave : MonoBehaviour {
 
 	private void TimeChanged(float timeScale) {
 		if(source != null) {
-			source.pitch = Mathf.Clamp(timeScale, 0.6f, 1.4f);
+			source.pitch = Mathf.Clamp(timeScale, 0.8f, 1.4f);
 		}
 	}
 
