@@ -115,13 +115,14 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 	}
 
 	private IEnumerator DelayedForce(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
+		output.secondSideGameObject.transform.parent = output.firstSideGameObject.transform.parent;
+		output.secondSideGameObject.transform.position = output.firstSideGameObject.transform.position;
+		//remove potentials script the ugly way
 
 		yield return new WaitForSeconds(forceDelay);
-		
+
 		GameObject particles1 = GameObject.Instantiate( spriteBurst, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
-		
 		GameObject particles2 = GameObject.Instantiate( spriteBurst, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
-		
 		GameObject particles3 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		particles3.transform.parent = output.firstSideGameObject.transform;
 		GameObject particles4 = GameObject.Instantiate( bloodBurstParticles, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
@@ -142,6 +143,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		Rigidbody2D rbdy1 = output.firstSideGameObject.GetComponent<Rigidbody2D>();
 		Rigidbody2D rbdy2 = output.secondSideGameObject.GetComponent<Rigidbody2D>();
+
+		rbdy1.isKinematic = false;
+		rbdy2.isKinematic = false;
 
 		rbdy1.AddForceAtPosition(-force, slashStart);
 		rbdy2.AddForceAtPosition(force, slashEnd);
