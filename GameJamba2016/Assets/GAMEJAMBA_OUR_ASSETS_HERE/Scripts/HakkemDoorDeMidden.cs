@@ -4,7 +4,11 @@ using UnitySpriteCutter;
 
 public class HakkemDoorDeMidden : MonoBehaviour {
 
-	[SerializeField]	private LayerMask enemyLayers;
+	[SerializeField]
+	private Object[] removeDezeKankerScriptsAlsIkIemandKapotMaakAUB;
+
+	[SerializeField]
+	private LayerMask enemyLayers;
 
 	[SerializeField]	private float areaOfAttack;
 
@@ -130,7 +134,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 	private IEnumerator DelayedForce(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
 		output.secondSideGameObject.transform.parent = output.firstSideGameObject.transform.parent;
 		output.secondSideGameObject.transform.position = output.firstSideGameObject.transform.position;
+		
 		//remove potentials script the ugly way
+
 
 		yield return new WaitForSeconds(forceDelay);
 
