@@ -4,26 +4,26 @@ using UnitySpriteCutter;
 
 public class HakkemDoorDeMidden : MonoBehaviour {
 
+<<<<<<< HEAD
 	[SerializeField]
 	private Object[] removeDezeKankerScriptsAlsIkIemandKapotMaakAUB;
 
 	[SerializeField]
 	private LayerMask enemyLayers;
+=======
+	[SerializeField]	private LayerMask enemyLayers;
+>>>>>>> a20ec62a718984fbd79cb84893b02dc6c72b6cb2
 
-	[SerializeField]
-	private float areaOfAttack;
+	[SerializeField]	private float areaOfAttack;
 
 	Collider2D[] enemiesToBeHakkedDoorDeMidden;
 
-	[SerializeField]
-	private SpriteRenderer drawSword;
-	[SerializeField]
-	private SpriteRenderer hakSword;
+	[SerializeField]	private SpriteRenderer drawSword;
+	[SerializeField]	private SpriteRenderer hakSword;
 
 	Rigidbody2D myRigidBody;
 
-	[SerializeField]
-	private float forceDelay;
+	[SerializeField]	private float forceDelay;
 
 	private GameObject bloodBurstParticles;
 	private GameObject spriteBurst;
@@ -34,6 +34,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		bloodBurstParticles = Resources.Load("Prefabs/BloodBurst") as GameObject;
 		spriteBurst = Resources.Load("Prefabs/SpriteSplat") as GameObject;
 		Container.instance.OnPlayerDied += PlayerKilled;
+		Container.instance.OnEnemyHit += EnemyHit;
 	}
 
 	private void PlayerKilled(Transform byWhom) {
@@ -59,10 +60,20 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		enemiesToBeHakkedDoorDeMidden = Physics2D.OverlapCircleAll(transform.position, areaOfAttack, enemyLayers,0,99);
 
 		foreach(Collider2D enemyCollider in enemiesToBeHakkedDoorDeMidden){
-			enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
+			Health potentialHealthComponent = enemyCollider.gameObject.GetComponent<Health>();
+			if(
+					(potentialHealthComponent == null) || 
+					(potentialHealthComponent != null && potentialHealthComponent.health - 1 == 0)		
+			){
+				enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
+				Vector2 slashDirection = enemyCollider.transform.position;
+				Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
+			}
+			if(potentialHealthComponent != null) {
+				potentialHealthComponent.health--;
+			}
 			
-			Vector2 slashDirection = enemyCollider.transform.position;
-			Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
+			
 		}
 	}
 
@@ -81,6 +92,13 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		} else {
 			Destroy(gameObject);
 			StartCoroutine(KillMyself(output, slashStart, slashEnd));
+		}
+	}
+
+	private void EnemyHit(Transform hitBy) {
+		bool hasEnemyPatrol = hitBy.gameObject.GetComponent<EnemyPatrol>() != null;
+		if(hasEnemyPatrol) {
+			//do specefiek shit
 		}
 	}
 

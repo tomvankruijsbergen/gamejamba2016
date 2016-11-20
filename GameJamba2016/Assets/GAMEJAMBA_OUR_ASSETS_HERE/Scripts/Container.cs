@@ -25,6 +25,9 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _EnemyKilled(GameObject enemyKilled);
 	public event _EnemyKilled OnEnemyKilled;
 
+	public delegate void _EnemyHit(Transform hitBy);
+	public event _EnemyHit OnEnemyHit;
+
 	public delegate void _TimeChanged(float timeScale);
 	public event _TimeChanged OnTimeChanged;
 
@@ -49,6 +52,9 @@ public class Container : MonoSingleton<Container> {
 	public event _ScoreChanged OnScoreChanged;
 	public delegate void _KillStreakChanged(float streakAmount);
 	public event _KillStreakChanged OnKillStreakChanged;
+
+	public delegate void _BossKilled();
+	public event _BossKilled OnBossKilled;
 
 	public override void Init () {
 		//instantiate the config
@@ -121,6 +127,10 @@ public class Container : MonoSingleton<Container> {
 	public void DoPlayerKill(Transform killedBy) {
 		this.OnPlayerDied(killedBy);
 	}
+	
+	public void DoEnemyHit(Transform hitBy) {
+		this.OnEnemyHit(hitBy);
+	}
 
 	public void PlayerMoved(Vector2 position, Vector2 velocity) {
 		this.OnPlayerMoved(position, velocity);
@@ -148,6 +158,10 @@ public class Container : MonoSingleton<Container> {
 
 	public void EnemyKilled(GameObject enemyKilled){
 		this.OnEnemyKilled(enemyKilled);
+
+		if (enemyKilled.GetComponent<EnemyBoss>() != null) {
+			this.OnBossKilled();
+		}
 	}
 
 	public void ScoreChanged(float newScore) {
