@@ -14,7 +14,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	private float distance;
 	private Vector3 point;
 
-	private float maxDragDistance = 5f;
+	private float maxDragDistance = 99f;
 
 	public int jumpCount = 2;
 
