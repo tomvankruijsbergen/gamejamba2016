@@ -14,6 +14,8 @@ public class CameraBehaviour : MonoBehaviour {
 	private float lookAheadVelocityModifier = 12f;
 	[SerializeField]
 	private float lookAheadMax = 20f;
+	[SerializeField]
+	private float yOffset = -3f;
 
 	[SerializeField]
 	private float movementSmoothTime = 0.6f;
@@ -98,10 +100,13 @@ public class CameraBehaviour : MonoBehaviour {
 		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime);
 
 		Vector2 newTarget = position + difference + extraAmount;
+		newTarget.y += yOffset;
 		Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, transform.position.z);
 
 		Vector3 resultPosition = Vector3.SmoothDamp(transform.position, newPosition, ref this.moveVelocity, this.movementSmoothTime);
-		transform.position = resultPosition;
+		Vector3 usedPosition = resultPosition;
+		
+		transform.position = usedPosition;
 
 		Container.instance.CameraMoved(new Vector2(resultPosition.x, resultPosition.y));
 	}
