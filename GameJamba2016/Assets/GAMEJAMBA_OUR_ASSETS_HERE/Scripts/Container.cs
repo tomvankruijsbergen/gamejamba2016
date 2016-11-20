@@ -140,10 +140,12 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	public void CameraMoved(Vector2 position) {
-		this.OnCameraMoved(position);
+		//TODO: Moet dit weer aan?
+//		this.OnCameraMoved(position);
 	}
 	public void CameraZoomed(float newZoom) {
-		this.OnCameraZoomed(newZoom);
+		//TODO: Moet dit weer aan?
+//		this.OnCameraZoomed(newZoom);
 	}
 
 	public void DragStart(Vector2 dragPosition) {

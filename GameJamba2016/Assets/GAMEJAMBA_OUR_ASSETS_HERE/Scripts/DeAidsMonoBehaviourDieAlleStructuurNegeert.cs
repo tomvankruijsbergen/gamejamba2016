@@ -3,10 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnitySpriteCutter;
 
-public class HakkemDoorDeMidden : MonoBehaviour {
-
-	[SerializeField]
-	private Object[] removeDezeKankerScriptsAlsIkIemandKapotMaakAUB;
+public class DeAidsMonoBehaviourDieAlleStructuurNegeert : MonoBehaviour {
 
 	[SerializeField]
 	private LayerMask enemyLayers;
@@ -85,18 +82,11 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden, Vector2 slashStart, Vector2 slashEnd, bool isEnemy = true){
 		//remove potentials script the ugly way
-		for(int i = 0; i < removeDezeKankerScriptsAlsIkIemandKapotMaakAUB.Length; i++) {
-			//TODO: haal kanker scripts van kanker object af kanker
-			var potentialRemove = enemyToBeHakkedDoorDeMidden.GetComponent(removeDezeKankerScriptsAlsIkIemandKapotMaakAUB[i].GetType().ToString());
-			if(potentialRemove != null) {
-				Destroy(potentialRemove);
-			}
-		}
 		SpriteCutterOutput output = SpriteCutter.Cut( new SpriteCutterInput() {
 			lineStart = slashStart,
 			lineEnd = slashEnd,
 			gameObject = enemyToBeHakkedDoorDeMidden,
-			gameObjectCreationMode = isEnemy ? SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY : SpriteCutterInput.GameObjectCreationMode.CUT_INTO_TWO,
+			gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_NEW,
 		} );
 		if(isEnemy) {
 			gameObject.GetComponent<DragCatapultMovement>().ResetJumpCount();
@@ -155,6 +145,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		yield return new WaitForSeconds(forceDelay);
 
+		//fix the Rigidbody2D for secondSideGameObject
+		output.secondSideGameObject.transform.gameObject.AddComponent<Rigidbody2D>();
+
 		GameObject particles1 = GameObject.Instantiate( spriteBurst, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		GameObject particles2 = GameObject.Instantiate( spriteBurst, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		GameObject particles3 = GameObject.Instantiate( bloodBurstParticles, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
@@ -167,6 +160,12 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		particles3.transform.Rotate(new Vector3(-90,0,0));
 		particles4.transform.Rotate(new Vector3(90,0,0));
+
+		//particle scaling
+		particles1.transform.localScale = output.firstSideGameObject.transform.localScale;
+		particles2.transform.localScale = output.firstSideGameObject.transform.localScale;
+		particles3.transform.localScale = output.firstSideGameObject.transform.localScale;
+		particles4.transform.localScale = output.firstSideGameObject.transform.localScale;
 
 		Vector2 distance = output.firstSideGameObject.transform.position - output.secondSideGameObject.transform.position;
 
@@ -190,7 +189,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 	void OnDestroy() {
 		Container.instance.OnPlayerDied -= PlayerKilled;
-		Container.instance.OnEnemyHit   -= EnemyHit;
-		Container.instance.OnDragEnd  -= ClearEnemiesThisDrag;
+		Container.instance.OnEnemyHit -= EnemyHit;
+		Container.instance.OnDragEnd -= ClearEnemiesThisDrag;
 	}
 }

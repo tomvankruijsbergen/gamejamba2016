@@ -18,6 +18,13 @@ public class EnemyPatrol : MonoBehaviour {
 		if(patrolPointA.position.y != patrolPointB.position.y) {
 			Debug.Log("Is the enemy really walking on a slope faggot???");
 		}
+		Container.instance.OnEnemyKilled += CheckIfIGotKilled;
+	}
+
+	public void CheckIfIGotKilled(GameObject isThisMe) {
+		if(isThisMe == gameObject) {
+			Destroy(this);
+		}
 	}
 
 	// Update is called once per frame
@@ -44,5 +51,9 @@ public class EnemyPatrol : MonoBehaviour {
 
 		//now do the y
 		transform.position = new Vector3(transform.position.x, baseY + Mathf.Abs(Mathf.Sin(deltaTime * hopSpeed)) *  maxHopHeight);
+	}
+
+	void OnDestroy() {
+		Container.instance.OnEnemyKilled -= CheckIfIGotKilled;
 	}
 }

@@ -63,6 +63,7 @@ public class AudioManager : MonoBehaviour {
         Container.instance.OnKillStreakChanged += this.OnKillStreakChanged;
         Container.instance.OnDragStart += this.StartDragSound;
         Container.instance.OnDragEnd += this.EndDragSound;
+        Container.instance.OnEnemyHit += this.OnEnemyHit;
 
         // Container.instance. 'OnEnemyDoDamage' of zoiets += this.DoArmorHit;
     }
@@ -85,7 +86,7 @@ public class AudioManager : MonoBehaviour {
         PlaySoundClip(release);
     }
 
-    void DoEnemyHit(GameObject hitByPlayerObviouslyWhyIsThisHereYorkQuestionMark) {
+    private void OnEnemyHit(Transform hitby) {
         StartCoroutine(SwordHitRoutine(false));
     }
     
@@ -215,6 +216,7 @@ public class AudioManager : MonoBehaviour {
         Container.instance.OnKillStreakChanged -= this.OnKillStreakChanged;
         Container.instance.OnDragStart -= this.StartDragSound;
         Container.instance.OnDragEnd -= this.EndDragSound;
+        Container.instance.OnEnemyHit -= this.OnEnemyHit;
     } 
 
 
