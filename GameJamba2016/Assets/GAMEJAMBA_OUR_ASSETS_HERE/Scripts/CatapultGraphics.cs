@@ -52,7 +52,7 @@ public class CatapultGraphics : MonoBehaviour {
 			}
 			var dir = (Vector2)transform.position - lastPosition;
 			if(dir.magnitude < 0.05f) {
-				if(spriteRenderer.flipY) {
+				if(spriteRenderer.transform.localScale.y < 0) {
 					transform.rotation = Quaternion.AngleAxis(-180f, Vector3.forward);
 				} else {
 					transform.rotation = Quaternion.AngleAxis(0f, Vector3.forward);
@@ -61,9 +61,11 @@ public class CatapultGraphics : MonoBehaviour {
 				var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 				transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 				if(angle < -90 || angle > 90){
-					spriteRenderer.flipY =true;
+					// spriteRenderer.flipY =true;
+					spriteRenderer.transform.localScale = new Vector2(spriteRenderer.transform.localScale.x, -1);
 				}else{
-					spriteRenderer.flipY =false;
+					// spriteRenderer.flipY =false;
+					spriteRenderer.transform.localScale = new Vector2(spriteRenderer.transform.localScale.x, 1);
 				}
 			}
 			lastPosition = transform.position;
@@ -83,6 +85,7 @@ public class CatapultGraphics : MonoBehaviour {
 			headBandEnd.transform.position = transform.position  - transform.right * 2.5f;
 			weDraggin = false;
 		}
+		// Container.instance
 	}
 
 	void DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
@@ -103,10 +106,11 @@ public class CatapultGraphics : MonoBehaviour {
 			diff.Normalize();
 			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 			if(rot_z < -90 || rot_z > 90){
-				spriteRenderer.flipY =false;
-				
+				// spriteRenderer.flipY =false;
+				spriteRenderer.transform.localScale = new Vector2(spriteRenderer.transform.localScale.x, 1);
 			}else{
-				spriteRenderer.flipY =true;
+				// spriteRenderer.flipY =true;
+				spriteRenderer.transform.localScale = new Vector2(spriteRenderer.transform.localScale.x, -1);
 			}
 			transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 180);
 		}
