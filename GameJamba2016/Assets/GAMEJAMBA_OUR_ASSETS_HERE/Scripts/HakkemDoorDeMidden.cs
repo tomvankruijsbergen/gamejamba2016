@@ -4,15 +4,11 @@ using UnitySpriteCutter;
 
 public class HakkemDoorDeMidden : MonoBehaviour {
 
-<<<<<<< HEAD
 	[SerializeField]
 	private Object[] removeDezeKankerScriptsAlsIkIemandKapotMaakAUB;
 
 	[SerializeField]
 	private LayerMask enemyLayers;
-=======
-	[SerializeField]	private LayerMask enemyLayers;
->>>>>>> a20ec62a718984fbd79cb84893b02dc6c72b6cb2
 
 	[SerializeField]	private float areaOfAttack;
 
