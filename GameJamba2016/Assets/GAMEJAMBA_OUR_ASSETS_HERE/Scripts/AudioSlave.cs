@@ -15,10 +15,11 @@ public class AudioSlave : MonoBehaviour {
 		}
 	}
 
-	public void Play(AudioClip clip, float maxHearDistance) {
+	public void Play(AudioClip clip, float maxHearDistance, float volume = 1f) {
 		source = gameObject.AddComponent<AudioSource>() as AudioSource;
         source.clip = clip;
         source.loop = false;
+		source.volume = volume;
 		source.maxDistance = maxHearDistance;
 		source.Play();
 		
