@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public struct BackgroundSingleData {
 	public Material material;
-	public Vector3 parallax;
+	public Vector2 parallax;
 	public float yOffset;
 }
 
@@ -19,6 +19,8 @@ public class BackgroundManager : MonoBehaviour {
 	public BackgroundSingleData[] backgrounds;
 
 	private List<BackgroundSingle> activeBackgrounds = new List<BackgroundSingle>();
+
+	private Vector3 initialScale;
 	
 	void Awake() {
 		for (int i = 0; i < this.backgrounds.Length; i++) {
@@ -33,25 +35,24 @@ public class BackgroundManager : MonoBehaviour {
 			
 			int zIndex = (this.backgrounds.Length - i);
 			if (single.data.parallax.x <= 1) {
-				zIndex *= -1;
+				//zIndex *= -1;
 			}
 			activeBackground.GetComponent<MeshRenderer>().material = single.data.material;
 			activeBackground.transform.position = new Vector3(0, 0, (this.backgrounds.Length - i) * 0.01f);
-			//activeBackground.transform.localScale = new Vector3(single.data.scale, single.data.scale, single.data.scale);
 
 			single.gameObject = activeBackground;
 
 			activeBackgrounds.Add(single);
 		}
-		
 
-		Container.instance.OnPlayerMoved += this.OnPlayerMoved;
 		Container.instance.OnCameraMoved += this.OnCameraMoved;
 		Container.instance.OnCameraZoomed += this.OnCameraZoomed;
 	}
 
 	void Start() {
-		this.OnCameraZoomed(Container.instance.GetCameraSize());
+		float zoom = Container.instance.GetCameraSize();
+		this.OnCameraZoomed(zoom);
+		this.initialScale = this.GetLocalScaleForZoom(zoom);
 	}
 
 	void OnCameraMoved(Vector2 newPosition) {
@@ -63,36 +64,37 @@ public class BackgroundManager : MonoBehaviour {
 			);
 
 			Material material = backgroundSingle.gameObject.GetComponent<MeshRenderer>().material;
-			material.mainTextureOffset = new Vector2(
-				newPosition.x * backgroundSingle.data.parallax.x / backgroundSingle.gameObject.transform.localScale.x,
-				newPosition.y * backgroundSingle.data.parallax.y / backgroundSingle.gameObject.transform.localScale.y
+			Vector3 scale = backgroundSingle.gameObject.transform.localScale;
+			Vector2 mainTextureOffset = new Vector2(
+			 	(newPosition.x * backgroundSingle.data.parallax.x) / scale.x,
+			 	(newPosition.y * backgroundSingle.data.parallax.y) / scale.y
 			);
+			// Beweeg de coordinates 0.5 * het absolute verschil tussen scale en initialscale gedeeld door max
+			Vector2 additions = new Vector2(
+				((scale.x - initialScale.x) / scale.x) * backgroundSingle.data.parallax.x * (newPosition.x / initialScale.x),
+				((scale.y - initialScale.y) / scale.y) * backgroundSingle.data.parallax.y
+			);
+			
+			mainTextureOffset += additions;
+			material.mainTextureOffset = mainTextureOffset;
 		} 
 	}
 	void OnCameraZoomed(float newZoom) {
-		float aspect = Container.instance.GetCameraAspect();
-		float width = 2f * newZoom;
-		float height = width * aspect;
+		Vector2 newScale = this.GetLocalScaleForZoom(newZoom);
 
 		foreach (BackgroundSingle backgroundSingle in this.activeBackgrounds) {
-			backgroundSingle.gameObject.transform.localScale = new Vector3(height, width, 1);
+			backgroundSingle.gameObject.transform.localScale = new Vector3(newScale.x, newScale.y, 1);
 		}
 	}
+	Vector2 GetLocalScaleForZoom(float zoom) {
+		float aspect = Container.instance.GetCameraAspect();
+		float width = 2f * zoom;
+		float height = width * aspect;
 
-	void OnPlayerMoved(Vector2 position, Vector2 velocity) {
-		// move the parallax in each background layer
-		/*
-		foreach (BackgroundSingle backgroundSingle in this.activeBackgrounds) {
-			Vector2 newTarget = position * backgroundSingle.data.parallax;
-			newTarget.y += backgroundSingle.data.y;
-			Vector3 newPosition = new Vector3(newTarget.x, newTarget.y, backgroundSingle.gameObject.transform.position.z);
-			backgroundSingle.gameObject.transform.position = newPosition;
-		}
-		*/
+		return new Vector2(height, width);
 	}
 
 	void Destroy() {
-        Container.instance.OnPlayerMoved -= this.OnPlayerMoved;
 		Container.instance.OnCameraMoved -= this.OnCameraMoved;
 		Container.instance.OnCameraZoomed -= this.OnCameraZoomed;
     }
