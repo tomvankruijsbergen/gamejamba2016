@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour {
             source.clip = clip;
             source.maxDistance = Mathf.Infinity;
             source.loop = true;
-            source.volume = 1;
+            source.volume = Container.instance.config.musicVolume;
             source.Play();
 
             audioSources[clip] = source;
@@ -106,7 +106,7 @@ public class AudioManager : MonoBehaviour {
             volume = 0;
         }
         if (volume > 1) {
-            volume = 1;
+            volume = Container.instance.config.musicVolume;
         }
 
         busyVolume = Mathf.SmoothDamp(busyVolume, volume, ref busyVolumeVelocity, this.busySoundVolumeFadeDuration);
@@ -139,7 +139,7 @@ public class AudioManager : MonoBehaviour {
             maxDistance = Mathf.Infinity;
             soundObject.transform.parent = transform;
         }
-        slave.Play(clip, maxDistance);
+        slave.Play(clip, maxDistance, Container.instance.config.sfxVolume);
     }
 
     private void StopSound(AudioClip soundToStop){
