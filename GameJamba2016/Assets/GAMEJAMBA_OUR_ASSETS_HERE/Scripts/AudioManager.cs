@@ -14,8 +14,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private float maxSoundDistanceForFX = 10f;
 
     [SerializeField] private AudioClip[] yuuuuaaaaas;
-    [SerializeField] private AudioClip swooshSound;
-    [SerializeField] private AudioClip normalHitSound;
+    [SerializeField] private AudioClip[] normalHitSounds;
+    [SerializeField] private AudioClip chinkSound;
     [SerializeField] private AudioClip armorHitSound;
 
     [SerializeField] private AudioClip killEnemy;
@@ -60,21 +60,21 @@ public class AudioManager : MonoBehaviour {
     }
 
     void DoNormalHit(GameObject normaleHenk) {
-        PlaySoundClip(swooshSound);
-        this.SwordHitDelay();
-        PlaySoundClip(normalHitSound);
+        StartCoroutine(SwordHitDelay());
     }
 
     void DoArmorHit(GameObject armorHenk) {
-        PlaySoundClip(swooshSound);
-        this.SwordHitDelay();
-        PlaySoundClip(armorHitSound);
+        //StartCoroutine(SwordHitDelay(1f));
     }
 
     private IEnumerator SwordHitDelay(){
-		//
-		yield return new WaitForSeconds(0.002f);
-		//
+		PlaySoundClip(chinkSound);
+        yield return new WaitForSeconds(.2f);
+        PlaySoundClip(armorHitSound);
+        yield  return new WaitForSeconds(.3f);
+        int randomIndex = Random.Range(0, normalHitSounds.Length);
+        AudioClip randomSound = normalHitSounds[randomIndex];
+        PlaySoundClip(randomSound);
     }
 
     void OnPlayerMoved(Vector2 position, Vector2 velocity) {
