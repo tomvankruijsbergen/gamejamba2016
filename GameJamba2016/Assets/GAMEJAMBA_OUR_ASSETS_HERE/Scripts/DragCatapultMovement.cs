@@ -21,6 +21,7 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	private Vector2 lastIncrementPosition;
 	private float stretchIncrement = 6f;
+	private float theTimesForStretchIncrementHasArrivedNow;
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
@@ -47,16 +48,16 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	void Update(){
 		if(mouseDownPos != Vector2.zero && jumpCount >0){
-
-
 			Container.instance.DragUpdate(Input.mousePosition);
-
-
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if(plane.Raycast(ray, out distance)) {
 				point = ray.GetPoint(distance);
 				// lastIncrementPosition = point;
-				if(Vector2.Distance(lastIncrementPosition,point) > stretchIncrement){
+				if(
+					Vector2.Distance(lastIncrementPosition,point) > stretchIncrement &&
+					theTimesForStretchIncrementHasArrivedNow < Time.time
+				){
+					theTimesForStretchIncrementHasArrivedNow = Time.time + .05f;
 					lastIncrementPosition = point;
 					Container.instance.DragIncrement(point);
 				}
