@@ -12,6 +12,11 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 	Collider2D[] enemiesToBeHakkedDoorDeMidden;
 
+	[SerializeField]
+	private SpriteRenderer drawSword;
+	[SerializeField]
+	private SpriteRenderer hakSword;
+
 	Rigidbody2D myRigidBody;
 
 	[SerializeField]
@@ -66,7 +71,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			gameObjectCreationMode = isEnemy ? SpriteCutterInput.GameObjectCreationMode.CUT_OFF_COPY : SpriteCutterInput.GameObjectCreationMode.CUT_INTO_TWO,
 		} );
 		if(isEnemy) {
+			gameObject.GetComponent<DragCatapultMovement>().ResetJumpCount();
 			StartCoroutine(DelayedForce(output, slashStart, slashEnd));
+			StartCoroutine(SwordAnimations());
 			Container.instance.EnemyKilled(enemyToBeHakkedDoorDeMidden);
 		} else {
 			Destroy(gameObject);
@@ -95,10 +102,20 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		rbdy2.AddTorque(9001);
 
 		yield return new WaitForSeconds(forceDelay);
+
+	}
+
+	private IEnumerator SwordAnimations(){
+		drawSword.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		drawSword.enabled = false;
+		hakSword.enabled = true;
+		yield return new WaitForSeconds(0.2f);
+		hakSword.enabled = false;
 	}
 
 	private IEnumerator DelayedForce(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
-		
+
 		yield return new WaitForSeconds(forceDelay);
 		
 		GameObject particles1 = GameObject.Instantiate( spriteBurst, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
@@ -131,6 +148,5 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		rbdy1.AddTorque(9001);
 		rbdy2.AddTorque(9001);
-
 	}
 }

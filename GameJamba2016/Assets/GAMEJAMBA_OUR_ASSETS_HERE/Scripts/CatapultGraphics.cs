@@ -39,7 +39,9 @@ public class CatapultGraphics : MonoBehaviour {
 	}
 
 	void DragStart(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
-		weDraggin = true;
+		if(Container.instance.GetJumpsLeft() > 0){
+			weDraggin = true;
+		}
 	}
 
 	void Update(){
@@ -76,35 +78,37 @@ public class CatapultGraphics : MonoBehaviour {
 	}
 
 	void DragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
-		lineRenderer.SetPosition(1,transform.position  - transform.right * 2.5f);
-		headBandEnd.transform.position = transform.position  - transform.right * 2.5f;
-		
-		weDraggin = false;
+		if(weDraggin){
+			lineRenderer.SetPosition(1,transform.position  - transform.right * 2.5f);
+			headBandEnd.transform.position = transform.position  - transform.right * 2.5f;
+			weDraggin = false;
+		}
 	}
 
 	void DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
-		
-		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		if(plane.Raycast(ray, out distance)) {
-			point = ray.GetPoint(distance);
-			worldMousePos = point;
-			lineRenderer.SetPosition(1,point);
-			headBandEnd.transform.position = worldMousePos;
-		}
+		if(weDraggin){
+			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if(plane.Raycast(ray, out distance)) {
+				point = ray.GetPoint(distance);
+				worldMousePos = point;
+				lineRenderer.SetPosition(1,point);
+				headBandEnd.transform.position = worldMousePos;
+			}
 
-		Vector2 diff = worldMousePos - (Vector2)transform.position;
+			Vector2 diff = worldMousePos - (Vector2)transform.position;
 
-		
-		Vector2 diffNotNormalised = diff;
-		
-		diff.Normalize();
-     	float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-		if(rot_z < -90 || rot_z > 90){
-			spriteRenderer.flipY =false;
 			
-		}else{
-			spriteRenderer.flipY =true;
+			Vector2 diffNotNormalised = diff;
+			
+			diff.Normalize();
+			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+			if(rot_z < -90 || rot_z > 90){
+				spriteRenderer.flipY =false;
+				
+			}else{
+				spriteRenderer.flipY =true;
+			}
+			transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 180);
 		}
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 180);
 	}
 }
