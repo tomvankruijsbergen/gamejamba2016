@@ -74,6 +74,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 					enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
 					Vector2 slashDirection = enemyCollider.transform.position;
 					Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
+					Container.instance.EnemyKilled(enemyCollider.gameObject);
+				} else {
+					Container.instance.DoEnemyHit(transform);
 				}
 			}
 			enemiesIHaveHittedAndDidNotLandInBetween.Add(enemyCollider.gameObject);
@@ -98,7 +101,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		if(isEnemy) {
 			gameObject.GetComponent<DragCatapultMovement>().ResetJumpCount();
 			StartCoroutine(DelayedForce(output, slashStart, slashEnd));
-			Container.instance.EnemyKilled(enemyToBeHakkedDoorDeMidden);
+			
 		} else {
 			Destroy(gameObject);
 			StartCoroutine(KillMyself(output, slashStart, slashEnd));

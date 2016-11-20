@@ -85,28 +85,36 @@ public class AudioManager : MonoBehaviour {
         PlaySoundClip(release);
     }
 
-    void DoArmorHit(GameObject armorHenk) {
-        //StartCoroutine(SwordHitDelay(1f));
+    void DoEnemyHit(GameObject hitByPlayerObviouslyWhyIsThisHereYorkQuestionMark) {
+        StartCoroutine(SwordHitRoutine(false));
     }
     
     private void OnEnemyKilled(GameObject enemyKilled){
-        StartCoroutine(SwordKillCoroutine());
+        StartCoroutine(SwordHitRoutine(true));
 	}
 
     private int amountOfDeadSoundsPlayedRightNow = 0;
-    private IEnumerator SwordKillCoroutine(){
+    private IEnumerator SwordHitRoutine(bool isKill = true){
 		PlaySoundClip(chinkSound);
         yield return new WaitForSeconds(.2f);
-        PlaySoundClip(hitSound);
-        yield return new WaitForSeconds(.3f);
-        int randomIndex = Random.Range(0, deadSounds.Length);
-        AudioClip randomSound = deadSounds[randomIndex];
-        if(amountOfDeadSoundsPlayedRightNow < 3) {
-            PlaySoundClip(randomSound);
-            amountOfDeadSoundsPlayedRightNow++;
+        if(isKill) {
+            PlaySoundClip(hitSound);
+        } else {
+            PlaySoundClip(armorHitSound);
         }
         yield return new WaitForSeconds(.3f);
-        amountOfDeadSoundsPlayedRightNow--;
+        if(isKill) {
+            int randomIndex = Random.Range(0, deadSounds.Length);
+            AudioClip randomSound = deadSounds[randomIndex];
+            if(amountOfDeadSoundsPlayedRightNow < 3) {
+                PlaySoundClip(randomSound);
+                amountOfDeadSoundsPlayedRightNow++;
+            }
+        }
+        yield return new WaitForSeconds(.3f);
+        if(isKill) {
+            amountOfDeadSoundsPlayedRightNow--;
+        }
     }
 
     void OnPlayerMoved(Vector2 position, Vector2 velocity) {
