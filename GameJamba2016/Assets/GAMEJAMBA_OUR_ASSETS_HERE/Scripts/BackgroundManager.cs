@@ -38,7 +38,7 @@ public class BackgroundManager : MonoBehaviour {
 				//zIndex *= -1;
 			}
 			activeBackground.GetComponent<MeshRenderer>().material = single.data.material;
-			activeBackground.transform.position = new Vector3(0, 0, (this.backgrounds.Length - i) * 0.01f);
+			activeBackground.transform.position = new Vector3(0, 0, 300f + (this.backgrounds.Length - i) * 0.01f);
 
 			single.gameObject = activeBackground;
 
