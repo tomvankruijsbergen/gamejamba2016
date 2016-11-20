@@ -22,9 +22,7 @@ public class GameState : MonoBehaviour {
 		killsThisJump += 1;
 
 		Container.instance.ScoreChanged(score);
-		if (this.killsThisJump > 1) {
-			Container.instance.KillStreakChanged(killsThisJump);
-		}
+		Container.instance.KillStreakChanged(killsThisJump);
 	}
 
 	public void OnDestroy() {
