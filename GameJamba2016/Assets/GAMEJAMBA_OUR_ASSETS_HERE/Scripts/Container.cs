@@ -50,6 +50,9 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _KillStreakChanged(float streakAmount);
 	public event _KillStreakChanged OnKillStreakChanged;
 
+	public delegate void _BossKilled();
+	public event _BossKilled OnBossKilled;
+
 	public override void Init () {
 		//instantiate the config
 		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
@@ -148,6 +151,10 @@ public class Container : MonoSingleton<Container> {
 
 	public void EnemyKilled(GameObject enemyKilled){
 		this.OnEnemyKilled(enemyKilled);
+
+		if (enemyKilled.GetComponent<EnemyBoss>() != null) {
+			this.OnBossKilled();
+		}
 	}
 
 	public void ScoreChanged(float newScore) {
