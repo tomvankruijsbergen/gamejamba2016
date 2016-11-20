@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip background;
     [SerializeField] private AudioClip normal;
 	[SerializeField] private AudioClip busy;
+    [SerializeField] private AudioClip dragging;
 
     [SerializeField] private float busyStartPlayingVelocity = 5f;
     [SerializeField] private float busyStopPlayingVelocity = 5f;
@@ -21,7 +22,7 @@ public class AudioManager : MonoBehaviour {
 
     [SerializeField] private AudioClip stretchSound;
     [SerializeField] private AudioClip release;
-
+    
     [SerializeField] private AudioClip killDouble;
     [SerializeField] private AudioClip killTriple;
     [SerializeField] private AudioClip killMulti;
@@ -37,7 +38,7 @@ public class AudioManager : MonoBehaviour {
         this.audioSources = new Dictionary<AudioClip, AudioSource>();
 
         // Initialises the music layers.
-        AudioClip[] musicClips = new AudioClip[] { background, normal, busy };
+        AudioClip[] musicClips = new AudioClip[] { background, normal, busy, dragging};
         foreach (AudioClip clip in musicClips) {
             
             AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
@@ -51,6 +52,7 @@ public class AudioManager : MonoBehaviour {
         }
 
         audioSources[busy].volume = 0;
+        audioSources[dragging].volume = 0;
 
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;
@@ -59,6 +61,8 @@ public class AudioManager : MonoBehaviour {
         // Container.instance.OnDragUpdate += this.DoStretch;
         Container.instance.OnDragIncrement += this.DoStretch;
         Container.instance.OnKillStreakChanged += this.OnKillStreakChanged;
+        Container.instance.OnDragStart += this.StartDragSound;
+        Container.instance.OnDragEnd += this.EndDragSound;
 
         // Container.instance. 'OnEnemyDoDamage' of zoiets += this.DoArmorHit;
     }
@@ -171,6 +175,19 @@ public class AudioManager : MonoBehaviour {
         slave.Play(clip, maxDistance, Container.instance.config.sfxVolume);
     }
 
+   // private bool firstTime = true;
+    void StartDragSound(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
+        // if(firstTime) {
+        //     firstTime = false;
+        //     return;
+        // }
+		this.audioSources[dragging].volume = Container.instance.config.musicVolume;
+    }
+
+    void EndDragSound(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
+		this.audioSources[dragging].volume = 0f;
+    }
+
     private void StopSound(AudioClip soundToStop){
         foreach(KeyValuePair<AudioClip, AudioSource>  entry in audioSources)
         {
@@ -183,8 +200,13 @@ public class AudioManager : MonoBehaviour {
     void Destroy() {
         Container.instance.OnPlayerMoved -= this.OnPlayerMoved;
         Container.instance.OnEnemyKilled -= this.OnEnemyKilled;
-
+        Container.instance.OnDragEnd -= this.DoYuuaaa;
+        Container.instance.OnDragEnd -= this.StopStretch;
+        // Container.instance.OnDragUpdate -= this.DoStretch;
+        Container.instance.OnDragIncrement -= this.DoStretch;
         Container.instance.OnKillStreakChanged -= this.OnKillStreakChanged;
+        Container.instance.OnDragStart -= this.StartDragSound;
+        Container.instance.OnDragEnd -= this.EndDragSound;
     } 
 
 
