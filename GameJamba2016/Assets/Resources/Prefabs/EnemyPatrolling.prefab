@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013599656026}
   m_Layer: 8
-  m_Name: PatrollingEnemy
+  m_Name: EnemyPatrolling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
