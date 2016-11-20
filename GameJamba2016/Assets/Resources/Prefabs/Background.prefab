@@ -53,11 +53,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgrounds:
   - material: {fileID: 2100000, guid: 7a52a4f66f0764fedb499abf32b4f0e7, type: 2}
-    parallax: {x: 0.05, y: 0, z: 0}
-    yOffset: 0
+    parallax: {x: 0.1, y: 0}
+    yOffset: 4
   - material: {fileID: 2100000, guid: 882dbdebdcfe3431881d8e8bd67c2311, type: 2}
-    parallax: {x: 0.1, y: 0, z: 0}
+    parallax: {x: 0.1, y: 0}
     yOffset: -5
   - material: {fileID: 2100000, guid: 11b0c6a019dc248218d73e1f5488fa64, type: 2}
-    parallax: {x: 1, y: 0, z: 0}
-    yOffset: -15
+    parallax: {x: 0.6, y: 0}
+    yOffset: -10
