@@ -171,4 +171,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e3d48d7ffe66b49779db6993a602ff4d, type: 3}
   - {fileID: 8300000, guid: 10e00abf37b8f4659997425307a6d5b5, type: 3}
   - {fileID: 8300000, guid: 613dd5df9acb54f2f9bc76c1211748c2, type: 3}
+  swooshSound: {fileID: 8300000, guid: b7a007bfd6fe44542bfdeb8a2af8edaa, type: 3}
+  normalHitSound: {fileID: 8300000, guid: 50b0c131dc66e454b88b17c6b2d546f9, type: 3}
+  armorHitSound: {fileID: 8300000, guid: 7c0f1cd4caccc4085a4bc19a5e8631be, type: 3}
   killEnemy: {fileID: 8300000, guid: a4809ad7e2d5a469a9dfa06639160907, type: 3}

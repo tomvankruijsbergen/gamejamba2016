@@ -14,9 +14,11 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private float maxSoundDistanceForFX = 10f;
 
     [SerializeField] private AudioClip[] yuuuuaaaaas;
+    [SerializeField] private AudioClip swooshSound;
+    [SerializeField] private AudioClip normalHitSound;
+    [SerializeField] private AudioClip armorHitSound;
 
-    [SerializeField]
-    private AudioClip killEnemy;
+    [SerializeField] private AudioClip killEnemy;
 
     private Dictionary<AudioClip, AudioSource> audioSources;
 
@@ -44,6 +46,8 @@ public class AudioManager : MonoBehaviour {
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;
         Container.instance.OnDragEnd += this.DoYuuaaa;
+        Container.instance.OnEnemyKilled += this.DoNormalHit;
+        // Container.instance. 'OnEnemyDoDamage' of zoiets += this.DoArmorHit;
     }
 
     private float busyVolume = 0;
@@ -52,8 +56,25 @@ public class AudioManager : MonoBehaviour {
     void DoYuuaaa(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
         int randomYuuaSoundIndex = Random.Range(0, yuuuuaaaaas.Length);
         AudioClip randomSound = yuuuuaaaaas[randomYuuaSoundIndex];
-
         PlaySoundClip(randomSound);
+    }
+
+    void DoNormalHit(GameObject normaleHenk) {
+        PlaySoundClip(swooshSound);
+        this.SwordHitDelay();
+        PlaySoundClip(normalHitSound);
+    }
+
+    void DoArmorHit(GameObject armorHenk) {
+        PlaySoundClip(swooshSound);
+        this.SwordHitDelay();
+        PlaySoundClip(armorHitSound);
+    }
+
+    private IEnumerator SwordHitDelay(){
+		//
+		yield return new WaitForSeconds(0.002f);
+		//
     }
 
     void OnPlayerMoved(Vector2 position, Vector2 velocity) {
