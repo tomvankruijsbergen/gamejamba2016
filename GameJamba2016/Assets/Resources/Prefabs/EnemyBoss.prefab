@@ -23,6 +23,7 @@ GameObject:
   - 58: {fileID: 58000013792928712}
   - 50: {fileID: 50000013494401034}
   - 114: {fileID: 114000011796649236}
+  - 114: {fileID: 114000010200282380}
   m_Layer: 8
   m_Name: EnemyBoss
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011610150732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 153.8, y: -41.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -74,6 +75,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.56
+--- !u!114 &114000010200282380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011610150732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81720e26ea823435993cf3f97f9c813f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!114 &114000011796649236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6656dcb5f90674e36b3538c090be58b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  protectionDuration: 3
+  vulnerableDuration: 1
 --- !u!212 &212000010331670816
 SpriteRenderer:
   m_ObjectHideFlags: 1

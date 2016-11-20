@@ -31,6 +31,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		bloodBurstParticles = Resources.Load("Prefabs/BloodBurst") as GameObject;
 		spriteBurst = Resources.Load("Prefabs/SpriteSplat") as GameObject;
 		Container.instance.OnPlayerDied += PlayerKilled;
+		Container.instance.OnEnemyHit += EnemyHit;
 	}
 
 	private void PlayerKilled(Transform byWhom) {
@@ -79,6 +80,17 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			Destroy(gameObject);
 			StartCoroutine(KillMyself(output, slashStart, slashEnd));
 		}
+	}
+
+	private void EnemyHit(Transform hitBy) {
+		bool hasEnemyPatrol = hitBy.gameObject.GetComponent<EnemyPatrol>() != null;
+		if(hasEnemyPatrol) {
+			//do specefiek shit
+
+		}
+	}
+
+	private void HakkemMultiple() {
 	}
 
 	private IEnumerator KillMyself(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){

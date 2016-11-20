@@ -25,6 +25,9 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _EnemyKilled(GameObject enemyKilled);
 	public event _EnemyKilled OnEnemyKilled;
 
+	public delegate void _EnemyHit(Transform hitBy);
+	public event _EnemyHit OnEnemyHit;
+
 	public delegate void _TimeChanged(float timeScale);
 	public event _TimeChanged OnTimeChanged;
 
@@ -120,6 +123,10 @@ public class Container : MonoSingleton<Container> {
 
 	public void DoPlayerKill(Transform killedBy) {
 		this.OnPlayerDied(killedBy);
+	}
+	
+	public void DoEnemyHit(Transform hitBy) {
+		this.OnEnemyHit(hitBy);
 	}
 
 	public void PlayerMoved(Vector2 position, Vector2 velocity) {
