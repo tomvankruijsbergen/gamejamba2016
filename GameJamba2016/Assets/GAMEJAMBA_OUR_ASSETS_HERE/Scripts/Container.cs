@@ -67,8 +67,8 @@ public class Container : MonoSingleton<Container> {
 		GameObject audioManagerObject = Instantiate(Resources.Load("Prefabs/AudioManager") as GameObject);
 		this.audioManager = audioManagerObject.GetComponent<AudioManager>();
 
-		GameObject backgroundManagerObject = Instantiate(Resources.Load("Prefabs/Background") as GameObject);
-		this.backgroundManager = audioManagerObject.GetComponent<BackgroundManager>();
+		// GameObject backgroundManagerObject = Instantiate(Resources.Load("Prefabs/Background") as GameObject);
+		// this.backgroundManager = audioManagerObject.GetComponent<BackgroundManager>();
 	}
 
 	// Assigns. Objects register themselves with the container on Awake, so that the container can access them.
