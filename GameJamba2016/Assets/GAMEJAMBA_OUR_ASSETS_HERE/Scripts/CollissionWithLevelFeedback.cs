@@ -17,6 +17,7 @@ public class CollissionWithLevelFeedback : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		if(levelLayer == 1 << collision.gameObject.layer) {
 			DoTheFuckinFade();
+			Container.instance.DoPlayerLevelCollide(collision);
 		}
 	}
 	

@@ -7,16 +7,17 @@ public class GameState : MonoBehaviour {
 	private float killsThisJump = 0;
 
 	public void Awake() {
-		Container.instance.OnDragEnd += this.OnDragEnd;
+		Container.instance.OnPlayerCollidedWithLevel += this.OnPlayerCollission;
 		Container.instance.OnEnemyKilled += this.OnEnemyKilled;
 	}
 	void Start() {
-		Container.instance.ScoreChanged(0); 
+		Container.instance.ScoreChanged(0);  
 	}
 
-	void OnDragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
-		this.killsThisJump = 0;
+	void OnPlayerCollission(Collision2D colliderDieIkNIetGebruikKankerLekkerOp) {
+		killsThisJump = 0;
 	}
+
 	void OnEnemyKilled(GameObject enemyKilled){
 		score += 1;
 		killsThisJump += 1;
@@ -26,7 +27,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	public void OnDestroy() {
-		Container.instance.OnDragEnd -= this.OnDragEnd;
+		Container.instance.OnPlayerCollidedWithLevel -= this.OnPlayerCollission;
 		Container.instance.OnEnemyKilled += this.OnEnemyKilled;
 	}
 }

@@ -42,6 +42,9 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _PlayerDied(Transform KilledBy);
 	public event _PlayerDied OnPlayerDied;
 
+	public delegate void _PlayerCollisionWithLevel(Collision2D collision);
+	public event _PlayerCollisionWithLevel OnPlayerCollidedWithLevel;
+
 	public delegate void _CameraMoved(Vector2 newPosition);
 	public event _CameraMoved OnCameraMoved;
 
@@ -162,6 +165,10 @@ public class Container : MonoSingleton<Container> {
 		if (enemyKilled.GetComponent<EnemyBoss>() != null) {
 			this.OnBossKilled();
 		}
+	}
+
+	public void DoPlayerLevelCollide(Collision2D collider) {
+		this.OnPlayerCollidedWithLevel(collider);
 	}
 
 	public void ScoreChanged(float newScore) {
