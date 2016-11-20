@@ -57,7 +57,7 @@ MonoBehaviour:
     yOffset: 4
   - material: {fileID: 2100000, guid: 882dbdebdcfe3431881d8e8bd67c2311, type: 2}
     parallax: {x: 0.1, y: 0}
-    yOffset: -5
+    yOffset: -6
   - material: {fileID: 2100000, guid: 11b0c6a019dc248218d73e1f5488fa64, type: 2}
     parallax: {x: 0.6, y: 0}
-    yOffset: -10
+    yOffset: -22
