@@ -32,6 +32,7 @@ public class Container : MonoSingleton<Container> {
 	public event _DragChanged OnDragStart;
 	public event _DragChanged OnDragUpdate;
 	public event _DragChanged OnDragEnd;
+	public event _DragChanged OnDragIncrement;
 
 	public delegate void _PlayerMoved(Vector2 newPosition, Vector2 velocity);
 	public event _PlayerMoved OnPlayerMoved;
@@ -93,6 +94,7 @@ public class Container : MonoSingleton<Container> {
 	public int GetJumpsLeft() {
 		return player.GetComponent<DragCatapultMovement>().jumpCount;
 	}
+	
 	public Vector2 GetCameraPosition() {
 		return camera.transform.position;
 	}
@@ -134,6 +136,9 @@ public class Container : MonoSingleton<Container> {
 	}
 	public void DragRelease(Vector2 dragPosition) {
 		this.OnDragEnd(dragPosition, player.position, camera.transform.position);
+	}
+	public void DragIncrement(Vector2 dragPosition){
+		this.OnDragIncrement(dragPosition, player.position, camera.transform.position);
 	}
 
 	public void EnemyKilled(GameObject enemyKilled){

@@ -171,6 +171,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 89b4d71e291d44af1a055bfe75b22769, type: 3}
   - {fileID: 8300000, guid: 6f81b05e337ed4dddbdc03cd62f96027, type: 3}
   - {fileID: 8300000, guid: 1f184e9ee3f834483961064ecbe79608, type: 3}
+  - {fileID: 8300000, guid: 6a2afa62c138541a992dde3deb519f9b, type: 3}
+  - {fileID: 8300000, guid: ea886172b1a5f47e7803a4f930275e25, type: 3}
+  - {fileID: 8300000, guid: 614ed163d59d045c0b67f9143b7bdbaf, type: 3}
+  - {fileID: 8300000, guid: 676c6fe6d58144010bdf3f7e4d2879ca, type: 3}
+  - {fileID: 8300000, guid: d1f660276172e43aa8dd65cfe560173c, type: 3}
+  - {fileID: 8300000, guid: 58d2bd284434a49918d7f4cbcdac7b9a, type: 3}
+  - {fileID: 8300000, guid: 3cca7e4b2da394e88976c1fbaf116390, type: 3}
+  - {fileID: 8300000, guid: 8d9b489b0bc43461b9e80c439da87256, type: 3}
+  - {fileID: 8300000, guid: d459758dd7a2d46e38858790bfa56790, type: 3}
+  - {fileID: 8300000, guid: ec0b088e85c3b469f95a5026656bcef2, type: 3}
+  - {fileID: 8300000, guid: 03dc277f18e4a4674970998df8b302ae, type: 3}
   deadSounds:
   - {fileID: 8300000, guid: a2a38483c51dd4237842c4f05a14eb19, type: 3}
   - {fileID: 8300000, guid: 650d2125cbcdf43bc930d02a556c1466, type: 3}
@@ -181,6 +192,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4961dc9d5d95542179407127e59b9fc6, type: 3}
   - {fileID: 8300000, guid: 1f8c302e5c9d04f46ad0f085478480ef, type: 3}
   - {fileID: 8300000, guid: f52ab57e5b1d44fd6871b2bb4a045720, type: 3}
+  - {fileID: 8300000, guid: 4291cff4b16a640bf9f0b20c9ebf3d31, type: 3}
+  - {fileID: 8300000, guid: 77e74c09fdf414c6b82d5f6da36076c0, type: 3}
   chinkSound: {fileID: 8300000, guid: 42c94b1d9886c4680ac111484fb4022b, type: 3}
   hitSound: {fileID: 8300000, guid: d3950608d461c411285f9f08596ceb2b, type: 3}
   armorHitSound: {fileID: 8300000, guid: d3950608d461c411285f9f08596ceb2b, type: 3}
+  stretchSound: {fileID: 8300000, guid: 5d990a07f16ff4a738e255bd2f38fc33, type: 3}
+  release: {fileID: 8300000, guid: ca40f55e799e746509a996cf8a62c840, type: 3}

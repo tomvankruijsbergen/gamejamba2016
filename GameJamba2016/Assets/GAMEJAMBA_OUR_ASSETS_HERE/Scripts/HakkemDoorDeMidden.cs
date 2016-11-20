@@ -100,7 +100,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		rbdy1.AddTorque(9001);
 		rbdy2.AddTorque(9001);
-
+		
 		yield return new WaitForSeconds(forceDelay);
 
 	}

@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip hitSound;
     [SerializeField] private AudioClip armorHitSound;
 
+    [SerializeField] private AudioClip stretchSound;
+    [SerializeField] private AudioClip release;
+
     private Dictionary<AudioClip, AudioSource> audioSources;
 
     private AudioSource fxAudioSource;
@@ -45,6 +48,10 @@ public class AudioManager : MonoBehaviour {
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;
         Container.instance.OnDragEnd += this.DoYuuaaa;
+        Container.instance.OnDragEnd += this.StopStretch;
+        // Container.instance.OnDragUpdate += this.DoStretch;
+        Container.instance.OnDragIncrement += this.DoStretch;
+
         // Container.instance. 'OnEnemyDoDamage' of zoiets += this.DoArmorHit;
     }
 
@@ -55,6 +62,15 @@ public class AudioManager : MonoBehaviour {
         int randomYuuaSoundIndex = Random.Range(0, yuuuuaaaaas.Length);
         AudioClip randomSound = yuuuuaaaaas[randomYuuaSoundIndex];
         PlaySoundClip(randomSound);
+    }
+
+    void DoStretch(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
+        PlaySoundClip(stretchSound);
+    }
+
+    void StopStretch(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
+        StopSound(stretchSound);
+        PlaySoundClip(release);
     }
 
     void DoArmorHit(GameObject armorHenk) {
@@ -104,6 +120,15 @@ public class AudioManager : MonoBehaviour {
             soundObject.transform.parent = transform;
         }
         slave.Play(clip, maxDistance);
+    }
+
+    private void StopSound(AudioClip soundToStop){
+        foreach(KeyValuePair<AudioClip, AudioSource>  entry in audioSources)
+        {
+            if(entry.Key == soundToStop){
+                entry.Value.Stop();
+            }
+        }
     }
 
     void Destroy() {

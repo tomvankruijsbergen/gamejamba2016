@@ -18,6 +18,9 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	public int jumpCount = 2;
 
+	private Vector2 lastIncrementPosition;
+	private float stretchIncrement = 6f;
+
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
 		catapultForce = Container.instance.config.catapultForce;
@@ -27,9 +30,11 @@ public class DragCatapultMovement : MonoBehaviour {
 	void OnMouseDown() 
 	{
 		if(jumpCount>0){
+			
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if(plane.Raycast(ray, out distance)) {
 				point = ray.GetPoint(distance);
+				lastIncrementPosition = point;
 				if(Vector2.Distance(point, transform.position) <= maxDragDistance){
 					mouseDownPos = Input.mousePosition;
 					Container.instance.DragStart(mouseDownPos);
@@ -40,7 +45,21 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	void Update(){
 		if(mouseDownPos != Vector2.zero && jumpCount >0){
+
+
 			Container.instance.DragUpdate(Input.mousePosition);
+
+
+			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if(plane.Raycast(ray, out distance)) {
+				point = ray.GetPoint(distance);
+				// lastIncrementPosition = point;
+				if(Vector2.Distance(lastIncrementPosition,point) > stretchIncrement){
+					lastIncrementPosition = point;
+					Container.instance.DragIncrement(point);
+				}
+			}
+
 		}
 	}
 	
