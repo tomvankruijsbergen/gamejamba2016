@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a96494681a0340d0b30f158b55141bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpCount: 2
+  jumpCount: 4
 --- !u!114 &114000013582751584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +358,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f6e638f1daf784c7abac3ed563eae1bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
