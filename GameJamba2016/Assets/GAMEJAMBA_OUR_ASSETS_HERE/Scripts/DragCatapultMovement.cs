@@ -16,6 +16,8 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	private float maxDragDistance = 5f;
 
+	public int jumpCount = 2;
+
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
 		catapultForce = Container.instance.config.catapultForce;
@@ -24,26 +26,39 @@ public class DragCatapultMovement : MonoBehaviour {
 	
 	void OnMouseDown() 
 	{
-		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		if(plane.Raycast(ray, out distance)) {
-			point = ray.GetPoint(distance);
-			if(Vector2.Distance(point, transform.position) <= maxDragDistance){
-				mouseDownPos = Input.mousePosition;
-				Container.instance.DragStart(mouseDownPos);
+		if(jumpCount>0){
+			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if(plane.Raycast(ray, out distance)) {
+				point = ray.GetPoint(distance);
+				if(Vector2.Distance(point, transform.position) <= maxDragDistance){
+					mouseDownPos = Input.mousePosition;
+					Container.instance.DragStart(mouseDownPos);
+				}
 			}
 		}
 	}
 
 	void Update(){
-		if(mouseDownPos != Vector2.zero){
+		if(mouseDownPos != Vector2.zero && jumpCount >0){
 			Container.instance.DragUpdate(Input.mousePosition);
 		}
 	}
 	
 	void OnMouseUp() 
 	{
-		StartCoroutine(Launch());
 		
+		if(jumpCount>0){
+			StartCoroutine(Launch());
+			jumpCount --;
+		}
+	}
+
+	void OnCollisionEnter2D(){
+		ResetJumpCount();
+	}
+
+	public void ResetJumpCount(){
+		jumpCount = 2;
 	}
 
 	private IEnumerator Launch(){

@@ -90,6 +90,9 @@ public class Container : MonoSingleton<Container> {
 	public Vector2 GetPlayerPosition() {
 		return player.position;
 	}
+	public int GetJumpsLeft() {
+		return player.GetComponent<DragCatapultMovement>().jumpCount;
+	}
 	public Vector2 GetCameraPosition() {
 		return camera.transform.position;
 	}
