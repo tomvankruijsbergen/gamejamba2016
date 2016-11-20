@@ -16,7 +16,8 @@ public class DragCatapultMovement : MonoBehaviour {
 
 	private float maxDragDistance = 99f;
 
-	public int jumpCount = 2;
+	public int jumpCount;
+	public int resetJumpToThis;
 
 	private Vector2 lastIncrementPosition;
 	private float stretchIncrement = 6f;
@@ -25,6 +26,7 @@ public class DragCatapultMovement : MonoBehaviour {
 		plane = new Plane(Vector3.forward, Vector3.zero);
 		catapultForce = Container.instance.config.catapultForce;
 		myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+		resetJumpToThis = jumpCount;
 	}
 	
 	void OnMouseDown() 
@@ -77,7 +79,7 @@ public class DragCatapultMovement : MonoBehaviour {
 	}
 
 	public void ResetJumpCount(){
-		jumpCount = 2;
+		jumpCount = resetJumpToThis;
 	}
 
 	private IEnumerator Launch(){
