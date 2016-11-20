@@ -133,4 +133,41 @@ MonoBehaviour:
   busyStopPlayingVelocity: 20
   busySoundVolumeFadeDuration: 0.5
   maxSoundDistanceForFX: 10
+  yuuuuaaaaas:
+  - {fileID: 8300000, guid: 02191e3067bd2419eaf4d5437912fff3, type: 3}
+  - {fileID: 8300000, guid: 01fe4080e98da49f891623a782c08fbd, type: 3}
+  - {fileID: 8300000, guid: c7fcac214e4ce4c728f0f6a1dd282419, type: 3}
+  - {fileID: 8300000, guid: c6b421b1ee0804300b851635c3014d3b, type: 3}
+  - {fileID: 8300000, guid: fac6cb12b2adf42dfa69b0883e70f668, type: 3}
+  - {fileID: 8300000, guid: 7cd34672823954826ac08f09742f67c9, type: 3}
+  - {fileID: 8300000, guid: 813daaa2f62c842c98b244a68baddce6, type: 3}
+  - {fileID: 8300000, guid: e0d7e5d207c4044f5babbf64e9cbe84a, type: 3}
+  - {fileID: 8300000, guid: 4a733af2c1beb4d6b8960e1a5aaaefac, type: 3}
+  - {fileID: 8300000, guid: 13f5444385b99414c9a791eedde79b01, type: 3}
+  - {fileID: 8300000, guid: a7998863ba24942e58f778e5a640417f, type: 3}
+  - {fileID: 8300000, guid: bcbdfcb3625084961a1fe57a0f3d59aa, type: 3}
+  - {fileID: 8300000, guid: 83e269f4c176941a3a93fc752f648c01, type: 3}
+  - {fileID: 8300000, guid: 4e6487356a0024cee81e1a110f540d5c, type: 3}
+  - {fileID: 8300000, guid: 42f71a8529ccb4cf99d00cf85f2616d0, type: 3}
+  - {fileID: 8300000, guid: c2fa5af502e8e4d37ae008e4d5738d15, type: 3}
+  - {fileID: 8300000, guid: 95354d47f5b234946812de95cf170437, type: 3}
+  - {fileID: 8300000, guid: 805a22c8ba50d441d85d1bbfe4c5450e, type: 3}
+  - {fileID: 8300000, guid: a513d7c8b95f742b58e1a992882cfe4f, type: 3}
+  - {fileID: 8300000, guid: 97ee44294dda84cb2a925870da99b19b, type: 3}
+  - {fileID: 8300000, guid: 48ddd439d76af42dab8c6312ffeae330, type: 3}
+  - {fileID: 8300000, guid: 32bf78390a8484f918b3db14fc9b22b9, type: 3}
+  - {fileID: 8300000, guid: d4465f890f1f64f6d95ea53c2595169f, type: 3}
+  - {fileID: 8300000, guid: 50e9e2b9723e7479c9ab16b3771668d7, type: 3}
+  - {fileID: 8300000, guid: 10222b2a8c5db486bafcb36349dc0a5b, type: 3}
+  - {fileID: 8300000, guid: 4569a0ba0bb534116b27bf9e70937b17, type: 3}
+  - {fileID: 8300000, guid: 753b360b603c547c9aed4f1d6d31b079, type: 3}
+  - {fileID: 8300000, guid: 3d22270b9fd5c46bebc594fa80dfa33d, type: 3}
+  - {fileID: 8300000, guid: 6d8ae83b1fd7e45fc8d695aef92e4aef, type: 3}
+  - {fileID: 8300000, guid: 6025608b1c47c4ef39c45d48c26e8d93, type: 3}
+  - {fileID: 8300000, guid: 420c669bac3f44fb7a9ce575db667359, type: 3}
+  - {fileID: 8300000, guid: 987949cbafe1c470ca07c0b8ca7ec0cf, type: 3}
+  - {fileID: 8300000, guid: d2896e3d2deee491caa561367c816eb1, type: 3}
+  - {fileID: 8300000, guid: 89b4d71e291d44af1a055bfe75b22769, type: 3}
+  - {fileID: 8300000, guid: 6f81b05e337ed4dddbdc03cd62f96027, type: 3}
+  - {fileID: 8300000, guid: 1f184e9ee3f834483961064ecbe79608, type: 3}
   killEnemy: {fileID: 8300000, guid: a4809ad7e2d5a469a9dfa06639160907, type: 3}
