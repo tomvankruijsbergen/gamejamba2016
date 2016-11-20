@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010234623184}
   - 212: {fileID: 212000011464059780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,8 +35,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014073872622}
-  m_Layer: 0
-  m_Name: HugeFence
+  m_Layer: 10
+  m_Name: LongPillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014022360340}
   - 212: {fileID: 212000014067879344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013356241332}
   - 212: {fileID: 212000010270473846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012554068628}
   - 212: {fileID: 212000014228341220}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012770333024}
   - 212: {fileID: 212000013542943892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-right (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011876528834}
   - 212: {fileID: 212000012917602602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013299336146}
   - 212: {fileID: 212000010878597806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010353429924}
   - 212: {fileID: 212000011406156646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013357708000}
   - 212: {fileID: 212000012024324728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010442277616}
   - 212: {fileID: 212000012023434670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014259556118}
   - 212: {fileID: 212000012937517240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-left (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011762496436}
   - 212: {fileID: 212000013435717734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence-mid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ Transform:
   m_GameObject: {fileID: 1000011250458514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000014259556118}
