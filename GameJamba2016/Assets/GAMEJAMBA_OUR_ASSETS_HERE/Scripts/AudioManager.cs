@@ -14,11 +14,10 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private float maxSoundDistanceForFX = 10f;
 
     [SerializeField] private AudioClip[] yuuuuaaaaas;
-    [SerializeField] private AudioClip[] normalHitSounds;
+    [SerializeField] private AudioClip[] deadSounds;
     [SerializeField] private AudioClip chinkSound;
+    [SerializeField] private AudioClip hitSound;
     [SerializeField] private AudioClip armorHitSound;
-
-    [SerializeField] private AudioClip killEnemy;
 
     private Dictionary<AudioClip, AudioSource> audioSources;
 
@@ -46,7 +45,6 @@ public class AudioManager : MonoBehaviour {
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;
         Container.instance.OnDragEnd += this.DoYuuaaa;
-        Container.instance.OnEnemyKilled += this.DoNormalHit;
         // Container.instance. 'OnEnemyDoDamage' of zoiets += this.DoArmorHit;
     }
 
@@ -59,21 +57,21 @@ public class AudioManager : MonoBehaviour {
         PlaySoundClip(randomSound);
     }
 
-    void DoNormalHit(GameObject normaleHenk) {
-        StartCoroutine(SwordHitDelay());
-    }
-
     void DoArmorHit(GameObject armorHenk) {
         //StartCoroutine(SwordHitDelay(1f));
     }
+    
+    private void OnEnemyKilled(GameObject enemyKilled){
+		StartCoroutine(SwordKillCoroutine());
+	}
 
-    private IEnumerator SwordHitDelay(){
+    private IEnumerator SwordKillCoroutine(){
 		PlaySoundClip(chinkSound);
         yield return new WaitForSeconds(.2f);
-        PlaySoundClip(armorHitSound);
+        PlaySoundClip(hitSound);
         yield  return new WaitForSeconds(.3f);
-        int randomIndex = Random.Range(0, normalHitSounds.Length);
-        AudioClip randomSound = normalHitSounds[randomIndex];
+        int randomIndex = Random.Range(0, deadSounds.Length);
+        AudioClip randomSound = deadSounds[randomIndex];
         PlaySoundClip(randomSound);
     }
 
@@ -91,10 +89,6 @@ public class AudioManager : MonoBehaviour {
 
         busyVolume = Mathf.SmoothDamp(busyVolume, volume, ref busyVolumeVelocity, this.busySoundVolumeFadeDuration);
 		this.audioSources[busy].volume = busyVolume;
-	}
-
-    private void OnEnemyKilled(GameObject enemyKilled){
-		this.PlaySoundClip(this.killEnemy, enemyKilled);
 	}
 
     private void PlaySoundClip(AudioClip clip, GameObject onGameObject = null) {

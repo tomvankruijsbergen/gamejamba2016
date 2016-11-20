@@ -171,7 +171,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 89b4d71e291d44af1a055bfe75b22769, type: 3}
   - {fileID: 8300000, guid: 6f81b05e337ed4dddbdc03cd62f96027, type: 3}
   - {fileID: 8300000, guid: 1f184e9ee3f834483961064ecbe79608, type: 3}
-  swooshSound: {fileID: 8300000, guid: 42c94b1d9886c4680ac111484fb4022b, type: 3}
-  normalHitSound: {fileID: 8300000, guid: 0894ebd32de984c20a24962abc591549, type: 3}
+  deadSounds:
+  - {fileID: 8300000, guid: a2a38483c51dd4237842c4f05a14eb19, type: 3}
+  - {fileID: 8300000, guid: 650d2125cbcdf43bc930d02a556c1466, type: 3}
+  - {fileID: 8300000, guid: 12a480168b24743b28f8d959fc8a2906, type: 3}
+  - {fileID: 8300000, guid: 355623869204a4895bd8e045edca4667, type: 3}
+  - {fileID: 8300000, guid: 88698fc611b334e38b48ede53eeb3f0c, type: 3}
+  - {fileID: 8300000, guid: c618fb67d42e34d0c8ddc4010290d7f4, type: 3}
+  - {fileID: 8300000, guid: 4961dc9d5d95542179407127e59b9fc6, type: 3}
+  - {fileID: 8300000, guid: 1f8c302e5c9d04f46ad0f085478480ef, type: 3}
+  - {fileID: 8300000, guid: f52ab57e5b1d44fd6871b2bb4a045720, type: 3}
+  chinkSound: {fileID: 8300000, guid: 42c94b1d9886c4680ac111484fb4022b, type: 3}
+  hitSound: {fileID: 8300000, guid: d3950608d461c411285f9f08596ceb2b, type: 3}
   armorHitSound: {fileID: 8300000, guid: d3950608d461c411285f9f08596ceb2b, type: 3}
-  killEnemy: {fileID: 8300000, guid: a4809ad7e2d5a469a9dfa06639160907, type: 3}
