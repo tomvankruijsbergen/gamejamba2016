@@ -13,8 +13,9 @@ public class AudioManager : MonoBehaviour {
 
     [SerializeField] private float maxSoundDistanceForFX = 10f;
 
-    [SerializeField]
-    private AudioClip killEnemy;
+    [SerializeField] private AudioClip[] yuuuuaaaaas;
+
+    [SerializeField] private AudioClip killEnemy;
 
     private Dictionary<AudioClip, AudioSource> audioSources;
 
@@ -41,10 +42,18 @@ public class AudioManager : MonoBehaviour {
 
         Container.instance.OnPlayerMoved += this.OnPlayerMoved;
         Container.instance.OnEnemyKilled += this.OnEnemyKilled;
+        Container.instance.OnDragEnd += this.DoYuuaaa;
     }
 
     private float busyVolume = 0;
     private float busyVolumeVelocity = 0;
+
+    void DoYuuaaa(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
+        int randomYuuaSoundIndex = Random.Range(0, yuuuuaaaaas.Length);
+        AudioClip randomSound = yuuuuaaaaas[randomYuuaSoundIndex];
+
+        PlaySoundClip(randomSound);
+    }
 
     void OnPlayerMoved(Vector2 position, Vector2 velocity) {
         // Determine how loud the 'busy' sound is.
