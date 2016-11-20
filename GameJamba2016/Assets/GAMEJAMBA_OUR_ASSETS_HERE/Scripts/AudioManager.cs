@@ -22,6 +22,10 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip stretchSound;
     [SerializeField] private AudioClip release;
 
+    [SerializeField] private AudioClip killDouble;
+    [SerializeField] private AudioClip killMulti;
+    [SerializeField] private AudioClip killUltra;
+
     private Dictionary<AudioClip, AudioSource> audioSources;
 
     private AudioSource fxAudioSource;
@@ -51,6 +55,8 @@ public class AudioManager : MonoBehaviour {
         Container.instance.OnDragEnd += this.StopStretch;
         // Container.instance.OnDragUpdate += this.DoStretch;
         Container.instance.OnDragIncrement += this.DoStretch;
+
+        Container.instance.OnKillStreakChanged += this.OnKillStreakChanged;
 
         // Container.instance. 'OnEnemyDoDamage' of zoiets += this.DoArmorHit;
     }
@@ -107,7 +113,21 @@ public class AudioManager : MonoBehaviour {
 		this.audioSources[busy].volume = busyVolume;
 	}
 
+    void OnKillStreakChanged(float streakAmount){	
+		if (streakAmount == 2) {
+            this.PlaySoundClip(this.killDouble);
+        } else if (streakAmount == 3) {
+            this.PlaySoundClip(this.killMulti);
+        } else if (streakAmount > 3) {
+            this.PlaySoundClip(this.killUltra);
+        }
+	}
+
     private void PlaySoundClip(AudioClip clip, GameObject onGameObject = null) {
+        if (clip == null) {
+            Debug.Log("a sound clip was null");
+            return;
+        }
         GameObject soundObject = new GameObject();
         AudioSlave slave = soundObject.AddComponent<AudioSlave>() as AudioSlave;
 
@@ -134,6 +154,8 @@ public class AudioManager : MonoBehaviour {
     void Destroy() {
         Container.instance.OnPlayerMoved -= this.OnPlayerMoved;
         Container.instance.OnEnemyKilled -= this.OnEnemyKilled;
+
+        Container.instance.OnKillStreakChanged -= this.OnKillStreakChanged;
     } 
 
 

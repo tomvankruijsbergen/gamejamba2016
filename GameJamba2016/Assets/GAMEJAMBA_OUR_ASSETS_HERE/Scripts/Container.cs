@@ -45,6 +45,11 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _CameraZoomed(float newZoom);
 	public event _CameraZoomed OnCameraZoomed;
 
+	public delegate void _ScoreChanged(float newScore);
+	public event _ScoreChanged OnScoreChanged;
+	public delegate void _KillStreakChanged(float streakAmount);
+	public event _KillStreakChanged OnKillStreakChanged;
+
 	public override void Init () {
 		//instantiate the config
 		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
@@ -143,5 +148,12 @@ public class Container : MonoSingleton<Container> {
 
 	public void EnemyKilled(GameObject enemyKilled){
 		this.OnEnemyKilled(enemyKilled);
+	}
+
+	public void ScoreChanged(float newScore) {
+		this.OnScoreChanged(newScore);
+	}
+	public void KillStreakChanged(float streakAmount) {
+		this.OnKillStreakChanged(streakAmount);
 	}
 }

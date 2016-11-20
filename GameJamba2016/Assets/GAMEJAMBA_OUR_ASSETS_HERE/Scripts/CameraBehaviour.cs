@@ -50,7 +50,8 @@ public class CameraBehaviour : MonoBehaviour {
 
 		// Initialising animation vars
 		this.animationZoomValue = 0;
-		this.camera.orthographicSize = zoomBase;
+		//this.camera.orthographicSize = zoomBase;
+		this.TweenedZoomValue(0);
 	}
 
 	void OnDragStart(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {

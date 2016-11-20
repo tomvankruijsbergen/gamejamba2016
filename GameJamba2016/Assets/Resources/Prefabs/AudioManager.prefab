@@ -199,3 +199,6 @@ MonoBehaviour:
   armorHitSound: {fileID: 8300000, guid: d3950608d461c411285f9f08596ceb2b, type: 3}
   stretchSound: {fileID: 8300000, guid: 5d990a07f16ff4a738e255bd2f38fc33, type: 3}
   release: {fileID: 8300000, guid: ca40f55e799e746509a996cf8a62c840, type: 3}
+  killDouble: {fileID: 8300000, guid: f17bbd9ae4e3d4922af240d3aa2d4243, type: 3}
+  killMulti: {fileID: 8300000, guid: f17bbd9ae4e3d4922af240d3aa2d4243, type: 3}
+  killUltra: {fileID: 8300000, guid: f17bbd9ae4e3d4922af240d3aa2d4243, type: 3}

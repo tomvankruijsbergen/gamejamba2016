@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013265939732}
   - 114: {fileID: 114000010558002078}
+  - 114: {fileID: 114000010636078600}
   m_Layer: 0
   m_Name: Config
   m_TagString: Untagged
@@ -54,3 +55,14 @@ MonoBehaviour:
   catapultForce: 70
   maxPullMagnitude: 120
   minPullMagnitude: 100
+--- !u!114 &114000010636078600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010111063444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1855d0bb3af1a4ba4a351da02119fcd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

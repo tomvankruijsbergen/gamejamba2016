@@ -34,11 +34,8 @@ public class BackgroundManager : MonoBehaviour {
 			activeBackground.transform.parent = transform;
 			
 			int zIndex = (this.backgrounds.Length - i);
-			if (single.data.parallax.x <= 1) {
-				//zIndex *= -1;
-			}
 			activeBackground.GetComponent<MeshRenderer>().material = single.data.material;
-			activeBackground.transform.position = new Vector3(0, 0, 300f + (this.backgrounds.Length - i) * 0.01f);
+			activeBackground.transform.position = new Vector3(0, 0, 300f + zIndex * 0.01f);
 
 			single.gameObject = activeBackground;
 
@@ -51,8 +48,10 @@ public class BackgroundManager : MonoBehaviour {
 
 	void Start() {
 		float zoom = Container.instance.GetCameraSize();
-		this.OnCameraZoomed(zoom);
 		this.initialScale = this.GetLocalScaleForZoom(zoom);
+
+		this.OnCameraZoomed(zoom);
+		//this.OnCameraMoved(Container.instance.GetCameraPosition());
 	}
 
 	void OnCameraMoved(Vector2 newPosition) {
