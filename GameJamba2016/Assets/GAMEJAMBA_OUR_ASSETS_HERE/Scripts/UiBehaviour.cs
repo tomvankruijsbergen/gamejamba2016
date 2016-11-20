@@ -16,11 +16,12 @@ public class UiBehaviour : MonoBehaviour {
 	}
 
 	void OnScoreChanged(float newScore){	
-		//scoreText.text = "" + newScore;
-		this.lastScore = newScore;
+		scoreText.text = "" + newScore;
+		//this.lastScore = newScore;
 	}
 	void OnKillStreakChanged(float streakAmount){	
 		// Debug.Log(streakAmount);
+		this.lastScore = streakAmount;
 	}
 	void OnEnemyKilled(GameObject enemyKilled){
 		GameObject slave = Instantiate(Resources.Load("Prefabs/UiKill") as GameObject);
