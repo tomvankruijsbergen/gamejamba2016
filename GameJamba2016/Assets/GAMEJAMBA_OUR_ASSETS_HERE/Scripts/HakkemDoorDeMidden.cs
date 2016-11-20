@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnitySpriteCutter;
 
 public class HakkemDoorDeMidden : MonoBehaviour {
@@ -24,6 +25,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 	private GameObject bloodBurstParticles;
 	private GameObject spriteBurst;
 	private bool checking = true;
+	private List<GameObject> enemiesIHaveHittedAndDidNotLandInBetween = new List<GameObject> {};
 
 	void Awake(){
 		myRigidBody = gameObject.GetComponent<Rigidbody2D>();
@@ -31,6 +33,7 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		spriteBurst = Resources.Load("Prefabs/SpriteSplat") as GameObject;
 		Container.instance.OnPlayerDied += PlayerKilled;
 		Container.instance.OnEnemyHit += EnemyHit;
+		Container.instance.OnDragEnd += ClearEnemiesThisDrag;
 	}
 
 	private void PlayerKilled(Transform byWhom) {
@@ -40,7 +43,10 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		}
 		this.Hakkem(gameObject, byWhom.transform.position, transform.position, false);
 		gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
-		
+	}
+
+	private void ClearEnemiesThisDrag(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition) {
+		enemiesIHaveHittedAndDidNotLandInBetween = new List<GameObject> {};
 	}
 
 	// private void OnDrawGizmos()
@@ -54,26 +60,35 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 			return;
 		}
 		enemiesToBeHakkedDoorDeMidden = Physics2D.OverlapCircleAll(transform.position, areaOfAttack, enemyLayers,0,99);
-
 		foreach(Collider2D enemyCollider in enemiesToBeHakkedDoorDeMidden){
 			Health potentialHealthComponent = enemyCollider.gameObject.GetComponent<Health>();
-			if(
+			if(enemiesIHaveHittedAndDidNotLandInBetween.IndexOf(enemyCollider.gameObject) == -1) {
+				if(potentialHealthComponent != null) {
+					potentialHealthComponent.health--;
+				}
+				StartCoroutine(SwordAnimations());
+				if(
 					(potentialHealthComponent == null) || 
-					(potentialHealthComponent != null && potentialHealthComponent.health - 1 == 0)		
-			){
-				enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
-				Vector2 slashDirection = enemyCollider.transform.position;
-				Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
+					(potentialHealthComponent != null && potentialHealthComponent.health == 0)
+				){
+					enemyCollider.gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
+					Vector2 slashDirection = enemyCollider.transform.position;
+					Hakkem(enemyCollider.gameObject,transform.position, slashDirection);
+				}
 			}
-			if(potentialHealthComponent != null) {
-				potentialHealthComponent.health--;
-			}
-			
-			
+			enemiesIHaveHittedAndDidNotLandInBetween.Add(enemyCollider.gameObject);
 		}
 	}
 
 	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden, Vector2 slashStart, Vector2 slashEnd, bool isEnemy = true){
+		//remove potentials script the ugly way
+		for(int i = 0; i < removeDezeKankerScriptsAlsIkIemandKapotMaakAUB.Length; i++) {
+			//TODO: haal kanker scripts van kanker object af kanker
+			var potentialRemove = enemyToBeHakkedDoorDeMidden.GetComponent(removeDezeKankerScriptsAlsIkIemandKapotMaakAUB[i].GetType().ToString());
+			if(potentialRemove != null) {
+				Destroy(potentialRemove);
+			}
+		}
 		SpriteCutterOutput output = SpriteCutter.Cut( new SpriteCutterInput() {
 			lineStart = slashStart,
 			lineEnd = slashEnd,
@@ -83,7 +98,6 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 		if(isEnemy) {
 			gameObject.GetComponent<DragCatapultMovement>().ResetJumpCount();
 			StartCoroutine(DelayedForce(output, slashStart, slashEnd));
-			StartCoroutine(SwordAnimations());
 			Container.instance.EnemyKilled(enemyToBeHakkedDoorDeMidden);
 		} else {
 			Destroy(gameObject);
@@ -132,11 +146,9 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 	}
 
 	private IEnumerator DelayedForce(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
+		//fix the position of the second part
 		output.secondSideGameObject.transform.parent = output.firstSideGameObject.transform.parent;
 		output.secondSideGameObject.transform.position = output.firstSideGameObject.transform.position;
-		
-		//remove potentials script the ugly way
-
 
 		yield return new WaitForSeconds(forceDelay);
 
@@ -171,5 +183,11 @@ public class HakkemDoorDeMidden : MonoBehaviour {
 
 		rbdy1.AddTorque(9001);
 		rbdy2.AddTorque(9001);
+	}
+
+	void OnDestroy() {
+		Container.instance.OnPlayerDied -= PlayerKilled;
+		Container.instance.OnEnemyHit   -= EnemyHit;
+		Container.instance.OnDragEnd  -= ClearEnemiesThisDrag;
 	}
 }
