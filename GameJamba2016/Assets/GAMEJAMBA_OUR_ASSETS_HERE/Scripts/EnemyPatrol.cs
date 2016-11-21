@@ -8,11 +8,13 @@ public class EnemyPatrol : MonoBehaviour {
 	[SerializeField] private float hopSpeed = 8f;
 	[SerializeField] private float patrolDuration = 5f;
 	[SerializeField] private float maxHopHeight = .5f;
+	private float baseScaleX;
 
 	private float baseY;
 	private float startTime;
 
 	void Awake() {
+		baseScaleX = transform.localScale.x;
 		startTime = Time.time;
 		baseY = transform.position.y;
 		if(patrolPointA.position.y != patrolPointB.position.y) {
@@ -43,9 +45,9 @@ public class EnemyPatrol : MonoBehaviour {
 		// do the actual X positioning
 		Vector3 newPosition = Vector3.Lerp(patrolPointA.position, patrolPointB.position, distancePercentage);
 		if(newPosition.x > transform.position.x) {
-			transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
+			transform.localScale = new Vector3(-baseScaleX, transform.localScale.y, transform.localScale.z);
 		} else {
-			transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
+			transform.localScale = new Vector3(baseScaleX, transform.localScale.y, transform.localScale.z);
 		}
 		transform.position = newPosition;
 

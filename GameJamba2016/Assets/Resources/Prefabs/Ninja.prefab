@@ -44,6 +44,7 @@ GameObject:
   - 114: {fileID: 114000013582751584}
   - 120: {fileID: 120000011107371946}
   - 114: {fileID: 114000011815433392}
+  - 114: {fileID: 114000013382423738}
   m_Layer: 9
   m_Name: Ninja
   m_TagString: Player
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011024658440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -157.8, y: -49.3, z: 0}
+  m_LocalPosition: {x: -164.01, y: -47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -239,8 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7db5288ed69a49cb8935f4aa77ce05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeDezeKankerScriptsAlsIkIemandKapotMaakAUB:
-  - {fileID: 11500000, guid: 50c53e6071ee04fb7afd20ea67cfbe61, type: 3}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -262,6 +261,18 @@ MonoBehaviour:
   maxDragStartDistance: 7
   jumpCount: 300
   resetJumpToThis: 0
+--- !u!114 &114000013382423738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011024658440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76447718eae1f4475bc92249ed989eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yHeightToDie: -80
 --- !u!114 &114000013582751584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,12 +312,12 @@ LineRenderer:
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
+  m_LightmapParameters: {fileID: 15201, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -6.19, y: -1.8, z: 0}
-  - {x: -4.68, y: -0.96, z: 0}
+  - {x: -6.19, y: -1.8, z: -1}
+  - {x: -4.68, y: -0.96, z: -1}
   m_Parameters:
     startWidth: 1
     endWidth: 0.5
@@ -345,7 +356,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2e645bf044d3a43d39ea44250048e4d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

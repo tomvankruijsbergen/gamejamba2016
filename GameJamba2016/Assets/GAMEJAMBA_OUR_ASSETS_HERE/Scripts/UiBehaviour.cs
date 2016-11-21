@@ -5,23 +5,21 @@ using System.Collections;
 public class UiBehaviour : MonoBehaviour {
 
 	[SerializeField] private Text scoreText;
-
-	[SerializeField] private GameObject backgroundPanel;
-
-	[SerializeField] private GameObject scorePanel1;
-	[SerializeField] private GameObject scorePanel2;
-	[SerializeField] private GameObject scorePanel3;
-
+	[SerializeField] private GameObject winText;
+	[SerializeField] private GameObject lostText;
+	[SerializeField] private GameObject panel;
 
 	private float lastScore;
-
 	public void Awake() {
 		Container.instance.OnEnemyKilled += this.OnEnemyKilled;
 		Container.instance.OnScoreChanged += this.OnScoreChanged;
 		Container.instance.OnKillStreakChanged += this.OnKillStreakChanged;
 
 		Container.instance.OnBossKilled += this.OnBossKilled;
-
+		Container.instance.OnPlayerDied += this.OnPlayerDied;
+		panel.SetActive(false);
+		lostText.SetActive(false);
+		winText.SetActive(false);
 		this.OnScoreChanged(0);
 	}
 
@@ -40,8 +38,14 @@ public class UiBehaviour : MonoBehaviour {
 		uiSlave.InitWithText("" + this.lastScore);
 	}
 
+	void OnPlayerDied(Transform dontCare) {
+		lostText.SetActive(true);
+		panel.SetActive(true);
+	}
+
 	void OnBossKilled() {
-		
+		winText.SetActive(true);
+		panel.SetActive(true);
 	}
 
 	public void OnDestroy() {

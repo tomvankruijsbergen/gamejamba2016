@@ -38,7 +38,7 @@ public class DeAidsMonoBehaviourDieAlleStructuurNegeert : MonoBehaviour {
 		if(this == null) {
 			return;
 		}
-		this.Hakkem(gameObject, byWhom.transform.position, transform.position, false);
+		this.Hakkem(gameObject, byWhom.transform.position, transform.position);
 		gameObject.layer = LayerMask.NameToLayer("DeadEnemies");
 	}
 
@@ -80,22 +80,18 @@ public class DeAidsMonoBehaviourDieAlleStructuurNegeert : MonoBehaviour {
 		}
 	}
 
-	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden, Vector2 slashStart, Vector2 slashEnd, bool isEnemy = true){
+	private void Hakkem(GameObject enemyToBeHakkedDoorDeMidden, Vector2 slashStart, Vector2 slashEnd){
 		//remove potentials script the ugly way
 		SpriteCutterOutput output = SpriteCutter.Cut( new SpriteCutterInput() {
 			lineStart = slashStart,
 			lineEnd = slashEnd,
 			gameObject = enemyToBeHakkedDoorDeMidden,
 			gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_NEW,
-		} );
-		if(isEnemy) {
-			gameObject.GetComponent<DragCatapultMovement>().ResetJumpCount();
-			StartCoroutine(DelayedForce(output, slashStart, slashEnd));
+		});
+
+		gameObject.GetComponent<DragCatapultMovement>().ResetJumpCount();
+		StartCoroutine(DelayedForce(output, slashStart, slashEnd));
 			
-		} else {
-			Destroy(gameObject);
-			StartCoroutine(KillMyself(output, slashStart, slashEnd));
-		}
 	}
 
 	private void EnemyHit(Transform hitBy) {
@@ -103,30 +99,6 @@ public class DeAidsMonoBehaviourDieAlleStructuurNegeert : MonoBehaviour {
 		if(hasEnemyPatrol) {
 			//do specefiek shit
 		}
-	}
-
-	private IEnumerator KillMyself(SpriteCutterOutput output, Vector2 slashStart, Vector2 slashEnd){
-		output.firstSideGameObject.AddComponent<Rigidbody2D>();
-		output.secondSideGameObject.AddComponent<Rigidbody2D>();
-
-		Rigidbody2D rbdy1 = output.firstSideGameObject.GetComponent<Rigidbody2D>();
-		Rigidbody2D rbdy2 = output.secondSideGameObject.GetComponent<Rigidbody2D>();
-
-		Vector2 distance = output.firstSideGameObject.transform.position - output.secondSideGameObject.transform.position;
-
-		float angle = Mathf.Atan2(distance.y, distance.x);
-		angle += 0.5f * Mathf.PI;
-
-		Vector2 force = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * 9991; // je force
-
-		rbdy1.AddForceAtPosition(-force, slashStart);
-		rbdy2.AddForceAtPosition(force, slashEnd);
-
-		rbdy1.AddTorque(9001);
-		rbdy2.AddTorque(9001);
-		
-		yield return new WaitForSeconds(forceDelay);
-
 	}
 
 	private IEnumerator SwordAnimations(){
@@ -145,8 +117,10 @@ public class DeAidsMonoBehaviourDieAlleStructuurNegeert : MonoBehaviour {
 
 		yield return new WaitForSeconds(forceDelay);
 
-		//fix the Rigidbody2D for secondSideGameObject
-		output.secondSideGameObject.transform.gameObject.AddComponent<Rigidbody2D>();
+		//fix the Rigidbody2D for secondSideGameObject if it doesnt have OnEnemyHit
+		if(output.secondSideGameObject.transform.gameObject.GetComponent<Rigidbody2D>() == null) {
+			output.secondSideGameObject.transform.gameObject.AddComponent<Rigidbody2D>();
+		}
 
 		GameObject particles1 = GameObject.Instantiate( spriteBurst, output.firstSideGameObject.transform.position, Quaternion.identity) as GameObject;
 		GameObject particles2 = GameObject.Instantiate( spriteBurst, output.secondSideGameObject.transform.position, Quaternion.identity) as GameObject;

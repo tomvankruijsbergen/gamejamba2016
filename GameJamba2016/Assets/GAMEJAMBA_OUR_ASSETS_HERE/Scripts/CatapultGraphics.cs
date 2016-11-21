@@ -27,6 +27,10 @@ public class CatapultGraphics : MonoBehaviour {
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
+		//dit is zo kanker hacky
+		if(Container.instance.config == null) {
+			
+		}
 		catapultForce = Container.instance.config.catapultForce;
 
 		Container.instance.OnDragStart += this.DragStart;
@@ -45,6 +49,9 @@ public class CatapultGraphics : MonoBehaviour {
 	}
 
 	void Update(){
+		if(spriteRenderer == null) {
+			return;
+		}
 		if(!weDraggin){
 			if(lastPosition == Vector2.zero) {
 				lastPosition = transform.position;
@@ -81,7 +88,9 @@ public class CatapultGraphics : MonoBehaviour {
 
 	void DragEnd(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
 		if(weDraggin){
-			lineRenderer.SetPosition(1,transform.position  - transform.right * 2.5f);
+			Vector3 newPosition = transform.position - transform.right * 2.5f;
+			newPosition.z = -1f;
+			lineRenderer.SetPosition(1,newPosition);
 			headBandEnd.transform.position = transform.position  - transform.right * 2.5f;
 			weDraggin = false;
 		}
@@ -89,6 +98,9 @@ public class CatapultGraphics : MonoBehaviour {
 	}
 
 	void DragChanged(Vector2 dragPosition, Vector2 playerPosition, Vector2 cameraPosition){
+		if(spriteRenderer == null) {
+			return;
+		}
 		if(weDraggin){
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if(plane.Raycast(ray, out distance)) {
