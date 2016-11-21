@@ -136,7 +136,10 @@ public class Container : MonoSingleton<Container> {
 	}
 
 	public void PlayerMoved(Vector2 position, Vector2 velocity) {
-		this.OnPlayerMoved(position, velocity);
+		//hier ook anders kan ik niet restarten
+		if(this.OnPlayerMoved != null) {
+			this.OnPlayerMoved(position, velocity);
+		}
 	}
 
 	public void CameraMoved(Vector2 position) {
@@ -174,9 +177,12 @@ public class Container : MonoSingleton<Container> {
 		this.OnPlayerCollidedWithLevel(collider);
 	}
 
+	
 	public void ScoreChanged(float newScore) {
+		if(this.OnScoreChanged == null) return;
 		this.OnScoreChanged(newScore);
 	}
+	
 	public void KillStreakChanged(float streakAmount) {
 		this.OnKillStreakChanged(streakAmount);
 	}

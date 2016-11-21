@@ -38,10 +38,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
                         Debug.LogError("Problem during the creation of " + typeof(T).ToString());
                     }
                 }
-				if (!_isInitialized){
-					_isInitialized = true;
-					m_Instance.Init();
-				}
+				m_Instance.Init();
             }
             return m_Instance;
         }
@@ -63,7 +60,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
 			return;
 		}
 		if (!_isInitialized) {
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 			_isInitialized = true;
 			m_Instance.Init ();
 		}
