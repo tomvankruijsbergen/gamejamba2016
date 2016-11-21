@@ -12,7 +12,18 @@ public class Container : MonoSingleton<Container> {
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
 	
 	// These are objects that are instantiated from a Prefab.
-	public Config config;
+	private Config _cfg = null;
+	public Config config {
+		get {
+			if(_cfg == null) {
+				//instantiate the config
+				GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
+				_cfg = configObject.GetComponent<Config>();
+			}
+			return _cfg;
+		}
+		set { _cfg = value; }
+	}
 	private AudioManager audioManager;
 	private BackgroundManager backgroundManager;
 
@@ -60,10 +71,6 @@ public class Container : MonoSingleton<Container> {
 	public event _BossKilled OnBossKilled;
 
 	public override void Init () {
-		//instantiate the config
-		GameObject configObject = Instantiate(Resources.Load("Prefabs/Config") as GameObject);
-		this.config = configObject.GetComponent<Config>();
-
 		GameObject audioManagerObject = Instantiate(Resources.Load("Prefabs/AudioManager") as GameObject);
 		this.audioManager = audioManagerObject.GetComponent<AudioManager>();
 
@@ -172,7 +179,6 @@ public class Container : MonoSingleton<Container> {
 		}
 	}
 
-
 	public void DoPlayerLevelCollide(Collision2D collider) {
 		this.OnPlayerCollidedWithLevel(collider);
 	}
@@ -182,7 +188,7 @@ public class Container : MonoSingleton<Container> {
 		if(this.OnScoreChanged == null) return;
 		this.OnScoreChanged(newScore);
 	}
-	
+
 	public void KillStreakChanged(float streakAmount) {
 		this.OnKillStreakChanged(streakAmount);
 	}

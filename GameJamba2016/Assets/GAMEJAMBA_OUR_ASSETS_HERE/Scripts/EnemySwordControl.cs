@@ -17,15 +17,28 @@ public class EnemySwordControl : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		lastHak = Time.time;
+		Container.instance.OnEnemyKilled += MyMasterDied;
+		hak.SetActive(false);
+		klik.SetActive(alwaysShowClick);
+	}
+
+	void MyMasterDied(GameObject isThisMyMaster) {
+		if(isThisMyMaster == transform.parent.gameObject) {
+			Destroy(gameObject);
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if(!didKill) {
+		if(!didKill && isHacking) {
 			if(other.gameObject.tag == "Player") {
 				Container.instance.DoPlayerKill(transform);
 				didKill = true;
 			}
 		}
+	}
+
+	void OnDestroy() {
+		Container.instance.OnEnemyKilled -= MyMasterDied;
 	}
 	
 	void Update() {

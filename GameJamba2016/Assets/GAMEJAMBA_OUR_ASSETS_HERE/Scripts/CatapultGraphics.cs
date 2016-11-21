@@ -27,6 +27,10 @@ public class CatapultGraphics : MonoBehaviour {
 
 	void Awake(){
 		plane = new Plane(Vector3.forward, Vector3.zero);
+		//dit is zo kanker hacky
+		if(Container.instance.config == null) {
+			
+		}
 		catapultForce = Container.instance.config.catapultForce;
 
 		Container.instance.OnDragStart += this.DragStart;
