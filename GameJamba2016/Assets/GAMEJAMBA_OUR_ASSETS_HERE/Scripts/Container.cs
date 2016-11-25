@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Container : MonoSingleton<Container> {
+public class Container : MonoBehaviour {
 
 	// All messages between objects should go through this class.
 	// An object always calls this class, and this class then sends events.
@@ -12,6 +12,19 @@ public class Container : MonoSingleton<Container> {
 	// - AudioManager.cs:	does things like this.UpdateBackgroundSoundForPlayerPosition(newPosition);
 	
 	// These are objects that are instantiated from a Prefab.
+	static private Container _self = null;
+	static public Container instance {
+		get {
+			if(Container._self == null) {
+				Debug.LogError("Container instance required before it was initiated!");
+			}
+			return _self;
+		}
+		set {
+			Debug.LogError("Container cannot be set!!!");
+		}
+	}
+
 	private Config _cfg = null;
 	public Config config {
 		get {
@@ -70,7 +83,8 @@ public class Container : MonoSingleton<Container> {
 	public delegate void _BossKilled();
 	public event _BossKilled OnBossKilled;
 
-	public override void Init () {
+	void Awake () {
+		Container._self = this;
 		GameObject audioManagerObject = Instantiate(Resources.Load("Prefabs/AudioManager") as GameObject);
 		this.audioManager = audioManagerObject.GetComponent<AudioManager>();
 
