@@ -58,7 +58,7 @@ namespace UnitySpriteCutter.Cutters {
 			result.triangles = GenerateConvexPolygonTrianglesFromVertices( newVertices );
 			result.uv = GenerateProportionalUVs( newVertices, original );
 
-			result.Optimize();
+			;
 			result.RecalculateNormals();
 
 			return result;

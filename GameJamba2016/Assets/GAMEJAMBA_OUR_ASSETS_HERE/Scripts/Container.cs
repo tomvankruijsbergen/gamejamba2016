@@ -16,8 +16,7 @@ public class Container : MonoBehaviour {
 	static public Container instance {
 		get {
 			if(Container._self == null) {
-				throw new System.Exception();
-				Debug.LogError("Container instance required before it was initiated!");
+				Debug.Log("Container instance required before it was initiated!");
 			}
 			return _self;
 		}

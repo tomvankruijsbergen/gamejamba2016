@@ -97,8 +97,8 @@ public class CameraBehaviour : MonoBehaviour {
 
 		Vector2 difference = (playerPosition - position);
 		Vector2 extra = Vector2.ClampMagnitude(velocity * Time.deltaTime * this.lookAheadVelocityModifier, this.lookAheadMax);
-
-		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime);
+		
+		extraAmount = Vector2.SmoothDamp(extraAmount, extra, ref this.extraAmountVelocity, this.targetSmoothTime, float.MaxValue, Time.deltaTime);
 
 		Vector2 newTarget = position + difference + extraAmount;
 		newTarget.y += yOffset;

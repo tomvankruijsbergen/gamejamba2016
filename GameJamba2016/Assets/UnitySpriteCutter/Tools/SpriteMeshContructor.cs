@@ -38,7 +38,7 @@ namespace UnitySpriteCutter.Tools {
 			result.vertices = vertices;
 			result.triangles = triangles;
 			result.uv = uv;
-			result.Optimize();
+			;
 			result.RecalculateNormals();
 
 			return result;
